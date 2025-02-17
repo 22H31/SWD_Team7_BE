@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\be_team7.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\be_team7.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\databasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\be_team7.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\be_team7.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\properties\\servicedependencies\\beteam720250214143214 - zip deploy\\profile.arm.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\properties\\servicedependencies\\beteam720250214143214 - zip deploy\\profile.arm.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Program.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeToolTip": "BE_Team7\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:30:29.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\AppDbContext.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeToolTip": "BE_Team7\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:28:05.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BE_Team7.http",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.http",
+              "RelativeDocumentMoniker": "BE_Team7\\BE_Team7.http",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.http",
+              "RelativeToolTip": "BE_Team7\\BE_Team7.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-02-17T14:46:16.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BE_Team7",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+              "RelativeDocumentMoniker": "BE_Team7\\BE_Team7.csproj",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+              "RelativeToolTip": "BE_Team7\\BE_Team7.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-17T14:46:31.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "BE_Team7\\appsettings.Development.json",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\appsettings.Development.json",
+              "RelativeToolTip": "BE_Team7\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T12:41:51.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:36:41.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\User.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\User.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:32:56.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DatabaseController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\DatabaseController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\DatabaseController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\DatabaseController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\DatabaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T15:18:21.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Worker.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Worker.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Worker.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Worker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T15:21:45.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\appsettings.json",
+              "RelativeDocumentMoniker": "BE_Team7\\appsettings.json",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\appsettings.json",
+              "RelativeToolTip": "BE_Team7\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T12:41:06.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BE_Team7\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BE_Team7\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T14:44:49.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "profile.arm.json",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Properties\\ServiceDependencies\\BETeam720250214143214 - Zip Deploy\\profile.arm.json",
+              "RelativeDocumentMoniker": "BE_Team7\\Properties\\ServiceDependencies\\BETeam720250214143214 - Zip Deploy\\profile.arm.json",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Properties\\ServiceDependencies\\BETeam720250214143214 - Zip Deploy\\profile.arm.json",
+              "RelativeToolTip": "BE_Team7\\Properties\\ServiceDependencies\\BETeam720250214143214 - Zip Deploy\\profile.arm.json",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAGYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T14:44:39.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:33:52.044Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
