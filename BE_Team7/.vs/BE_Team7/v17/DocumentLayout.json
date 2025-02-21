@@ -1,7 +1,64 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\accountmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\accountmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\helpers\\productquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\helpers\\productquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\repository.contracts\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\be_team7.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\be_team7.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\service.contracts\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\service.contracts\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\repository.contracts\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +66,186 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Program.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeToolTip": "BE_Team7\\Program.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:45:21.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:27:49.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\AppDbContext.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeToolTip": "BE_Team7\\AppDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:01:19.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductMapper.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\ProductMapper.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
+              "RelativeToolTip": "BE_Team7\\Mappers\\ProductMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:34:22.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountMapper.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\AccountMapper.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\AccountMapper.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\AccountMapper.cs",
+              "RelativeToolTip": "BE_Team7\\Mappers\\AccountMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:33:54.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductQuery.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Helpers\\ProductQuery.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Helpers\\ProductQuery.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Helpers\\ProductQuery.cs",
+              "RelativeToolTip": "BE_Team7\\Helpers\\ProductQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:16:58.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\ProductDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:35:10.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:11:03.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Product.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Product.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:00:54.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BE_Team7.csproj",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+              "RelativeDocumentMoniker": "BE_Team7\\BE_Team7.csproj",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+              "RelativeToolTip": "BE_Team7\\BE_Team7.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-20T11:16:20.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAccountRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAlwAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T11:07:59.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T10:59:46.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IAuthRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAuthRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IAuthRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T10:57:19.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Service.Contracts\\IEmailService.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Service.Contracts\\IEmailService.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Service.Contracts\\IEmailService.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Service.Contracts\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T10:56:59.559Z"
             }
           ]
         }

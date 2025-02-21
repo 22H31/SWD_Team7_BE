@@ -172,7 +172,6 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets\msbuild.build.BE_
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets\msbuild.buildMultiTargeting.BE_Team7.props
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets\msbuild.buildTransitive.BE_Team7.props
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets.pack.json
-C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets.upToDateCheck.txt
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\BE_Team7.csproj.Up2Date
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\BE_Team7.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\refint\BE_Team7.dll
@@ -182,3 +181,4 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\ref\BE_Team7.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Release\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Release\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Release\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net9.0\staticwebassets.upToDateCheck.txt
