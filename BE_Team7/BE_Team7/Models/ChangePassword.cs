@@ -8,15 +8,16 @@ namespace api.Models
 {
     public class ChangePassword
     {
+        [Key]
         [Required]
         [DataType(DataType.Password)]
-        public string CurrentPassword { get; set; }
+        public required string CurrentPassword { get; set; }
         [Required]
         [DataType(DataType.Password)]
-        public string NewPassword { get; set; }
+        public required string NewPassword { get; set; }
         [Required]
         [DataType(DataType.Password)]
         [Compare("NewPassword", ErrorMessage = "Mật khẩu mới và xác nhận mật khẩu không khớp.")]
-        public string NewPasswordConfirmation { get; set; }
+        public required string NewPasswordConfirmation { get; set; }
     }
 }

@@ -15,6 +15,7 @@ using System.Security.Claims;
 using api.Mappers;
 using BE_Team7.Models;
 using BE_Team7.Interfaces.Repository.Contracts;
+using BE_Team7.Sevices;
 
 namespace api.Controllers
 {
@@ -179,5 +180,23 @@ namespace api.Controllers
             var accountDto = accounts.Select(a => a.ToAccountDto());
             return Ok(accountDto);
         }
+
+        [Authorize]
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest(new { message = "Không có token" });
+            }
+
+            // Vô hiệu hóa token nhưng không lưu vào database
+            TokenRevocationService.RevokeToken(token);
+
+            return Ok(new { message = "Đăng xuất thành công, token đã bị vô hiệu hóa" });
+        }
+
     }
 }

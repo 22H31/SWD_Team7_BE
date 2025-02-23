@@ -1,18 +1,21 @@
-﻿namespace BE_Team7.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BE_Team7.Models
 {
-    public class ProductIf
+    public class Product
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ProductId { get; set; }
+        public Guid CategoryId { get; set; }
+        public required string ProductName { get; set; }
+        public required string Description { get; set; }
         public double Price { get; set; }
         public int StockQuantity { get; set; }
-        public int CategoryId { get; set; }
-        public string SkinType { get; set; }
-        public string CreatedAt { get; set; }
-
-    }
-    public class Product : ProductIf
-    {
-        public Guid ProductId { get; set; }
+        public required string SkinType { get; set; }
+        public required string Img { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public virtual Category Category { get; set; } = null!;
     }
 }
