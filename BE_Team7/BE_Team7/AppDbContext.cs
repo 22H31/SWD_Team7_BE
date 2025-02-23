@@ -1,4 +1,5 @@
 ﻿namespace BE_Team7;
+
 using BE_Team7.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -8,8 +9,19 @@ public class AppDbContext : IdentityDbContext<User>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     public DbSet<User> User { get; set; }
-    public DbSet<Worker> Worker { get; set; }   
+    public DbSet<Category> Category { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Blog> Blog { get; set; }
+    public DbSet<Cart> Cart { get; set; }
+    public DbSet<CartItem> CartItem { get; set; }
+    public DbSet<Feedback> Feedback { get; set; }
+    public DbSet<Order> Order { get; set; }
+    public DbSet<OrderDetail> OrderDetail { get; set; }
+    public DbSet<Payment> Payment { get; set; }
+    public DbSet<Promotion> Promotion { get; set; }
+    public DbSet<SkinCareRoutine> SkinCareRoutine { get; set; }
+    public DbSet<SkinTest> SkinTest { get; set; }
+    public DbSet<SuggestProducts> SuggestProducts { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -18,6 +30,11 @@ public class AppDbContext : IdentityDbContext<User>
                 new IdentityRole{
                     Name="Admin",
                     NormalizedName="ADMIN"
+                },
+                new IdentityRole
+                {
+                    Name="Staff",
+                    NormalizedName="STAFF"
                 },
                 new IdentityRole{
                     Name="User",

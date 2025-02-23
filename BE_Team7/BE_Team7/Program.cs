@@ -4,13 +4,14 @@ using BE_Team7;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using BE_Team7.Models;
 using api.Interfaces;
 using api.Service;
 using api.Services;
 using BE_Team7.Interfaces.Repository.Contracts;
 using api.Repository;
 using BE_Team7.Repository;
+using BE_Team7.Sevices; // Import profile
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,7 +56,13 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 })
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
-
+// Add Authorization with Policy
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireUser", policy => policy.RequireRole("User"));
+    options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("RequireAdminOrStaff", policy => policy.RequireRole("Admin", "Staff"));
+});
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
@@ -82,33 +89,17 @@ builder.Services.AddAuthentication(options =>
 
         options.Events = new JwtBearerEvents
         {
-            // Xử lý khi có token trong query string
-            OnMessageReceived = context =>
-            {
-                var accessToken = context.Request.Query["access_token"];
-
-                // Kiểm tra xem request có phải là yêu cầu cho SignalR hub không
-                var path = context.HttpContext.Request.Path;
-                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hub"))
-                {
-                    // Đọc token từ query string
-                    context.Token = accessToken;
-                }
-
-                return Task.CompletedTask;
-            },
-
             // Xử lý khi xác thực token thất bại
             OnAuthenticationFailed = context =>
             {
                 if (context.Exception is SecurityTokenExpiredException)
                 {
-                    context.Response.StatusCode = 401;
+                    context.Response.StatusCode = 403;
                     context.Response.ContentType = "application/json";
                     return context.Response.WriteAsync("{\"message\": \"Token expired\"}");
                 }
 
-                context.Response.StatusCode = 401;
+                context.Response.StatusCode = 403;
                 context.Response.ContentType = "application/json";
                 return context.Response.WriteAsync("{\"message\": \"Authentication failed\"}");
             }
@@ -125,7 +116,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 // Add services to the container.
-
+// Đăng ký AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
@@ -140,9 +132,18 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 
 var app = builder.Build();
-
+app.UseMiddleware<TokenValidationMiddlewareService>();
 // Configure the HTTP request pipeline.
+app.Use(async (context, next) =>
+{
+    await next();
 
+    if (context.Response.StatusCode == 403)
+    {
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsync("{\"message\": \"Bạn không có quyền truy cập vào tài nguyên này.\"}");
+    }
+});
 app.UseSwagger();
 
 app.UseSwaggerUI();
