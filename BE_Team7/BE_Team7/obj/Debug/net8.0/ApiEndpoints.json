@@ -84,6 +84,164 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "GetAllBrand",
+    "RelativePath": "api/brand",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "CreateNewBrand",
+    "RelativePath": "api/brand",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createBrandRequestDto",
+        "Type": "BE_Team7.Dtos.Brand.CreateBrandRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "GetBrandById",
+    "RelativePath": "api/brand/{brandId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "brandId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "UpdateBrand",
+    "RelativePath": "api/brand/{brandId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "brandId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBrandRequestDto",
+        "Type": "BE_Team7.Dtos.Brand.UpdateBrandRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "DeleteBrand",
+    "RelativePath": "api/brand/{brandId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "brandId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CategoryTitleController",
+    "Method": "GetAllCategoryTitle",
+    "RelativePath": "api/categoryTitle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CategoryTitleController",
+    "Method": "CreateNewCategoryTitle",
+    "RelativePath": "api/categoryTitle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCategoryTitleRequestDto",
+        "Type": "BE_Team7.Dtos.CategoryTitle.CreateCategoryTitleRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CategoryTitleController",
+    "Method": "GetCategoryTitleById",
+    "RelativePath": "api/categoryTitle/{categoryTitleId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryTitleId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CategoryTitleController",
+    "Method": "UpdateCatregoryTitle",
+    "RelativePath": "api/categoryTitle/{categoryTitleId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryTitleId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCategoryTitleRequestDto",
+        "Type": "BE_Team7.Dtos.CategoryTitle.UpdateCategoryTitleRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CategoryTitleController",
+    "Method": "DeleteCategoryTitle",
+    "RelativePath": "api/categoryTitle/{categoryTitleId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryTitleId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.DatabaseController",
     "Method": "CheckDatabaseConnection",
     "RelativePath": "api/Database/check-connection",
@@ -167,6 +325,22 @@
       {
         "Name": "updateDto",
         "Type": "BE_Team7.Dtos.Product.UpdateProductRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "Delete",
+    "RelativePath": "api/products/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

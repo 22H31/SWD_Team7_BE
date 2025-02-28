@@ -26,7 +26,7 @@ namespace BE_Team7.Controllers
         }
 
         // GET: api/product
-        [Authorize(Policy = "RequireUser")]
+        //[Authorize(Policy = "RequireUser")]
         [HttpGet]
 
         public async Task<IActionResult> GetAll([FromQuery] ProductQuery query)
@@ -35,7 +35,7 @@ namespace BE_Team7.Controllers
             var productdDto = _mapper.Map<List<ProductDto>>(products);
             return Ok(productdDto);
         }
-        [Authorize(Policy = "RequireAdmin")]
+        //[Authorize(Policy = "RequireAdmin")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateProductRequestDto createProductRequestDto)
         {
@@ -74,6 +74,22 @@ namespace BE_Team7.Controllers
                 Data = null
             }); ;
             var productModel = await _productRepo.UpdateProductById(id, updateDto);
+
+            if (!productModel.Success)
+                return NotFound(productModel);
+            return Ok(productModel);
+        }
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        {
+            if (!ModelState.IsValid) return BadRequest(new ApiResponse<Product>
+            {
+                Success = false,
+                Message = "Dữ liệu không hợp lệ.",
+                Data = null
+            }); ;
+            var productModel = await _productRepo.DeleteProductById(id);
 
             if (!productModel.Success)
                 return NotFound(productModel);

@@ -3,6 +3,7 @@
     public class UpdateProductRequestDto
     {
         public Guid CategoryId { get; set; }
+        public Guid BrandId { get; set; }
         public required string ProductName { get; set; }
         public required string Description { get; set; }
         public double Price { get; set; }

@@ -9,5 +9,6 @@ namespace api.Dtos.Account
     {
         public bool IsLogedIn { get; set; } = false;
         public required string JwtToken { get; set; }
+
     }
 }

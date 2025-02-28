@@ -8,8 +8,9 @@ namespace BE_Team7.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public required Guid CategoryId { get; set; }
+        public required Guid CategoryTitleId { get; set; }
         public required string CategoryName { get; set; }
         public required string Description { get; set; }
-        public required string icon { get; set; }
+        public virtual CategoryTitle CategoryTitle { get; set; } = null!;
     }
 }

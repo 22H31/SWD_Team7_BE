@@ -22,7 +22,7 @@ namespace BE_Team7.Repository
         public async Task<List<Product>> GetProductsAsync(ProductQuery productQuery)
         {
 
-            var products = _context.Products.Include(c => c.Category).AsQueryable();
+            var products = _context.Products.Include(c => c.Category).Include(b => b.Brand).AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(productQuery.Name))
             {
@@ -75,6 +75,20 @@ namespace BE_Team7.Repository
                 }
                 productModel.CategoryId = productDtoForUpdate.CategoryId;
             }
+            if (productModel.BrandId != productDtoForUpdate.BrandId)
+            {
+                var brandExists = await _context.Brand.AnyAsync(c => c.BrandId == productDtoForUpdate.BrandId);
+                if (!brandExists)
+                {
+                    return new ApiResponse<Product>
+                    {
+                        Success = false,
+                        Message = "Brand không tồn tại.",
+                        Data = null
+                    };
+                }
+                productModel.BrandId = productDtoForUpdate.BrandId;
+            }
 
             _mapper.Map(productDtoForUpdate, productModel);
             await _context.SaveChangesAsync();
@@ -82,6 +96,28 @@ namespace BE_Team7.Repository
             {
                 Success = true,
                 Message = "Cập nhật sản phẩm thành công.",
+                Data = productModel
+            };
+        }
+
+        public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
+        {
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+            if (productModel == null)
+            {
+                return new ApiResponse<Product>
+                {
+                    Success = false,
+                    Message = "Sản phẩm không tồn tại.",
+                    Data = null
+                };
+            }
+            _context.Products.Remove(productModel);
+            await _context.SaveChangesAsync();
+            return new ApiResponse<Product>
+            {
+                Success = true,
+                Message = "Xóa sản phẩm thành công.",
                 Data = productModel
             };
         }
