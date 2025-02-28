@@ -10,5 +10,6 @@ namespace BE_Team7.Models
         public Guid CategoryTitleId { get; set; }
         public required string CategoryTitleName { get; set; }
         public required string CategoryTitleIcon { get; set; }
+        public virtual List<Category> Category { get; set; } = new();
     }
 }

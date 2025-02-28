@@ -50,10 +50,15 @@ namespace api.Controllers
             if (!user.EmailConfirmed) return Unauthorized("Please confirm your email before logging in");
             var result = await _authService.LoginAsync(user, loginDto.Password);
             if (result == null) return Unauthorized("Invalid username or password");
+            // 🔹 Lấy danh sách role của user
+            var roles = await _userManager.GetRolesAsync(user);
             var userLogIn = new LoginResponseDto
             {
                 IsLogedIn = true,
                 JwtToken = _tokenService.CreateToken(user),
+                Roles = roles,
+                PhoneNumber = user.PhoneNumber
+                
             };
             return Ok(userLogIn);
         }
@@ -89,8 +94,10 @@ namespace api.Controllers
                     TwoFactorEnabled = false,
                     LockoutEnabled = false,
                     Name = registerDto.Name, // Bắt buộc nếu không cho phép NULL
-                    SkinType = registerDto.SkinType,// Bắt buộc nếu không cho phép NULL
-                    CreatedAt = DateTime.UtcNow
+                    //SkinType = registerDto.SkinType,
+                    CreatedAt = DateTime.UtcNow,
+                    
+                    
                 };
                 var createdUser = await _userManager.CreateAsync(user, registerDto.Password);
                 if (createdUser.Succeeded)

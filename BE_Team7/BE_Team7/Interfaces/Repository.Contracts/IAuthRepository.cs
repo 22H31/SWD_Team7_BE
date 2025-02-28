@@ -14,7 +14,6 @@ namespace BE_Team7.Interfaces.Repository.Contracts
     {
         public Task<string> LoginAsync(User appUser, string pwd);
         public Task<string> ChangePasswordUSerAsync(ChangePassword changePassword, ClaimsPrincipal user);
-
         public Task<string> ConfirmEmailAsync(string email);
         public Task<string> ForgotPasswordAsync(string email);
         public Task<string> NewPasswordAsync(string email, string token);

@@ -17,9 +17,6 @@ namespace api.Dtos.Account
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
-
-        public string SkinType { get; set; }
-
         public string PhoneNumber { get; set; }
     }
 }

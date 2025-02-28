@@ -495,19 +495,19 @@ namespace BE_Team7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c6607a38-9d89-4479-b395-7bb9980f7f45",
+                            Id = "c196fd02-50e6-4e02-93f3-0e36371060d5",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "d04eaa2c-0ac0-409c-bfbd-558ce662d2ec",
+                            Id = "92dde644-c5f9-4a2e-a37d-32509ee2de09",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         },
                         new
                         {
-                            Id = "f0668276-427a-493c-bb06-0685b96dfb3c",
+                            Id = "cd384879-e294-4dc6-b09f-130c8e62e297",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -739,7 +739,7 @@ namespace BE_Team7.Migrations
             modelBuilder.Entity("BE_Team7.Models.Category", b =>
                 {
                     b.HasOne("BE_Team7.Models.CategoryTitle", "CategoryTitle")
-                        .WithMany()
+                        .WithMany("Categories")
                         .HasForeignKey("CategoryTitleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -907,6 +907,11 @@ namespace BE_Team7.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.CategoryTitle", b =>
+                {
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }
