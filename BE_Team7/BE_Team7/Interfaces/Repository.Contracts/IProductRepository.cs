@@ -10,5 +10,6 @@ namespace BE_Team7.Interfaces.Repository.Contracts
         Task<Product> CreateProductAsyns(Product product);
         Task<Product?> GetProductById(Guid productId);
         Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto product);
+        Task<ApiResponse<Product>> DeleteProductById(Guid id);
     }
 }

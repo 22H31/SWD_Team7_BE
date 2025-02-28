@@ -10,6 +10,7 @@ public class AppDbContext : IdentityDbContext<User>
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     public DbSet<User> User { get; set; }
     public DbSet<Category> Category { get; set; }
+    public DbSet<CategoryTitle> CategoryTitle { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Blog> Blog { get; set; }
     public DbSet<Cart> Cart { get; set; }
@@ -19,6 +20,7 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<OrderDetail> OrderDetail { get; set; }
     public DbSet<Payment> Payment { get; set; }
     public DbSet<Promotion> Promotion { get; set; }
+    public DbSet<Brand> Brand { get; set; }
     public DbSet<SkinCareRoutine> SkinCareRoutine { get; set; }
     public DbSet<SkinTest> SkinTest { get; set; }
     public DbSet<SuggestProducts> SuggestProducts { get; set; }

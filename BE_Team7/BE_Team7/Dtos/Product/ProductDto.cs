@@ -10,6 +10,10 @@ namespace BE_Team7.Dtos.Product
         public double Price { get; set; }
         public int StockQuantity { get; set; }
         public string SkinType { get; set; }
+        public string ProductImg {  get; set; }
+        public DateTime CreatedAt { get; set; }
         public string CategoryName { get; set; }
+        public string BrandName { get; set; }
+
     }
 }

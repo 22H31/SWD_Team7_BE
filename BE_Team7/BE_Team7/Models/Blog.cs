@@ -13,6 +13,5 @@ namespace BE_Team7.Models
         public required string Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public virtual User User { get; set; } = null!;
-
     }
 }
