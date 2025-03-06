@@ -24,6 +24,8 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<SkinCareRoutine> SkinCareRoutine { get; set; }
     public DbSet<SkinTest> SkinTest { get; set; }
     public DbSet<SuggestProducts> SuggestProducts { get; set; }
+    public DbSet<ProductImage> ProductImage { get; set; }
+    public DbSet<ProductVariant> ProductVariant { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -32,6 +34,11 @@ public class AppDbContext : IdentityDbContext<User>
                 new IdentityRole{
                     Name="Admin",
                     NormalizedName="ADMIN"
+                },
+                new IdentityRole
+                {
+                    Name="StaffSale",
+                    NormalizedName="STAFFSALE"
                 },
                 new IdentityRole
                 {

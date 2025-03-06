@@ -143,3 +143,4 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\refint\BE_Team7.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\BE_Team7.pdb
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\BE_Team7.genruntimeconfig.cache
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\ref\BE_Team7.dll
+C:\SWD\BE\BE_Team7\BE_Team7\bin\Release\net8.0\linux-x64\CloudinaryDotNet.dll

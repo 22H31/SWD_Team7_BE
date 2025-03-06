@@ -185,6 +185,10 @@ namespace BE_Team7.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("FeedbackId");
 
                     b.HasIndex("ProductId");
@@ -285,35 +289,45 @@ namespace BE_Team7.Migrations
                     b.ToTable("Payment");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Product", b =>
+            modelBuilder.Entity("BE_Team7.Models.ProductImage", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("ImageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("BrandId")
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
+                    b.HasKey("ImageId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImage");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.ProductVariant", b =>
+                {
+                    b.Property<Guid>("VariantId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("FullIngredients")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("MainIngredients")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("ProductImg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SkinType")
                         .IsRequired()
@@ -322,13 +336,14 @@ namespace BE_Team7.Migrations
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductId");
+                    b.Property<int>("Volume")
+                        .HasColumnType("int");
 
-                    b.HasIndex("BrandId");
+                    b.HasKey("VariantId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("Products");
+                    b.ToTable("ProductVariant");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.Promotion", b =>
@@ -495,19 +510,19 @@ namespace BE_Team7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c196fd02-50e6-4e02-93f3-0e36371060d5",
+                            Id = "56f8b293-5807-486e-995e-611cbe919171",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "92dde644-c5f9-4a2e-a37d-32509ee2de09",
+                            Id = "5522712f-b0bb-4c6e-91a0-a3eb99876529",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         },
                         new
                         {
-                            Id = "cd384879-e294-4dc6-b09f-130c8e62e297",
+                            Id = "3d0ddb4e-1607-4d26-abd0-b10b93707edc",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -619,6 +634,46 @@ namespace BE_Team7.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BrandId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Specification")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UseManual")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("User", b =>
                 {
                     b.Property<string>("Id")
@@ -725,7 +780,7 @@ namespace BE_Team7.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BE_Team7.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -739,7 +794,7 @@ namespace BE_Team7.Migrations
             modelBuilder.Entity("BE_Team7.Models.Category", b =>
                 {
                     b.HasOne("BE_Team7.Models.CategoryTitle", "CategoryTitle")
-                        .WithMany("Categories")
+                        .WithMany("Category")
                         .HasForeignKey("CategoryTitleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -749,8 +804,8 @@ namespace BE_Team7.Migrations
 
             modelBuilder.Entity("BE_Team7.Models.Feedback", b =>
                 {
-                    b.HasOne("BE_Team7.Models.Product", "Product")
-                        .WithMany()
+                    b.HasOne("Product", "Product")
+                        .WithMany("Feedbacks")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -789,7 +844,7 @@ namespace BE_Team7.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BE_Team7.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -811,23 +866,26 @@ namespace BE_Team7.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Product", b =>
+            modelBuilder.Entity("BE_Team7.Models.ProductImage", b =>
                 {
-                    b.HasOne("BE_Team7.Models.Brand", "Brand")
-                        .WithMany()
-                        .HasForeignKey("BrandId")
+                    b.HasOne("Product", "Product")
+                        .WithMany("ImageUrls")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BE_Team7.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.ProductVariant", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany("Variants")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Brand");
-
-                    b.Navigation("Category");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.SkinCareRoutine", b =>
@@ -841,7 +899,7 @@ namespace BE_Team7.Migrations
 
             modelBuilder.Entity("BE_Team7.Models.SuggestProducts", b =>
                 {
-                    b.HasOne("BE_Team7.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -909,9 +967,37 @@ namespace BE_Team7.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BE_Team7.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.CategoryTitle", b =>
                 {
-                    b.Navigation("Categories");
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("ImageUrls");
+
+                    b.Navigation("Variants");
                 });
 #pragma warning restore 612, 618
         }

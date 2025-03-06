@@ -1,24 +1,32 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BE_Team7.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace BE_Team7.Models
+public class Product
 {
-    public class Product
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ProductId { get; set; }
-        public Guid CategoryId { get; set; }
-        public Guid BrandId { get; set; }
-        public required string ProductName { get; set; }
-        public required string Description { get; set; }
-        public double Price { get; set; }
-        public int StockQuantity { get; set; }
-        public required string SkinType { get; set; }
-        public required string ProductImg { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public virtual Category Category { get; set; } = null!;
-        public virtual Brand Brand { get; set; } = null!;
-
-    }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid ProductId { get; set; }
+    public required string ProductName { get; set; }
+    public required string ProductAvatar {  get; set; }
+    public Guid CategoryId { get; set; }
+    public virtual Category Category { get; set; } = null!;
+    public Guid BrandId { get; set; }
+    public virtual Brand Brand { get; set; } = null!;
+    public DateTime CreatedAt { get; set; }
+    // Danh sách biến thể sản phẩm
+    public virtual ICollection<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
+    // Danh sách hình ảnh sản phẩm
+    public virtual ICollection<ProductImage> ImageUrls { get; set; } = new List<ProductImage>();
+    // Danh sách Feedbacks
+    public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+    // Mô tả chi tiết sản phẩm (Lưu dưới dạng JSON)
+    [Column(TypeName = "nvarchar(max)")]
+    public string Description { get; set; } = "{}";
+    // Thông số kỹ thuật sản phẩm (Lưu dưới dạng JSON)
+    [Column(TypeName = "nvarchar(max)")]
+    public string Specification { get; set; } = "{}";
+    // Hướng dẫn sử dụng (Lưu dưới dạng JSON)
+    [Column(TypeName = "nvarchar(max)")]
+    public string UseManual { get; set; } = "{}";
 }

@@ -155,4 +155,5 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.genruntimeconfig.cache
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\ref\BE_Team7.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\AutoMapper.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\CloudinaryDotNet.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
