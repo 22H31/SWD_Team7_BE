@@ -1,12 +1,496 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\helpers\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\helpers\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\usemanualdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\usemanualdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\createproductrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\createproductrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\descriptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\descriptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\feedbackdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\feedbackdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\productdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\productvariantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\productvariantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\specificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\specificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\product\\updateproductrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\updateproductrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\sevices\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\sevices\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Helpers\\PagedResult.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Helpers\\PagedResult.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Helpers\\PagedResult.cs",
+              "RelativeToolTip": "BE_Team7\\Helpers\\PagedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:04:17.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UseManualDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\UseManualDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\UseManualDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\UseManualDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\UseManualDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:15:24.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T10:54:37.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:35:33.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAC4AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T11:00:00.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductResponseDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T11:05:53.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateProductRequestDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\CreateProductRequestDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\CreateProductRequestDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\CreateProductRequestDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\CreateProductRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:21:56.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwGEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T12:41:14.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\AuthRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\AuthRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\AuthRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T13:30:33.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\AccountRepository.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Repository\\AccountRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\AccountRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T13:30:28.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T12:41:13.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DescriptionDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\DescriptionDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\DescriptionDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\DescriptionDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\DescriptionDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:14:00.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FeedbackDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\FeedbackDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\FeedbackDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\FeedbackDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\FeedbackDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:10:11.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductDetailDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductDetailDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\ProductDetailDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductDetailDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\ProductDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:08:54.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProductVariantDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductVariantDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\ProductVariantDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductVariantDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\ProductVariantDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:09:46.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SpecificationDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\SpecificationDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\SpecificationDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\SpecificationDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\SpecificationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:14:58.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UpdateProductRequestDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\UpdateProductRequestDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\UpdateProductRequestDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Product\\UpdateProductRequestDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\UpdateProductRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:21:49.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProductMapper.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\ProductMapper.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
+              "RelativeToolTip": "BE_Team7\\Mappers\\ProductMapper.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T09:22:07.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Brand.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:42:41.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Category.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Category.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:42:48.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Feedback.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Feedback.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Feedback.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:40:41.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProductVariant.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\ProductVariant.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\ProductVariant.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\ProductVariant.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\ProductVariant.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA4wBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:49:03.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\ProductImage.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\ProductImage.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\ProductImage.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\ProductImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:49:57.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Product.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Product.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA+wBwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:42:25.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FeedbackController.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\FeedbackController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\FeedbackController.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\FeedbackController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\FeedbackController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T11:15:31.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Blog.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Blog.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Blog.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T08:45:26.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MediaService.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Sevices\\MediaService.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Sevices\\MediaService.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Sevices\\MediaService.cs",
+              "RelativeToolTip": "BE_Team7\\Sevices\\MediaService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAwCEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T08:40:15.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\AppDbContext.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\AppDbContext.cs",
+              "RelativeToolTip": "BE_Team7\\AppDbContext.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwBMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T08:05:38.625Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

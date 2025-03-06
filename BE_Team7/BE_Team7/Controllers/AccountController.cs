@@ -30,7 +30,7 @@ namespace api.Controllers
         private readonly IAccountRepository _accountRepository;
         private readonly SignInManager<User> _signinManager;
         public AccountController(UserManager<User> userManager, ITokenService tokenService, IEmailService emailService
-, SignInManager<User> signInManager, IAuthRepository authService, IAccountRepository accountRepository)
+        , SignInManager<User> signInManager, IAuthRepository authService, IAccountRepository accountRepository)
         {
             _userManager = userManager;
             _tokenService = tokenService;
@@ -96,8 +96,6 @@ namespace api.Controllers
                     Name = registerDto.Name, // Bắt buộc nếu không cho phép NULL
                     //SkinType = registerDto.SkinType,
                     CreatedAt = DateTime.UtcNow,
-                    
-                    
                 };
                 var createdUser = await _userManager.CreateAsync(user, registerDto.Password);
                 if (createdUser.Succeeded)

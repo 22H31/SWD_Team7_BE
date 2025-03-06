@@ -9,6 +9,7 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\AutoMapper.E
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\Azure.Core.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\Azure.Identity.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\BouncyCastle.Cryptography.dll
+C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\CloudinaryDotNet.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\MailKit.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\SWD\BE\BE_Team7\BE_Team7\obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

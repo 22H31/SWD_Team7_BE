@@ -590,6 +590,75 @@
         }
       }
     },
+    "/api/feedback": {
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Feedback"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeebackRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeebackRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeebackRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeebackRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/feedback/{feedbackId}": {
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "feedbackId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/products": {
       "get": {
         "tags": [
@@ -661,14 +730,14 @@
         }
       }
     },
-    "/api/products/{id}": {
+    "/api/products/{productId}": {
       "get": {
         "tags": [
           "Product"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "productId",
             "in": "path",
             "required": true,
             "schema": {
@@ -682,7 +751,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/products/{id}": {
       "put": {
         "tags": [
           "Product"
@@ -872,28 +943,141 @@
         },
         "additionalProperties": false
       },
-      "CreateProductRequestDto": {
+      "CreateFeebackRequestDto": {
         "required": [
-          "description",
-          "img",
-          "productName",
-          "skinType"
+          "comment"
         ],
         "type": "object",
         "properties": {
-          "categoryId": {
+          "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "productId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateProductRequestDto": {
+        "required": [
+          "brandId",
+          "categoryId",
+          "describe",
+          "imageUrl",
+          "productAvatar",
+          "productName",
+          "specifications",
+          "useManual",
+          "variants"
+        ],
+        "type": "object",
+        "properties": {
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productAvatar": {
+            "type": "string",
+            "nullable": true
           },
           "brandId": {
             "type": "string",
             "format": "uuid"
           },
-          "productName": {
+          "categoryId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "imageUrl": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductVariantDto"
+            },
+            "nullable": true
+          },
+          "describe": {
+            "$ref": "#/components/schemas/DescriptionDto"
+          },
+          "specifications": {
+            "$ref": "#/components/schemas/SpecificationDto"
+          },
+          "useManual": {
+            "$ref": "#/components/schemas/UseManualDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DescriptionDto": {
+        "type": "object",
+        "properties": {
+          "summary": {
             "type": "string",
             "nullable": true
           },
-          "description": {
+          "describeImg1": {
+            "type": "string",
+            "nullable": true
+          },
+          "suitableUsers": {
+            "type": "string",
+            "nullable": true
+          },
+          "solutionsForSkinHairConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "describeImg2": {
+            "type": "string",
+            "nullable": true
+          },
+          "uses": {
+            "type": "string",
+            "nullable": true
+          },
+          "outstandingAdvantages": {
+            "type": "string",
+            "nullable": true
+          },
+          "safetyLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "describeImg3": {
+            "type": "string",
+            "nullable": true
+          },
+          "preserve": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductVariantDto": {
+        "type": "object",
+        "properties": {
+          "volume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinType": {
             "type": "string",
             "nullable": true
           },
@@ -905,11 +1089,41 @@
             "type": "integer",
             "format": "int32"
           },
-          "skinType": {
+          "mainIngredients": {
             "type": "string",
             "nullable": true
           },
-          "img": {
+          "fullIngredients": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpecificationDto": {
+        "type": "object",
+        "properties": {
+          "brandOrigin": {
+            "type": "string",
+            "nullable": true
+          },
+          "placeOfManufacture": {
+            "type": "string",
+            "nullable": true
+          },
+          "skinHairTypesCanUsed": {
+            "type": "string",
+            "nullable": true
+          },
+          "listCapacity": {
+            "type": "string",
+            "nullable": true
+          },
+          "texture": {
+            "type": "string",
+            "nullable": true
+          },
+          "scent": {
             "type": "string",
             "nullable": true
           }
@@ -1009,6 +1223,28 @@
             "nullable": true
           },
           "img": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UseManualDto": {
+        "type": "object",
+        "properties": {
+          "step1": {
+            "type": "string",
+            "nullable": true
+          },
+          "step2": {
+            "type": "string",
+            "nullable": true
+          },
+          "step3": {
+            "type": "string",
+            "nullable": true
+          },
+          "step4": {
             "type": "string",
             "nullable": true
           }

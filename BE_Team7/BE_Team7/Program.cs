@@ -10,13 +10,26 @@ using api.Services;
 using BE_Team7.Interfaces.Repository.Contracts;
 using api.Repository;
 using BE_Team7.Repository;
-using BE_Team7.Sevices; // Import profile
-
+using BE_Team7.Sevices;
+using BE_Team7.Dtos;
+using CloudinaryDotNet;
+using Microsoft.Extensions.Options; // Import profile
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Thêm CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
 
-
+// Cấu hình Swagger
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -45,7 +58,7 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 
-// Configure Identity with custom settings
+// Cấu hình Identity
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
@@ -56,13 +69,16 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 })
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
-// Add Authorization with Policy
+
+// Cấu hình Authorization
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireUser", policy => policy.RequireRole("User"));
     options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
     options.AddPolicy("RequireAdminOrStaff", policy => policy.RequireRole("Admin", "Staff"));
 });
+
+// Cấu hình Authentication + JWT
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
@@ -84,7 +100,6 @@ builder.Services.AddAuthentication(options =>
             IssuerSigningKey = new SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"])
             ),
-            // ClockSkew = TimeSpan.Zero,
         };
 
         options.Events = new JwtBearerEvents
@@ -107,23 +122,32 @@ builder.Services.AddAuthentication(options =>
     }
 );
 
-builder.Services.AddControllers().AddNewtonsoftJson(options => { options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; });
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
 
+// Cấu hình DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Cấu hình Cloudinary
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+builder.Services.AddSingleton<Cloudinary>(provider =>
+{
+    var config = provider.GetRequiredService<IOptions<CloudinarySettings>>().Value;
+    return new Cloudinary(new Account(config.CloudName, config.ApiKey, config.ApiSecret));
+});
 
-// Add services to the container.
 // Đăng ký AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-
-// Thêm Swagger vào DI container
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Đăng ký các Repository & Service
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
@@ -132,29 +156,32 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<ICategoryTitleRepository, CategoryTitleRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 
 var app = builder.Build();
+
+// Middleware kiểm tra Token
 app.UseMiddleware<TokenValidationMiddlewareService>();
-// Configure the HTTP request pipeline.
+
+// ✅ Thêm Middleware CORS trước Authentication
+app.UseCors("AllowAll");
+
+// Xử lý lỗi 403
 app.Use(async (context, next) =>
 {
     await next();
-
     if (context.Response.StatusCode == 403)
     {
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync("{\"message\": \"Bạn không có quyền truy cập vào tài nguyên này.\"}");
     }
 });
-app.UseSwagger();
 
+app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();

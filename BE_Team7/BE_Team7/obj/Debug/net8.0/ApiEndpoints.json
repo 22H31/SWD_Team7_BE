@@ -331,8 +331,50 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "GetAllBrand",
+    "RelativePath": "api/feedback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "CreateNewFeedback",
+    "RelativePath": "api/feedback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createFeebackRequestDto",
+        "Type": "BE_Team7.Dtos.FeedBack.CreateFeebackRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "GetFeedbackById",
+    "RelativePath": "api/feedback/{feedbackId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedbackId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "GetAll",
+    "Method": "GetProducts",
     "RelativePath": "api/products",
     "HttpMethod": "GET",
     "IsController": true,
@@ -358,7 +400,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "Create",
+    "Method": "CreateNewProduct",
     "RelativePath": "api/products",
     "HttpMethod": "POST",
     "IsController": true,
@@ -367,22 +409,6 @@
       {
         "Name": "createProductRequestDto",
         "Type": "BE_Team7.Dtos.Product.CreateProductRequestDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "GetById",
-    "RelativePath": "api/products/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -419,6 +445,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetProductDetailById",
+    "RelativePath": "api/products/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
       }
