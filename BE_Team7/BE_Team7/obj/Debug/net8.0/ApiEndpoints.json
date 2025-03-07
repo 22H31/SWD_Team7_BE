@@ -84,6 +84,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "GetAllBlog",
+    "RelativePath": "api/blogs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "CreateNewBlog",
+    "RelativePath": "api/blogs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createBlogDto",
+        "Type": "BE_Team7.Dtos.Blog.CreateBlogDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "GetBlogById",
+    "RelativePath": "api/blogs/{blogId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "UpdateBlog",
+    "RelativePath": "api/blogs/{blogId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBlogDto",
+        "Type": "BE_Team7.Dtos.Blog.UpdateBlogDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "DeleteBlog",
+    "RelativePath": "api/blogs/{blogId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.BrandController",
     "Method": "GetAllBrand",
     "RelativePath": "api/brand",

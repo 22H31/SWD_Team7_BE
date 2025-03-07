@@ -125,33 +125,33 @@ namespace BE_Team7.Controllers
                 return NotFound(productModel);
             return Ok(productModel);
         }
-        [HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
-        public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
-        {
-            var productExists = await _productRepo.GetProductById(productId);
-            if (productExists == null)
-            {
-                return NotFound(new { message = "Sản phẩm không tồn tại." });
-            }
-            if (fileDtos == null || !fileDtos.Any())
-            {
-                return BadRequest("No files were uploaded.");
-            }
-            var createdProductImages = new List<object>();
-            foreach (var fileDto in fileDtos)
-            {
-                var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
+        //[HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
+        //public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
+        //{
+        //    var productExists = await _productRepo.GetProductById(productId);
+        //    if (productExists == null)
+        //    {
+        //        return NotFound(new { message = "Sản phẩm không tồn tại." });
+        //    }
+        //    if (fileDtos == null || !fileDtos.Any())
+        //    {
+        //        return BadRequest("No files were uploaded.");
+        //    }
+        //    var createdProductImages = new List<object>();
+        //    foreach (var fileDto in fileDtos)
+        //    {
+        //        var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
 
-                if (!uploadFileResult.IsSuccess) return ProcessError(uploadFileResult);
+        //        if (!uploadFileResult.IsSuccess) return ProcessError(uploadFileResult);
 
-                var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
+        //        var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
 
-                var updateResult = await _service.ProductImageService.CreateProductImageAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
+        //        var updateResult = await _service.ProductImageService.CreateProductImageAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
 
-                if (!updateResult.IsSuccess) return ProcessError(updateResult);
+        //        if (!updateResult.IsSuccess) return ProcessError(updateResult);
 
-                createdProductImages.Add(updateResult.Value!.ImageLink);
-            }
+        //        createdProductImages.Add(updateResult.Value!.ImageLink);
+        //    }
 
 
         }

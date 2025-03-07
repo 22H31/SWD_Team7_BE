@@ -19,94 +19,33 @@ namespace BE_Team7.Repository
             _context = context;
             _mapper = mapper;
         }
-        public async Task<PagedResult<Product>> GetProductsAsync(ProductQuery productQuery)
+        public async Task<List<Product>> GetProductsAsync(ProductQuery productQuery)
         {
-            var products = _context.Products
-                .Include(p => p.Brand)
-                .Include(p => p.Category)
-                .Include(p => p.Variants)
-                .Include(p => p.Feedbacks) 
-                .AsQueryable();
+
+            var products = _context.Products.Include(c => c.Category).Include(b => b.Brand).AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(productQuery.Name))
             {
-                products = products.Where(p => p.ProductName.Contains(productQuery.Name));
+                products = products.Where(s => s.ProductName.Contains(productQuery.Name));
             }
-            var totalCount = await products.CountAsync();
-            var skipNumber = (productQuery.PageNumber - 1) * productQuery.PageSize;
-            var pagedProducts = await products.Skip(skipNumber).Take(productQuery.PageSize).ToListAsync();
 
-            return new PagedResult<Product>
-            {
-                Items = pagedProducts,
-                TotalCount = totalCount
-            };
+            // phân trang
+            var skipNumber = (productQuery.PageNumber - 1) * productQuery.PageSize;
+
+            return await products.Skip(skipNumber).Take(productQuery.PageSize).ToListAsync();
         }
 
-
-        public async Task<ApiResponse<Product>> CreateProductAsyns(Product product)
+        public async Task<Product> CreateProductAsyns(Product product)
         {
-            // Kiểm tra Category có tồn tại không
-            var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == product.CategoryId);
-            if (!categoryExists)
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Danh mục không tồn tại.",
-                    Data = null
-                };
-            }
-            // Kiểm tra Brand có tồn tại không
-            var brandExists = await _context.Brand.AnyAsync(b => b.BrandId == product.BrandId);
-            if (!brandExists)
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Thương hiệu không tồn tại.",
-                    Data = null
-                };
-            }
-            // Kiểm tra các trường bắt buộc
-            if (string.IsNullOrWhiteSpace(product.ProductName))
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Tên sản phẩm không được để trống.",
-                    Data = null
-                };
-            }
-
-            if (string.IsNullOrWhiteSpace(product.ProductAvatar))
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Ảnh đại diện sản phẩm không được để trống.",
-                    Data = null
-                };
-            }
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
-            return new ApiResponse<Product>
-            {
-                Success = true,
-                Message = "Tạo sản phẩm thành công.",
-                Data = product
-            };
+
+            return product;
         }
 
         public async Task<Product?> GetProductById(Guid productId)
         {
-            return await _context.Products
-            .Include(p => p.Brand)
-            .Include(p => p.Category)
-            .Include(p => p.ImageUrls)
-            .Include(p => p.Variants)
-            .Include(p => p.Feedbacks)
-            .FirstOrDefaultAsync(p => p.ProductId == productId);
+            return await _context.Products.FirstOrDefaultAsync(i => i.ProductId == productId);
         }
 
         public async Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto productDtoForUpdate)
@@ -121,7 +60,7 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
-      
+
             if (productModel.CategoryId != productDtoForUpdate.CategoryId)
             {
                 var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == productDtoForUpdate.CategoryId);
@@ -161,27 +100,10 @@ namespace BE_Team7.Repository
             };
         }
 
-        /* public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
-         {
-             var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
-         }*/
-        public async Task<ApiResponse<ProductImage>> CreateProductAsyns(ProductImage productImage)
+        public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
         {
-            _context.ProductImage.Add(productImage);
-            await _context.SaveChangesAsync();
-            return new ApiResponse<ProductImage>
-            {
-                Success = true,
-                Message = "Tạo sản phẩm thành công.",
-                Data = productImage
-            };
-        }
-
-
-        public async Task<ApiResponse<Product>> UploadProductImageAsync(Guid productId, string publicId, string absoluteUrl)
-        {
-            var product = this.GetProductById(productId);
-            if (product == null)
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+            if (productModel == null)
             {
                 return new ApiResponse<Product>
                 {
@@ -190,21 +112,29 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
-            var productImg = new ProductImage()
-            {
-                ImageUrl = absoluteUrl,
-                ImageId = publicId,
-                ProductId = productId
-            };
+            _context.Products.Remove(productModel);
             await _context.SaveChangesAsync();
-            var productResponse = this.GetProductById(productId);
-
             return new ApiResponse<Product>
             {
                 Success = true,
-                Message = "Cập nhật sản phẩm thành công.",
-                Data = null,
+                Message = "Xóa sản phẩm thành công.",
+                Data = productModel
             };
+        }
+
+        Task<PagedResult<Product>> IProductRepository.GetProductsAsync(ProductQuery productQuery)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<ApiResponse<Product>> IProductRepository.CreateProductAsyns(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ApiResponse<Product>> UploadProductImageAsync(Guid productId, string publicId, string absoluteUrl)
+        {
+            throw new NotImplementedException();
         }
     }
 }
