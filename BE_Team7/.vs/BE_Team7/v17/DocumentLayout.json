@@ -1,12 +1,177 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\SWD\\BE_Team7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\dtos\\blog\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\dtos\\blog\\updateblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\updateblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\dtos\\blog\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\controllers\\blogcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\blogcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\swd\\be_team7\\be_team7\\mappers\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Program.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeToolTip": "BE_Team7\\Program.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T03:02:02.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateBlogDto.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:47:54.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateBlogDto.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:48:10.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BlogDto.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\BlogDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\BlogDto.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Dtos\\Blog\\BlogDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\BlogDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:48:04.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BlogMapper.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Mappers\\BlogMapper.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\BlogMapper.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Mappers\\BlogMapper.cs",
+              "RelativeToolTip": "BE_Team7\\Mappers\\BlogMapper.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:47:47.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogRepository.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Repository\\BlogRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\BlogRepository.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Repository\\BlogRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\BlogRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwCYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:47:05.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Brand.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:43:41.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Blog.cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Blog.cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Blog.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:43:31.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BlogController .cs",
+              "DocumentMoniker": "D:\\SWD\\BE_Team7\\BE_Team7\\Controllers\\BlogController .cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\BlogController .cs",
+              "ToolTip": "D:\\SWD\\BE_Team7\\BE_Team7\\Controllers\\BlogController .cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\BlogController .cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAACMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T14:42:41.736Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

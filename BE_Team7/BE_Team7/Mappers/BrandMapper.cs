@@ -10,7 +10,7 @@ namespace BE_Team7.Mappers
         public BrandMapper()
         {
             // Map giữa Brand và BrandDto
-            CreateMap<Brand, BrandDto>().ReverseMap();
+            CreateMap<Brand, BrandDto>().ReverseMap();  
             //map create
             CreateMap<Brand, CreateBrandRequestDto>().ReverseMap();
             //map update

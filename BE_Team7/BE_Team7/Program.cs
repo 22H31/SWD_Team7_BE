@@ -10,7 +10,8 @@ using api.Services;
 using BE_Team7.Interfaces.Repository.Contracts;
 using api.Repository;
 using BE_Team7.Repository;
-using BE_Team7.Sevices; // Import profile
+using BE_Team7.Sevices;
+using BE_Team7.Mappers; // Import profile
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -132,6 +133,9 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<ICategoryTitleRepository, CategoryTitleRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+
 
 
 var app = builder.Build();
@@ -147,6 +151,9 @@ app.Use(async (context, next) =>
         await context.Response.WriteAsync("{\"message\": \"Bạn không có quyền truy cập vào tài nguyên này.\"}");
     }
 });
+
+
+
 app.UseSwagger();
 
 app.UseSwaggerUI();
