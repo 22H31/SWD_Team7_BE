@@ -19,6 +19,7 @@ namespace BE_Team7.Repository
             _context = context;
             _mapper = mapper;
         }
+        // Lấy ra tất cả sản phẩm nè
         public async Task<PagedResult<Product>> GetProductsAsync(ProductQuery productQuery)
         {
             var products = _context.Products
@@ -43,10 +44,9 @@ namespace BE_Team7.Repository
             };
         }
 
-
+        //Tạo sản phẩm oki men
         public async Task<ApiResponse<Product>> CreateProductAsyns(Product product)
         {
-            // Kiểm tra Category có tồn tại không
             var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == product.CategoryId);
             if (!categoryExists)
             {
@@ -57,7 +57,6 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
-            // Kiểm tra Brand có tồn tại không
             var brandExists = await _context.Brand.AnyAsync(b => b.BrandId == product.BrandId);
             if (!brandExists)
             {
@@ -68,7 +67,6 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
-            // Kiểm tra các trường bắt buộc
             if (string.IsNullOrWhiteSpace(product.ProductName))
             {
                 return new ApiResponse<Product>
@@ -98,6 +96,7 @@ namespace BE_Team7.Repository
             };
         }
 
+        //Lấy sản phẩm bằng ID product
         public async Task<Product?> GetProductById(Guid productId)
         {
             return await _context.Products
@@ -109,9 +108,10 @@ namespace BE_Team7.Repository
             .FirstOrDefaultAsync(p => p.ProductId == productId);
         }
 
-        public async Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto productDtoForUpdate)
+        // Update ở đây nè
+        public async Task<ApiResponse<Product>> UpdateProductById(Guid productId, UpdateProductRequestDto productDtoForUpdate)
         {
-            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId);
             if (productModel == null)
             {
                 return new ApiResponse<Product>
@@ -152,6 +152,26 @@ namespace BE_Team7.Repository
             }
 
             _mapper.Map(productDtoForUpdate, productModel);
+            if (productDtoForUpdate.ImageUrl != null)
+            {
+                productModel.ImageUrls.Clear();
+                foreach (var image in productDtoForUpdate.ImageUrl)
+                {
+                    productModel.ImageUrls.Add(new ProductImage
+                    {
+                        ImageUrl = image.Value,
+                        ProductId = productId
+                    });
+                }
+            }
+            if (productDtoForUpdate.Variants != null)
+            {
+                productModel.Variants.Clear();
+                foreach (var variantDto in productDtoForUpdate.Variants)
+                {
+                    productModel.Variants.Add(_mapper.Map<ProductVariant>(variantDto));
+                }
+            }
             await _context.SaveChangesAsync();
             return new ApiResponse<Product>
             {
@@ -159,6 +179,30 @@ namespace BE_Team7.Repository
                 Message = "Cập nhật sản phẩm thành công.",
                 Data = productModel
             };
+        }
+
+        // Xóa nữa là xong
+        public async Task<ApiResponse<Product>> DeleteProductById(Guid productId)
+        {
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.BrandId == productId);
+            if (productModel == null)
+            {
+                return new ApiResponse<Product>
+                {
+                    Success = false,
+                    Message = "Sản phẩm không tồn tại.",
+                    Data = null
+                };
+            }
+            _context.Products.Remove(productModel);
+            await _context.SaveChangesAsync();
+            return new ApiResponse<Product>
+            {
+                Success = true,
+                Message = "Xóa brand thành công",
+                Data = productModel
+            };
+
         }
 
         /* public async Task<ApiResponse<Product>> DeleteProductById(Guid id)

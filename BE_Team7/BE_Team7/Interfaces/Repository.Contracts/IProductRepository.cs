@@ -10,8 +10,8 @@ namespace BE_Team7.Interfaces.Repository.Contracts
         Task<PagedResult<Product>> GetProductsAsync(ProductQuery productQuery);
         Task<ApiResponse<Product>> CreateProductAsyns(Product product);
         Task<Product?> GetProductById(Guid productId);
-        Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto product);
-        Task<ApiResponse<Product>> DeleteProductById(Guid id);
+        Task<ApiResponse<Product>> UpdateProductById(Guid productId, UpdateProductRequestDto product);
+        Task<ApiResponse<Product>> DeleteProductById(Guid productId);
         Task<ApiResponse<Product>> UploadProductImageAsync(Guid productId,string publicId,string absoluteUrl);   
     }
 }

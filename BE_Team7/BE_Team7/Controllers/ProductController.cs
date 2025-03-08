@@ -93,25 +93,23 @@ namespace BE_Team7.Controllers
             var productDto = _mapper.Map<ProductDetailDto>(product);
             return Ok(productDto);
         }
-        [HttpPut]
-        [Route("{id:Guid}")]
-        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateProductRequestDto updateDto)
+        [HttpPut("{id:Guid}")]
+        public async Task<IActionResult> UpdateProductById([FromRoute] Guid id, [FromBody] UpdateProductRequestDto updateDto)
         {
-            if (!ModelState.IsValid) return BadRequest(new ApiResponse<Product>
-            {
-                Success = false,
-                Message = "Dữ liệu không hợp lệ.",
-                Data = null
-            }); ;
-            var productModel = await _productRepo.UpdateProductById(id, updateDto);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            if (!productModel.Success)
-                return NotFound(productModel);
-            return Ok(productModel);
+            var productResponse = await _productRepo.UpdateProductById(id, updateDto);
+
+            if (!productResponse.Success)
+                return NotFound(new { message = productResponse.Message });
+
+            return Ok(productResponse);
         }
+
         [HttpDelete]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteProductById([FromRoute] Guid id)
         {
             if (!ModelState.IsValid) return BadRequest(new ApiResponse<Product>
             {
@@ -122,37 +120,38 @@ namespace BE_Team7.Controllers
             var productModel = await _productRepo.DeleteProductById(id);
 
             if (!productModel.Success)
-                return NotFound(productModel);
+                return NotFound(productModel);  
             return Ok(productModel);
         }
-        [HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
-        public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
-        {
-            var productExists = await _productRepo.GetProductById(productId);
-            if (productExists == null)
-            {
-                return NotFound(new { message = "Sản phẩm không tồn tại." });
-            }
-            if (fileDtos == null || !fileDtos.Any())
-            {
-                return BadRequest("No files were uploaded.");
-            }
-            var createdProductImages = new List<object>();
-            foreach (var fileDto in fileDtos)
-            {
-                var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
+        //[HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
+        //public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
+        //{
+        //    var productExists = await _productRepo.GetProductById(productId);
+        //    if (productExists == null)
+        //    {
+        //        return NotFound(new { message = "Sản phẩm không tồn tại." });
+        //    }
+        //    if (fileDtos == null || !fileDtos.Any())
+        //    {
+        //        return BadRequest("No files were uploaded.");
+        //    }
+        //    var createdProductImages = new List<object>();
+        //    foreach (var fileDto in fileDtos)
+        //    {
+        //        var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
 
-                if (!uploadFileResult.IsSuccess) return ProcessError(uploadFileResult);
+        //        if (!uploadFileResult.IsSuccess) return ProcessError(uploadFileResult);
 
-                var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
+        //        var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
 
-                var updateResult = await _service.ProductImageService.CreateProductImageAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
+        //        var updateResult = await _service.ProductImageService.CreateProductImageAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
 
-                if (!updateResult.IsSuccess) return ProcessError(updateResult);
+        //        if (!updateResult.IsSuccess) return ProcessError(updateResult);
 
-                createdProductImages.Add(updateResult.Value!.ImageLink);
-            }
+        //        createdProductImages.Add(updateResult.Value!.ImageLink);
+        //    }
 
 
-        }
+        //}
     }
+}

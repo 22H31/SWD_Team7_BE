@@ -123,6 +123,25 @@ namespace api.Services
                 ValidAudience = _config["JWT:Audience"],
             };
             return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
-        } 
+        }
+
+        public async Task<IList<string>> GetRolesAsync(User user)
+        {
+            return await _userManager.GetRolesAsync(user);
+        }
+
+        public async Task<User?> ValidateUserAsync(string username, string password)
+        {
+            // Tìm user theo Username
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null) return null;
+
+            // Kiểm tra password
+            var result = await _signinManager.CheckPasswordSignInAsync(user, password, false);
+            if (!result.Succeeded) return null;
+
+            // Trả về user nếu đăng nhập thành công
+            return user;
+        }
     }
 }

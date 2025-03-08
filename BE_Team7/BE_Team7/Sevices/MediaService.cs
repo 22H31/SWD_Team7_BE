@@ -6,6 +6,7 @@ using BE_Team7.Dtos;
 using BE_Team7.Shared.Contanst;
 using BE_Team7.Shared;
 using BE_Team7.Interfaces.Service.Contracts;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace GarageManagementAPI.Service
 {
@@ -33,27 +34,27 @@ namespace GarageManagementAPI.Service
             _cloudinary = new Cloudinary(account);
         }
 
-        private async Task<Result<(string? publicId, string? absoluteUrl)>> UploadImageAsync(IFormFile file, string folderName)
+        private async Task<Results<(string? publicId, string? absoluteUrl)>> UploadImageAsync(IFormFile file, string folderName)
         {
             if (file == null || file.Length == 0)
             {
-                return Result<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileNotFoundErrors()]);
+                return Results<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileNotFoundErrors()]);
             }
 
             if (file.Length > _maxFileSize)
             {
-                return Result<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileTooLargeErrors()]);
+                return Results<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileTooLargeErrors()]);
             }
 
             var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
             if (string.IsNullOrEmpty(extension) || !_permittedExtensions.Contains(extension))
             {
-                return Result<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileExtensionInvalidErrors()]);
+                return Results<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileExtensionInvalidErrors()]);
             }
 
             if (!_permittedMimeTypes.Contains(file.ContentType.ToLowerInvariant()))
             {
-                return Result<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileTypeInvalidErrors()]);
+                return Results<(string? publicId, string? absoluteUrl)>.BadRequest([RequestErrors.GetFileTypeInvalidErrors()]);
             }
 
             await using var stream = file.OpenReadStream();
@@ -69,25 +70,21 @@ namespace GarageManagementAPI.Service
             var uploadResult = await _cloudinary.UploadAsync(uploadParams);
             if ((int)uploadResult.StatusCode == (int)HttpStatusCode.OK)
             {
-                return Result<(string? publicId, string? absoluteUrl)>.Ok((publicId: uploadResult.PublicId, absoluteUrl: uploadResult.SecureUrl.AbsoluteUri));
+                return Results<(string? publicId, string? absoluteUrl)>.Ok((publicId: uploadResult.PublicId, absoluteUrl: uploadResult.SecureUrl.AbsoluteUri));
             }
 
-            return Result<(string? publicId, string? absoluteUrl)>.Failure(uploadResult.StatusCode, [new()
-            {
-                Code = _errorCode,
-                Description = uploadResult.Error.Message
-            }]);
+            return Results<(string? publicId, string? absoluteUrl)>.Ok((publicId: uploadResult.PublicId, absoluteUrl: uploadResult.SecureUrl.AbsoluteUri));
         }
 
-        public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadUserImageAsync(IFormFile file)
+        public async Task<Results<(string? publicId, string? absoluteUrl)>> UploadUserImageAsync(IFormFile file)
             => await UploadImageAsync(file, _userFolder);
-        public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadProductImageAsync(IFormFile file)
+        public async Task<Results<(string? publicId, string? absoluteUrl)>> UploadProductImageAsync(IFormFile file)
             => await UploadImageAsync(file, _productFolder);
-        public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadServiceImageAsync(IFormFile file)
+        public async Task<Results<(string? publicId, string? absoluteUrl)>> UploadServiceImageAsync(IFormFile file)
             => await UploadImageAsync(file, _productFolder);
-        public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadBrandImageAsync(IFormFile file)
+        public async Task<Results<(string? publicId, string? absoluteUrl)>> UploadBrandImageAsync(IFormFile file)
             => await UploadImageAsync(file, _productFolder);
-        public async Task<Result<string>> RemoveImage(string publicId)
+        public async Task<Results<string>> RemoveImage(string publicId)
         {
 
             var deletionParams = new DeletionParams(publicId)
@@ -100,19 +97,40 @@ namespace GarageManagementAPI.Service
 
             if (result.Error != null)
             {
-                return Result<string>.Failure(result.StatusCode, [new()
-                {
-                    Code = _errorCode,
-                    Description = result.Error.Message
-                }]);
+                return Results<string>.Ok(result.Result); ;
             }
 
-            return Result<string>.Ok(result.Result);
+            return Results<string>.Ok(result.Result);
         }
 
-        Result<string> IMediaService.RemoveImage(string publicId)
+        Results<string> IMediaService.RemoveImage(string publicId)
         {
             throw new NotImplementedException();
         }
+
+        Task<Results<(string? publicId, string? absoluteUrl)>> IMediaService.UploadUserImageAsync(IFormFile file)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Results<(string? publicId, string? absoluteUrl)>> IMediaService.UploadProductImageAsync(IFormFile file)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Results<(string? publicId, string? absoluteUrl)>> IMediaService.UploadServiceImageAsync(IFormFile file)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Results<(string? publicId, string? absoluteUrl)>> IMediaService.UploadBrandImageAsync(IFormFile file)
+        {
+            throw new NotImplementedException();
+        }
+
+        //Results<string> IMediaService.RemoveImage(string publicId)
+        //{
+        //    return publicId;
+        //}
     }
 }

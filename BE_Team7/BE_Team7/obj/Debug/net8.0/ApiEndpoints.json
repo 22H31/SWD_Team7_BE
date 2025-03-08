@@ -416,7 +416,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "Update",
+    "Method": "UpdateProductById",
     "RelativePath": "api/products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -437,7 +437,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "Delete",
+    "Method": "DeleteProductById",
     "RelativePath": "api/products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

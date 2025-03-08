@@ -1187,44 +1187,49 @@
       },
       "UpdateProductRequestDto": {
         "required": [
-          "description",
-          "img",
-          "productName",
-          "skinType"
+          "productAvatar",
+          "productName"
         ],
         "type": "object",
         "properties": {
-          "categoryId": {
+          "productName": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
+          },
+          "productAvatar": {
+            "type": "string",
+            "nullable": true
           },
           "brandId": {
             "type": "string",
             "format": "uuid"
           },
-          "productName": {
+          "categoryId": {
             "type": "string",
+            "format": "uuid"
+          },
+          "imageUrl": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
             "nullable": true
           },
-          "description": {
-            "type": "string",
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductVariantDto"
+            },
             "nullable": true
           },
-          "price": {
-            "type": "number",
-            "format": "double"
+          "describe": {
+            "$ref": "#/components/schemas/DescriptionDto"
           },
-          "stockQuantity": {
-            "type": "integer",
-            "format": "int32"
+          "specification": {
+            "$ref": "#/components/schemas/SpecificationDto"
           },
-          "skinType": {
-            "type": "string",
-            "nullable": true
-          },
-          "img": {
-            "type": "string",
-            "nullable": true
+          "useManual": {
+            "$ref": "#/components/schemas/UseManualDto"
           }
         },
         "additionalProperties": false

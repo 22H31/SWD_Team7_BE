@@ -166,7 +166,6 @@ app.UseMiddleware<TokenValidationMiddlewareService>();
 // ✅ Thêm Middleware CORS trước Authentication
 app.UseCors("AllowAll");
 
-// Xử lý lỗi 403
 app.Use(async (context, next) =>
 {
     await next();

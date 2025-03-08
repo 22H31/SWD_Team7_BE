@@ -2,13 +2,14 @@
 {
     public class UpdateProductRequestDto
     {
-        public Guid CategoryId { get; set; }
-        public Guid BrandId { get; set; }
         public required string ProductName { get; set; }
-        public required string Description { get; set; }
-        public double Price { get; set; }
-        public int StockQuantity { get; set; }
-        public required string SkinType { get; set; }
-        public required string Img { get; set; }
+        public required string ProductAvatar { get; set; }
+        public Guid BrandId { get; set; }
+        public Guid CategoryId { get; set; }
+        public Dictionary<string, string> ImageUrl { get; set; } = new();
+        public List<ProductVariantDto> Variants { get; set; } = new();
+        public DescriptionDto Describe { get; set; } = new();
+        public SpecificationDto Specification { get; set; } = new();
+        public UseManualDto UseManual { get; set; } = new();
     }
 }
