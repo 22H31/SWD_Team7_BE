@@ -16,6 +16,7 @@ using api.Mappers;
 using BE_Team7.Models;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Sevices;
+using AutoMapper;
 
 namespace api.Controllers
 {
@@ -29,8 +30,11 @@ namespace api.Controllers
         public readonly IAuthRepository _authService;
         private readonly IAccountRepository _accountRepository;
         private readonly SignInManager<User> _signinManager;
+        private readonly IAuthRepository _authRepo;
+        private readonly IMapper _mapper;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public AccountController(UserManager<User> userManager, ITokenService tokenService, IEmailService emailService
-        , SignInManager<User> signInManager, IAuthRepository authService, IAccountRepository accountRepository)
+        , SignInManager<User> signInManager, IAuthRepository authService, IAccountRepository accountRepository, IAuthRepository authRepo, IMapper mapper, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _tokenService = tokenService;
@@ -38,29 +42,27 @@ namespace api.Controllers
             _signinManager = signInManager;
             _authService = authService;
             _accountRepository = accountRepository;
+            _authRepo = authRepo;
+            _mapper = mapper;
+            _roleManager = roleManager;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto loginDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
+            var user = await _authRepo.ValidateUserAsync(loginDto.Username, loginDto.Password);
             if (user == null) return Unauthorized("Invalid username");
             if (!user.EmailConfirmed) return Unauthorized("Please confirm your email before logging in");
             var result = await _authService.LoginAsync(user, loginDto.Password);
             if (result == null) return Unauthorized("Invalid username or password");
-            // 🔹 Lấy danh sách role của user
-            var roles = await _userManager.GetRolesAsync(user);
-            var userLogIn = new LoginResponseDto
-            {
-                IsLogedIn = true,
-                JwtToken = _tokenService.CreateToken(user),
-                Roles = roles,
-                PhoneNumber = user.PhoneNumber
-                
-            };
-            return Ok(userLogIn);
+            var roles = await _authRepo.GetRolesAsync(user);
+            var token = _tokenService.CreateToken(user, roles);
+            var userLoginDto = _mapper.Map<LoginResponseDto>(user);
+            userLoginDto.IsLogedIn = true;
+            userLoginDto.JwtToken = token;
+            userLoginDto.Roles = roles;
+            return Ok(userLoginDto);
         }
 
         [HttpGet("confirm-email")]
@@ -100,11 +102,19 @@ namespace api.Controllers
                 var createdUser = await _userManager.CreateAsync(user, registerDto.Password);
                 if (createdUser.Succeeded)
                 {
-                    var roleResult = await _userManager.AddToRoleAsync(user, "USER");
+                    // Kiểm tra xem role "USER" có tồn tại không, nếu không thì tạo role mới
+                    if (!await _roleManager.RoleExistsAsync("USER"))
+                    {
+                        var createRoleResult = await _roleManager.CreateAsync(new IdentityRole("USER"));
+                        if (!createRoleResult.Succeeded)
+                        {
+                            return StatusCode(500, createRoleResult.Errors);
+                        }
+                    }
 
+                    var roleResult = await _userManager.AddToRoleAsync(user, "USER");
                     if (roleResult.Succeeded)
                     {
-
                         // Tạo liên kết xác nhận email
                         var confirmationLink = Url.Action("ConfirmEmail", "Account", new { email = user.Email }, Request.Scheme);
                         var emailContent = $"Please confirm your account by clicking <a href=\"{confirmationLink}\">here</a>";

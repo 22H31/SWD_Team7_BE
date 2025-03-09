@@ -13,7 +13,7 @@ namespace BE_Team7.Mappers
             CreateMap<Product, ProductDetailDto>()
             .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Brand.BrandName))
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
-            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrls.ToDictionary(img => $"img{src.ImageUrls.ToList().IndexOf(img) + 1}", img => img.ImageUrl)))
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ProductImages.ToDictionary(img => $"img{src.ProductImages.ToList().IndexOf(img) + 1}", img => img.ImageUrl)))
             .ForMember(dest => dest.Variants, opt => opt.MapFrom(src => src.Variants))
             .ForMember(dest => dest.Feedbacks, opt => opt.MapFrom(src => src.Feedbacks))
             .ForMember(dest => dest.AverageRating, opt => opt.MapFrom(src =>
@@ -31,10 +31,10 @@ namespace BE_Team7.Mappers
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Describe)))
                 .ForMember(dest => dest.Specification, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Specifications)))
                 .ForMember(dest => dest.UseManual, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.UseManual)))
-                .ForMember(dest => dest.ImageUrls, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductImages, opt => opt.Ignore())
                 .ForMember(dest => dest.Variants, opt => opt.Ignore());
 
-            CreateMap<ProductVariantDto, ProductVariant>();       
+            CreateMap<ProductVariantDto, ProductVariant>();
             // Map update
             CreateMap<UpdateProductRequestDto, Product>()
             .ForMember(dest => dest.ProductId, opt => opt.Ignore());

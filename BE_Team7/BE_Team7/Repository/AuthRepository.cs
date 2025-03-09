@@ -23,7 +23,7 @@ namespace api.Services
     public class AuthRepository : IAuthRepository
     {
         private readonly UserManager<User> _userManager;
-        private readonly IConfiguration _config;        
+        private readonly IConfiguration _config;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<User> _signinManager;
         private readonly AppDbContext _context;
@@ -67,7 +67,7 @@ namespace api.Services
             }
 
             return "Wrong password";
-        } 
+        }
         public async Task<string> ConfirmEmailAsync(string email)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == email.ToLower());
@@ -123,6 +123,25 @@ namespace api.Services
                 ValidAudience = _config["JWT:Audience"],
             };
             return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
-        } 
+        }
+
+        public async Task<User?> ValidateUserAsync(string username, string password)
+        {
+            // Tìm user theo Username
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null) return null;
+
+            // Kiểm tra password
+            var result = await _signinManager.CheckPasswordSignInAsync(user, password, false);
+            if (!result.Succeeded) return null;
+
+            // Trả về user nếu đăng nhập thành công
+            return user;
+        }
+
+        public async Task<IList<string>> GetRolesAsync(User user)
+        {
+            return await _userManager.GetRolesAsync(user);
+        }
     }
 }

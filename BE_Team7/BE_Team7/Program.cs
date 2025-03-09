@@ -13,7 +13,9 @@ using BE_Team7.Repository;
 using BE_Team7.Sevices;
 using BE_Team7.Dtos;
 using CloudinaryDotNet;
-using Microsoft.Extensions.Options; // Import profile
+using Microsoft.Extensions.Options;
+using BE_Team7.Interfaces.Service.Contracts;
+using GarageManagementAPI.Service; // Import profile
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -157,9 +159,7 @@ builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<ICategoryTitleRepository, CategoryTitleRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
-builder.Services.AddScoped<IBlogRepository, BlogRepository>();
-builder.Services.AddControllers();
-
+builder.Services.AddScoped<IMediaService, MediaService>();
 
 var app = builder.Build();
 

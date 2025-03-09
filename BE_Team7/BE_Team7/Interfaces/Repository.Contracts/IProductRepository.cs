@@ -12,6 +12,6 @@ namespace BE_Team7.Interfaces.Repository.Contracts
         Task<Product?> GetProductById(Guid productId);
         Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto product);
         Task<ApiResponse<Product>> DeleteProductById(Guid id);
-        Task<ApiResponse<Product>> UploadProductImageAsync(Guid productId,string publicId,string absoluteUrl);   
+        Task<ApiResponse<Product>> CreateProductImgAsync(Guid productId, string publicId, string absoluteUrl);
     }
 }

@@ -12,6 +12,8 @@ namespace BE_Team7.Interfaces.Repository.Contracts
 {
     public interface IAuthRepository
     {
+        Task<User?> ValidateUserAsync(string username, string password);
+        public Task<IList<string>> GetRolesAsync(User user);
         public Task<string> LoginAsync(User appUser, string pwd);
         public Task<string> ChangePasswordUSerAsync(ChangePassword changePassword, ClaimsPrincipal user);
         public Task<string> ConfirmEmailAsync(string email);

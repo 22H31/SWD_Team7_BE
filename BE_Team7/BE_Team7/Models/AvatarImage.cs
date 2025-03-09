@@ -3,15 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BE_Team7.Models
 {
-    public class ProductImage
+    public class AvatarImage
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]  // Tự động tạo giá trị
-        public Guid ProductImageId { get; set; }
+        public Guid UserImageId { get; set; }
         public string? ImageId { get; set; }
         public string? ImageUrl { get; set; }
-        public Guid ProductId { get; set; }
-        public virtual Product Product { get; set; } = null!;
-
+        public string Id { get; set; }
+        public virtual User User { get; set; } = null!;
     }
 }

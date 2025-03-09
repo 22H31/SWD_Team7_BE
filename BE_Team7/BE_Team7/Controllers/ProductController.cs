@@ -1,14 +1,12 @@
 ﻿using BE_Team7.Helpers;
 using BE_Team7.Interfaces.Repository.Contracts;
-using BE_Team7.Models;
-using BE_Team7.Mappers;
 using Microsoft.AspNetCore.Mvc;
 using BE_Team7.Dtos.Product;
 using AutoMapper;
-using Azure;
-using Microsoft.AspNetCore.Authorization;
-using BE_Team7.Repository;
+using BE_Team7.Shared.Extensions;
 using BE_Team7.Interfaces.Service.Contracts;
+using GarageManagementAPI.Shared.ResultModel;
+using BE_Team7.Shared.ErrorModel;
 
 namespace BE_Team7.Controllers
 {
@@ -43,7 +41,6 @@ namespace BE_Team7.Controllers
             {
                 ProductId = p.ProductId,
                 ProductName = p.ProductName,
-                ProductAvatar = p.ProductAvatar,
                 BrandName = p.Brand?.BrandName,
                 CategoryName = p.Category?.CategoryName,
                 AverageRating = p.Feedbacks.Any() ? p.Feedbacks.Average(f => f.Rating) : 0,
@@ -125,34 +122,34 @@ namespace BE_Team7.Controllers
                 return NotFound(productModel);
             return Ok(productModel);
         }
-        //[HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
-        //public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
-        //{
-        //    var productExists = await _productRepo.GetProductById(productId);
-        //    if (productExists == null)
-        //    {
-        //        return NotFound(new { message = "Sản phẩm không tồn tại." });
-        //    }
-        //    if (fileDtos == null || !fileDtos.Any())
-        //    {
-        //        return BadRequest("No files were uploaded.");
-        //    }
-        //    var createdProductImages = new List<object>();
-        //    foreach (var fileDto in fileDtos)
-        //    {
-        //        var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
+        [HttpPost("{productId:guid}/images", Name = "CreateProductImage")]
+        public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
+        {
+            var productExists = await _productRepo.GetProductById(productId);
+            if (productExists == null)
+            {
+                return NotFound(new { message = "Sản phẩm không tồn tại." });
+            }
+            if (fileDtos == null || !fileDtos.Any())
+            {
+                return BadRequest("No files were uploaded.");
+            }
+            var createdProductImages = new List<object>();
+            foreach (var fileDto in fileDtos)
+            {
+                var uploadFileResult = await _mediaService.UploadProductImageAsync(fileDto);
 
-        //        if (!uploadFileResult.IsSuccess) return ProcessError(uploadFileResult);
+                if (!uploadFileResult.IsSuccess)
+                    return BadRequest(Result.Failure(HttpStatusCode.BadRequest, uploadFileResult.Errors));
 
-        //        var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
+                var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
 
-        //        var updateResult = await _service.ProductImageService.CreateProductImageAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
+                var updateResult = await _productRepo.CreateProductImgAsync(productId, imgTuple.publicId!, imgTuple.absoluteUrl!);
 
-        //        if (!updateResult.IsSuccess) return ProcessError(updateResult);
+                if (!updateResult.Success) return BadRequest(Result.Failure(HttpStatusCode.BadRequest, new List<ErrorsResult>()));
 
-        //        createdProductImages.Add(updateResult.Value!.ImageLink);
-        //    }
-
-
+            }
+            return Ok();
         }
     }
+}

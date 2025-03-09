@@ -1,5 +1,6 @@
 ﻿namespace BE_Team7;
 
+using System.Reflection.Emit;
 using BE_Team7.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -26,9 +27,20 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<SuggestProducts> SuggestProducts { get; set; }
     public DbSet<ProductImage> ProductImage { get; set; }
     public DbSet<ProductVariant> ProductVariant { get; set; }
+    public DbSet<AvatarImage> AvatarImage { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Product>()
+       .HasMany(p => p.ProductImages)
+       .WithOne(pi => pi.Product)
+       .HasForeignKey(pi => pi.ProductId)
+       .OnDelete(DeleteBehavior.Cascade); // Xóa sản phẩm sẽ xóa luôn ảnh
+        builder.Entity<AvatarImage>()
+        .HasOne(a => a.User)  // AvatarImage có một User
+        .WithOne(u => u.Avatar)  // User có một AvatarImage
+        .HasForeignKey<AvatarImage>(a => a.Id)  // Đặt khóa ngoại ở AvatarImage
+        .IsRequired();  // Đảm bảo UserId không null
         List<IdentityRole> roles = new List<IdentityRole>
             {
                 new IdentityRole{

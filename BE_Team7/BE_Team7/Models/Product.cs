@@ -7,8 +7,7 @@ public class Product
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid ProductId { get; set; }
-    public required string ProductName { get; set; }
-    public required string ProductAvatar {  get; set; }
+    public string ProductName { get; set; } = null!;
     public Guid CategoryId { get; set; }
     public virtual Category Category { get; set; } = null!;
     public Guid BrandId { get; set; }
@@ -17,7 +16,7 @@ public class Product
     // Danh sách biến thể sản phẩm
     public virtual ICollection<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
     // Danh sách hình ảnh sản phẩm
-    public virtual ICollection<ProductImage> ImageUrls { get; set; } = new List<ProductImage>();
+    public virtual ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
     // Danh sách Feedbacks
     public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
     // Mô tả chi tiết sản phẩm (Lưu dưới dạng JSON)

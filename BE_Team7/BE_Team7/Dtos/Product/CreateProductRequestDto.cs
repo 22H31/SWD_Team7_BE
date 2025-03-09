@@ -3,7 +3,6 @@
     public class CreateProductRequestDto
     {
         public required string ProductName { get; set; }
-        public required string ProductAvatar { get; set; }
         public required Guid BrandId { get; set; }
         public required Guid CategoryId { get; set; }
         public required Dictionary<string, string> ImageUrl { get; set; }
