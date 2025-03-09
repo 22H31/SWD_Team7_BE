@@ -19,14 +19,13 @@ namespace BE_Team7.Repository
             _context = context;
             _mapper = mapper;
         }
-        // Lấy ra tất cả sản phẩm nè
         public async Task<PagedResult<Product>> GetProductsAsync(ProductQuery productQuery)
         {
             var products = _context.Products
                 .Include(p => p.Brand)
                 .Include(p => p.Category)
                 .Include(p => p.Variants)
-                .Include(p => p.Feedbacks) 
+                .Include(p => p.Feedbacks)
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(productQuery.Name))
@@ -44,9 +43,10 @@ namespace BE_Team7.Repository
             };
         }
 
-        //Tạo sản phẩm oki men
+
         public async Task<ApiResponse<Product>> CreateProductAsyns(Product product)
         {
+            // Kiểm tra Category có tồn tại không
             var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == product.CategoryId);
             if (!categoryExists)
             {
@@ -57,6 +57,7 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
+            // Kiểm tra Brand có tồn tại không
             var brandExists = await _context.Brand.AnyAsync(b => b.BrandId == product.BrandId);
             if (!brandExists)
             {
@@ -67,22 +68,13 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
+            // Kiểm tra các trường bắt buộc
             if (string.IsNullOrWhiteSpace(product.ProductName))
             {
                 return new ApiResponse<Product>
                 {
                     Success = false,
                     Message = "Tên sản phẩm không được để trống.",
-                    Data = null
-                };
-            }
-
-            if (string.IsNullOrWhiteSpace(product.ProductAvatar))
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Ảnh đại diện sản phẩm không được để trống.",
                     Data = null
                 };
             }
@@ -96,22 +88,20 @@ namespace BE_Team7.Repository
             };
         }
 
-        //Lấy sản phẩm bằng ID product
         public async Task<Product?> GetProductById(Guid productId)
         {
             return await _context.Products
             .Include(p => p.Brand)
             .Include(p => p.Category)
-            .Include(p => p.ImageUrls)
+            .Include(p => p.ProductImages)
             .Include(p => p.Variants)
             .Include(p => p.Feedbacks)
             .FirstOrDefaultAsync(p => p.ProductId == productId);
         }
 
-        // Update ở đây nè
-        public async Task<ApiResponse<Product>> UpdateProductById(Guid productId, UpdateProductRequestDto productDtoForUpdate)
+        public async Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto productDtoForUpdate)
         {
-            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId);
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
             if (productModel == null)
             {
                 return new ApiResponse<Product>
@@ -121,7 +111,7 @@ namespace BE_Team7.Repository
                     Data = null
                 };
             }
-      
+
             if (productModel.CategoryId != productDtoForUpdate.CategoryId)
             {
                 var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == productDtoForUpdate.CategoryId);
@@ -152,26 +142,6 @@ namespace BE_Team7.Repository
             }
 
             _mapper.Map(productDtoForUpdate, productModel);
-            if (productDtoForUpdate.ImageUrl != null)
-            {
-                productModel.ImageUrls.Clear();
-                foreach (var image in productDtoForUpdate.ImageUrl)
-                {
-                    productModel.ImageUrls.Add(new ProductImage
-                    {
-                        ImageUrl = image.Value,
-                        ProductId = productId
-                    });
-                }
-            }
-            if (productDtoForUpdate.Variants != null)
-            {
-                productModel.Variants.Clear();
-                foreach (var variantDto in productDtoForUpdate.Variants)
-                {
-                    productModel.Variants.Add(_mapper.Map<ProductVariant>(variantDto));
-                }
-            }
             await _context.SaveChangesAsync();
             return new ApiResponse<Product>
             {
@@ -181,10 +151,9 @@ namespace BE_Team7.Repository
             };
         }
 
-        // Xóa nữa là xong
-        public async Task<ApiResponse<Product>> DeleteProductById(Guid productId)
+        public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
         {
-            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.BrandId == productId);
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
             if (productModel == null)
             {
                 return new ApiResponse<Product>
@@ -199,49 +168,21 @@ namespace BE_Team7.Repository
             return new ApiResponse<Product>
             {
                 Success = true,
-                Message = "Xóa brand thành công",
+                Message = "Xóa sản phẩm thành công.",
                 Data = productModel
             };
-
         }
-
-        /* public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
-         {
-             var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
-         }*/
-        public async Task<ApiResponse<ProductImage>> CreateProductAsyns(ProductImage productImage)
+        public async Task<ApiResponse<Product>> CreateProductImgAsync(Guid productId, string publicId, string absoluteUrl)
         {
-            _context.ProductImage.Add(productImage);
-            await _context.SaveChangesAsync();
-            return new ApiResponse<ProductImage>
-            {
-                Success = true,
-                Message = "Tạo sản phẩm thành công.",
-                Data = productImage
-            };
-        }
 
-
-        public async Task<ApiResponse<Product>> UploadProductImageAsync(Guid productId, string publicId, string absoluteUrl)
-        {
-            var product = this.GetProductById(productId);
-            if (product == null)
-            {
-                return new ApiResponse<Product>
-                {
-                    Success = false,
-                    Message = "Sản phẩm không tồn tại.",
-                    Data = null
-                };
-            }
             var productImg = new ProductImage()
             {
                 ImageUrl = absoluteUrl,
                 ImageId = publicId,
                 ProductId = productId
             };
+            _context.ProductImage.Add(productImg);
             await _context.SaveChangesAsync();
-            var productResponse = this.GetProductById(productId);
 
             return new ApiResponse<Product>
             {

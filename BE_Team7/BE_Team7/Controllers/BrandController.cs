@@ -24,12 +24,12 @@ namespace BE_Team7.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllBrand()
         {
-            var brands = await _brandRepo.GetBrandAsync();  
+            var brands = await _brandRepo.GetBrandAsync();
             var brandDto = _mapper.Map<List<BrandDto>>(brands);
             return Ok(brandDto);
         }
-        [HttpGet("{brandId}")]
-        public async Task<IActionResult> GetBrandById(Guid brandId)
+        [HttpGet("{brandId:Guid}")]
+        public async Task<IActionResult> GetBrandById([FromRoute] Guid brandId)
         {
             try
             {
@@ -52,7 +52,8 @@ namespace BE_Team7.Controllers
             if (!ModelState.IsValid) return BadRequest();
             var brandModel = _mapper.Map<Brand>(createBrandRequestDto);
             await _brandRepo.CreateBrandAsync(brandModel);
-            return CreatedAtAction(nameof(GetBrandById), new { BrandId = brandModel.BrandId }, _mapper.Map<BrandDto>(brandModel));
+
+            return CreatedAtAction(nameof(GetBrandById), new { id = brandModel.BrandId }, _mapper.Map<BrandDto>(brandModel));
         }
         [HttpPut]
         [Route("{brandId:Guid}")]
