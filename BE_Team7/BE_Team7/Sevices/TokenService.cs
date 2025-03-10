@@ -43,5 +43,10 @@ namespace api.Service
 
             return tokenHandler.WriteToken(token);
         }
+
+        public string CreateToken(User user, IList<string> roles)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
