@@ -1,50 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
+  "WorkspaceRootPath": "D:\\skintest\\BE_Team7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\skintest\\be_team7\\be_team7\\repository\\skintestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\skintestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\skintest\\be_team7\\be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\skintest\\be_team7\\be_team7\\controllers\\skintestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\skintestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\interfaces\\repository.contracts\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\skintest\\be_team7\\be_team7\\interfaces\\repository.contracts\\iskintestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iskintestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\accountmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\accountmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\brandmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\brandmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\categorymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\categorymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\categorytitlemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\categorytitlemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\feedbackmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\feedbackmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\skintest\\be_team7\\be_team7\\dtos\\skintest\\skintestquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\skintest\\skintestquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,149 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\skintest\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Program.cs",
+              "ToolTip": "D:\\skintest\\BE_Team7\\BE_Team7\\Program.cs",
+              "RelativeToolTip": "BE_Team7\\Program.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAAJ0AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:06:51.793Z",
+              "WhenOpened": "2025-03-10T17:50:39.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAtwIoAAAANAAAAAAAAAA==",
+              "Title": "SkinTestController.cs",
+              "DocumentMoniker": "D:\\skintest\\BE_Team7\\BE_Team7\\Controllers\\SkinTestController.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\SkinTestController.cs",
+              "ToolTip": "D:\\skintest\\BE_Team7\\BE_Team7\\Controllers\\SkinTestController.cs",
+              "RelativeToolTip": "BE_Team7\\Controllers\\SkinTestController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAEwFAAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:06:35.833Z",
+              "WhenOpened": "2025-03-10T17:50:28.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "SkinTestRepository.cs",
+              "DocumentMoniker": "D:\\skintest\\BE_Team7\\BE_Team7\\Repository\\SkinTestRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\SkinTestRepository.cs",
+              "ToolTip": "D:\\skintest\\BE_Team7\\BE_Team7\\Repository\\SkinTestRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\SkinTestRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:06:08.761Z",
+              "WhenOpened": "2025-03-10T17:50:06.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IAccountRepository.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IAccountRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "ISkinTestRepository.cs",
+              "DocumentMoniker": "D:\\skintest\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\ISkinTestRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\ISkinTestRepository.cs",
+              "ToolTip": "D:\\skintest\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\ISkinTestRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\ISkinTestRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAewAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:55.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BrandMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\BrandMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\BrandMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\BrandMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\BrandMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:36.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoryMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\CategoryMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\CategoryMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\CategoryMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\CategoryMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:32.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CategoryTitleMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\CategoryTitleMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\CategoryTitleMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\CategoryTitleMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\CategoryTitleMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:32.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FeedbackMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\FeedbackMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\FeedbackMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\FeedbackMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\FeedbackMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:25.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\ProductMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\ProductMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:04:37.45Z",
+              "WhenOpened": "2025-03-10T17:49:25.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AccountMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\AccountMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\AccountMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\AccountMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\AccountMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SkinTestQuestionDto.cs",
+              "DocumentMoniker": "D:\\skintest\\BE_Team7\\BE_Team7\\Dtos\\Skintest\\SkinTestQuestionDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Skintest\\SkinTestQuestionDto.cs",
+              "ToolTip": "D:\\skintest\\BE_Team7\\BE_Team7\\Dtos\\Skintest\\SkinTestQuestionDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Skintest\\SkinTestQuestionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:04:33.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserMapper.cs",
-              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\UserMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\UserMapper.cs",
-              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Mappers\\UserMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\UserMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T09:05:12.931Z",
+              "WhenOpened": "2025-03-10T17:48:41.748Z",
               "EditorCaption": ""
             }
           ]
