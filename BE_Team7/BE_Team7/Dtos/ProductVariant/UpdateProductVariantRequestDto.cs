@@ -1,6 +1,6 @@
-﻿namespace BE_Team7.Dtos.Product
+﻿namespace BE_Team7.Dtos.ProductVariant
 {
-    public class ProductVariantDto
+    public class UpdateProductVariantRequestDto
     {
         public int Volume { get; set; }
         public string SkinType { get; set; }

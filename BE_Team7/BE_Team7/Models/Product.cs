@@ -15,6 +15,7 @@ public class Product
     public DateTime CreatedAt { get; set; }
     // Danh sách biến thể sản phẩm
     public virtual ICollection<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
+    public virtual ICollection<ProductAvatarImage> ProductAvatarImages { get; set; } = new List<ProductAvatarImage>();
     // Danh sách hình ảnh sản phẩm
     public virtual ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
     // Danh sách Feedbacks

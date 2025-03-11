@@ -14,7 +14,7 @@ namespace BE_Team7.Shared
 
         //
         // Summary:
-        //     Gets raw JSON as received from the server.
+        //     Gets raw JSON as received from the server.   
         public JToken JsonObj
         {
             get

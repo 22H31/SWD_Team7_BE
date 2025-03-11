@@ -21,18 +21,34 @@ namespace BE_Team7.Repository
             _mapper = mapper;
         }
 
-        public async Task<List<Blog>> GetBlogsAsync()
+        public async Task<List<BlogDto>> GetBlogsAsync()
         {
             var blogs = await _context.Blog
-         .Include(b => b.User) // Ensure Account is included
-         .ToListAsync();
+                .Include(b => b.User)
+                .Include(b => b.BlogAvartarImage)
+                .ToListAsync();
+            var blogDtos = blogs.Select(b => new BlogDto
+            {
+                BlogId = b.BlogId,
+                Title = b.Title,
+                SubTitle = b.SubTitle,
+                CreatedAt = DateTime.Now,
+                Content1 = b.Content1, // Lấy tên user nếu có
+                AvartarBlogUrl = b.BlogAvartarImage
+                    .OrderByDescending(img => img.BlogAvartarImageCreatedAt) // Sắp xếp giảm dần theo ngày tạo
+                    .Select(img => img.ImageUrl)
+                    .FirstOrDefault() // Lấy ảnh mới nhất
+            }).ToList();
 
-            return _mapper.Map<List<Blog>>(blogs);
+            return blogDtos;
         }
 
         public async Task<Blog?> GetBlogById(Guid blogId)
         {
-            return await _context.Blog.FirstOrDefaultAsync(i => i.BlogId == blogId);
+            return await _context.Blog
+            .Include(p => p.BlogAvartarImage)
+            .Include(p => p.BlogImage)
+            .FirstOrDefaultAsync(p => p.BlogId == blogId);
 
         }
         public async Task<ApiResponse<Blog>> CreateBlogAsync(Blog blog)
@@ -103,7 +119,44 @@ namespace BE_Team7.Repository
             };
         }
 
+        public async Task<ApiResponse<Blog>> CreateBlogImgAsync(Guid blogId, string publicId, string absoluteUrl)
+        {
+            var blogImg = new BlogImage()
+            {
+                ImageUrl = absoluteUrl,
+                ImageId = publicId,
+                BlogId = blogId,
+                BlogImageCreatedAt = DateTime.UtcNow
+            };
+            _context.BlogImage.Add(blogImg);
+            await _context.SaveChangesAsync();
 
+            return new ApiResponse<Blog>
+            {
+                Success = true,
+                Message = "Upload thành công.",
+                Data = null,
+            };
+        }
 
+        public async Task<ApiResponse<Blog>> CreateBlogAvartarImgAsync(Guid blogId, string publicId, string absoluteUrl)
+        {
+            var blogAvartarImg = new BlogAvartarImage()
+            {
+                ImageUrl = absoluteUrl,
+                ImageId = publicId,
+                BlogId = blogId,
+                BlogAvartarImageCreatedAt = DateTime.UtcNow
+            };
+            _context.BlogAvartarImage.Add(blogAvartarImg);
+            await _context.SaveChangesAsync();
+
+            return new ApiResponse<Blog>
+            {
+                Success = true,
+                Message = "Upload thành công.",
+                Data = null,
+            };
+        }
     }
 }
