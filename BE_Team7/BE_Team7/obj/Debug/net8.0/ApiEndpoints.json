@@ -163,6 +163,50 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "CreateBlogAvartarImage",
+    "RelativePath": "api/blogs/{blogId}/blog_avartar_images",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateblogAvartarImage"
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.BlogController",
+    "Method": "CreateBlogImage",
+    "RelativePath": "api/blogs/{blogId}/blog_images",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateBlogImage"
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.BrandController",
     "Method": "GetAllBrand",
     "RelativePath": "api/brand",
@@ -479,7 +523,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "CreateNewProduct",
+    "Method": "CreateProduct",
     "RelativePath": "api/products",
     "HttpMethod": "POST",
     "IsController": true,
@@ -495,14 +539,30 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetProductDetailById",
+    "RelativePath": "api/products/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
     "Method": "Update",
-    "RelativePath": "api/products/{id}",
+    "RelativePath": "api/products/{productId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
       },
@@ -517,13 +577,13 @@
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
     "Method": "Delete",
-    "RelativePath": "api/products/{id}",
+    "RelativePath": "api/products/{productId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -532,14 +592,121 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "GetProductDetailById",
-    "RelativePath": "api/products/{productId}",
-    "HttpMethod": "GET",
+    "Method": "CreateProductAvartarImage",
+    "RelativePath": "api/products/{productId}/product_avartar_images",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateProductAvartarImage"
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "CreateProductImage",
+    "RelativePath": "api/products/{productId}/product_images",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "CreateProductImage"
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductVariantController",
+    "Method": "GetAllProductVariant",
+    "RelativePath": "api/productVariant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductVariantController",
+    "Method": "CreateNewProductVariant",
+    "RelativePath": "api/productVariant",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductVariantRequestDto",
+        "Type": "BE_Team7.Dtos.ProductVariant.CreateProductVariantRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductVariantController",
+    "Method": "GetProductVariantById",
+    "RelativePath": "api/productVariant/{variantId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "variantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductVariantController",
+    "Method": "UpdateProductVariant",
+    "RelativePath": "api/productVariant/{variantId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "variantId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateProductVariantRequestDto",
+        "Type": "BE_Team7.Dtos.ProductVariant.UpdateProductVariantRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductVariantController",
+    "Method": "DeleteProductVariant",
+    "RelativePath": "api/productVariant/{variantId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "variantId",
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -565,5 +732,27 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.UserController",
+    "Method": "UploadAvatarImage",
+    "RelativePath": "api/User/{id}/images",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UploadAvaterImage"
   }
 ]

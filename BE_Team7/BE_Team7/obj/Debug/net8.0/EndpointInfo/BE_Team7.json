@@ -308,6 +308,100 @@
         }
       }
     },
+    "/api/blogs/{blogId}/blog_images": {
+      "post": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "CreateBlogImage",
+        "parameters": [
+          {
+            "name": "blogId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fileDtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "fileDtos": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/blogs/{blogId}/blog_avartar_images": {
+      "post": {
+        "tags": [
+          "Blog"
+        ],
+        "operationId": "CreateblogAvartarImage",
+        "parameters": [
+          {
+            "name": "blogId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fileDtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "fileDtos": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/brand": {
       "get": {
         "tags": [
@@ -886,16 +980,14 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/products/{id}": {
+      },
       "put": {
         "tags": [
           "Product"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "productId",
             "in": "path",
             "required": true,
             "schema": {
@@ -940,7 +1032,236 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/{productId}/product_images": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "CreateProductImage",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fileDtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "fileDtos": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/{productId}/product_avartar_images": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "CreateProductAvartarImage",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fileDtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "fileDtos": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/productVariant": {
+      "get": {
+        "tags": [
+          "ProductVariant"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ProductVariant"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductVariantRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductVariantRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductVariantRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductVariantRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/productVariant/{variantId}": {
+      "get": {
+        "tags": [
+          "ProductVariant"
+        ],
+        "parameters": [
+          {
+            "name": "variantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProductVariant"
+        ],
+        "parameters": [
+          {
+            "name": "variantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductVariantRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductVariantRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductVariantRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductVariantRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProductVariant"
+        ],
+        "parameters": [
+          {
+            "name": "variantId",
             "in": "path",
             "required": true,
             "schema": {
@@ -993,10 +1314,81 @@
           }
         }
       }
+    },
+    "/api/User/{id}/images": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "operationId": "UploadAvaterImage",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fileDtos": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "fileDtos": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AvatarImage": {
+        "type": "object",
+        "properties": {
+          "userImageId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "imageId": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
       "ChangePassword": {
         "required": [
           "currentPassword",
@@ -1024,13 +1416,24 @@
         "additionalProperties": false
       },
       "CreateBlogDto": {
+        "required": [
+          "id"
+        ],
         "type": "object",
         "properties": {
           "title": {
             "type": "string",
             "nullable": true
           },
-          "content": {
+          "subTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "content1": {
+            "type": "string",
+            "nullable": true
+          },
+          "content2": {
             "type": "string",
             "nullable": true
           },
@@ -1126,20 +1529,13 @@
           "brandId",
           "categoryId",
           "describe",
-          "imageUrl",
-          "productAvatar",
           "productName",
           "specifications",
-          "useManual",
-          "variants"
+          "useManual"
         ],
         "type": "object",
         "properties": {
           "productName": {
-            "type": "string",
-            "nullable": true
-          },
-          "productAvatar": {
             "type": "string",
             "nullable": true
           },
@@ -1150,20 +1546,6 @@
           "categoryId": {
             "type": "string",
             "format": "uuid"
-          },
-          "imageUrl": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "variants": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProductVariantDto"
-            },
-            "nullable": true
           },
           "describe": {
             "$ref": "#/components/schemas/DescriptionDto"
@@ -1177,55 +1559,18 @@
         },
         "additionalProperties": false
       },
-      "DescriptionDto": {
+      "CreateProductVariantRequestDto": {
+        "required": [
+          "fullIngredients",
+          "mainIngredients",
+          "skinType"
+        ],
         "type": "object",
         "properties": {
-          "summary": {
+          "productId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
-          "describeImg1": {
-            "type": "string",
-            "nullable": true
-          },
-          "suitableUsers": {
-            "type": "string",
-            "nullable": true
-          },
-          "solutionsForSkinHairConditions": {
-            "type": "string",
-            "nullable": true
-          },
-          "describeImg2": {
-            "type": "string",
-            "nullable": true
-          },
-          "uses": {
-            "type": "string",
-            "nullable": true
-          },
-          "outstandingAdvantages": {
-            "type": "string",
-            "nullable": true
-          },
-          "safetyLevel": {
-            "type": "string",
-            "nullable": true
-          },
-          "describeImg3": {
-            "type": "string",
-            "nullable": true
-          },
-          "preserve": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProductVariantDto": {
-        "type": "object",
-        "properties": {
           "volume": {
             "type": "integer",
             "format": "int32"
@@ -1247,6 +1592,40 @@
             "nullable": true
           },
           "fullIngredients": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DescriptionDto": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "nullable": true
+          },
+          "suitableUsers": {
+            "type": "string",
+            "nullable": true
+          },
+          "solutionsForSkinHairConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "uses": {
+            "type": "string",
+            "nullable": true
+          },
+          "outstandingAdvantages": {
+            "type": "string",
+            "nullable": true
+          },
+          "safetyLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "preserve": {
             "type": "string",
             "nullable": true
           }
@@ -1290,7 +1669,15 @@
             "type": "string",
             "nullable": true
           },
-          "content": {
+          "subTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "content1": {
+            "type": "string",
+            "nullable": true
+          },
+          "content2": {
             "type": "string",
             "nullable": true
           }
@@ -1354,26 +1741,47 @@
       },
       "UpdateProductRequestDto": {
         "required": [
-          "description",
-          "img",
+          "brandId",
+          "categoryId",
+          "describe",
           "productName",
-          "skinType"
+          "specifications",
+          "useManual"
         ],
         "type": "object",
         "properties": {
-          "categoryId": {
+          "productName": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
           "brandId": {
             "type": "string",
             "format": "uuid"
           },
-          "productName": {
+          "categoryId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
-          "description": {
+          "describe": {
+            "$ref": "#/components/schemas/DescriptionDto"
+          },
+          "specifications": {
+            "$ref": "#/components/schemas/SpecificationDto"
+          },
+          "useManual": {
+            "$ref": "#/components/schemas/UseManualDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateProductVariantRequestDto": {
+        "type": "object",
+        "properties": {
+          "volume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinType": {
             "type": "string",
             "nullable": true
           },
@@ -1385,11 +1793,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "skinType": {
+          "mainIngredients": {
             "type": "string",
             "nullable": true
           },
-          "img": {
+          "fullIngredients": {
             "type": "string",
             "nullable": true
           }
@@ -1490,9 +1898,8 @@
             "type": "string",
             "nullable": true
           },
-          "avartar": {
-            "type": "string",
-            "nullable": true
+          "avatar": {
+            "$ref": "#/components/schemas/AvatarImage"
           },
           "createdAt": {
             "type": "string",

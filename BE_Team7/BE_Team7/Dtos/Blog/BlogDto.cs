@@ -4,9 +4,9 @@
     {
         public Guid BlogId { get; set; }
         public string Title { get; set; } = string.Empty;
-        public string Content { get; set; } = string.Empty;
+        public string SubTitle { get; set; } = string.Empty;
+        public string Content1 { get; set; } = string.Empty;
+        public string AvartarBlogUrl { get; set; }
         public DateTime CreatedAt { get; set; }
-        public Guid Id { get; set; }
-        public string AuthorName { get; set; }  // Lấy tên tác giả từ Account
     }
 }

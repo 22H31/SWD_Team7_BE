@@ -2,6 +2,7 @@
 using AutoMapper;
 using BE_Team7.Dtos.Product;
 using Newtonsoft.Json;
+using BE_Team7.Dtos.ProductVariant;
 
 namespace BE_Team7.Mappers
 {
@@ -13,7 +14,12 @@ namespace BE_Team7.Mappers
             CreateMap<Product, ProductDetailDto>()
             .ForMember(dest => dest.BrandName, opt => opt.MapFrom(src => src.Brand.BrandName))
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
-            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ProductImages.ToDictionary(img => $"img{src.ProductImages.ToList().IndexOf(img) + 1}", img => img.ImageUrl)))
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ProductImages
+            .OrderByDescending(img => img.ProductImageCreatedAt) // Sắp xếp theo ngày tạo giảm dần
+            .Take(5) // Lấy 5 ảnh mới nhất
+            .ToDictionary(img => $"img{src.ProductImages.ToList().IndexOf(img) + 1}", img => img.ImageUrl)))
+            .ForMember(dest => dest.AvatarImageUrl, opt => opt.MapFrom(src =>
+            src.ProductAvatarImages != null && src.ProductAvatarImages.Any() ? src.ProductAvatarImages.First().ImageUrl: null))
             .ForMember(dest => dest.Variants, opt => opt.MapFrom(src => src.Variants))
             .ForMember(dest => dest.Feedbacks, opt => opt.MapFrom(src => src.Feedbacks))
             .ForMember(dest => dest.AverageRating, opt => opt.MapFrom(src =>
@@ -37,6 +43,9 @@ namespace BE_Team7.Mappers
             CreateMap<ProductVariantDto, ProductVariant>();
             // Map update
             CreateMap<UpdateProductRequestDto, Product>()
+            .ForMember(dest => dest.Description,opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Describe ?? new DescriptionDto())))
+            .ForMember(dest => dest.Specification, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Specifications ?? new SpecificationDto())))
+            .ForMember(dest => dest.UseManual,opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.UseManual ?? new UseManualDto())))
             .ForMember(dest => dest.ProductId, opt => opt.Ignore());
         }
     }

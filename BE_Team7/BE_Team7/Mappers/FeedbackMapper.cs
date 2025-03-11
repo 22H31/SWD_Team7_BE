@@ -5,16 +5,13 @@ using BE_Team7.Models;
 
 namespace BE_Team7.Mappers
 {
-    public class FeedbackMapper
+    public class FeedbackMapper : Profile
     {
-        public class BrandMapper : Profile
-        {
-            public BrandMapper()
+            public FeedbackMapper()
             {
                 CreateMap<Feedback, FeedbackDto>().ReverseMap();
                 // create map
                 CreateMap<Feedback, CreateFeebackRequestDto>().ReverseMap();
             }
-        }
     }
 }

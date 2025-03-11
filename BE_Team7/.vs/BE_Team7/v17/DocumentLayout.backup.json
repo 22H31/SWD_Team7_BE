@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CCCCCC\\BE_Team7\\",
+  "WorkspaceRootPath": "C:\\SWD\\BE\\BE_Team7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\cccccc\\be_team7\\be_team7\\mappers\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\cccccc\\be_team7\\be_team7\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\cccccc\\be_team7\\be_team7\\dtos\\blog\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\blog\\updateblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\updateblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\cccccc\\be_team7\\be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\feedback\\feedbackreponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\feedback\\feedbackreponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|d:\\cccccc\\be_team7\\be_team7\\dtos\\blog\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\blog\\createblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\feedback\\createfeebackrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\feedback\\createfeebackrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\feedback\\feedbanckdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\feedback\\feedbanckdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\swd\\be\\be_team7\\be_team7\\dtos\\feedback\\updatefeedbackrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\feedback\\updatefeedbackrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\BrandController.cs",
-              "ToolTip": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADcAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:13:06.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateBlogDto.cs",
-              "DocumentMoniker": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
-              "ToolTip": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\CreateBlogDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:06:13.781Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlogDto.cs",
-              "DocumentMoniker": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Dtos\\Blog\\BlogDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\BlogDto.cs",
-              "ToolTip": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Dtos\\Blog\\BlogDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\BlogDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:02:13.324Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BlogMapper.cs",
-              "DocumentMoniker": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Mappers\\BlogMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\BlogMapper.cs",
-              "ToolTip": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Mappers\\BlogMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\BlogMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\User.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\User.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:00:53.576Z",
+              "WhenOpened": "2025-03-11T02:40:29.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Blog.cs",
-              "DocumentMoniker": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Models\\Blog.cs",
-              "ToolTip": "D:\\CCCCCC\\BE_Team7\\BE_Team7\\Models\\Blog.cs",
-              "RelativeToolTip": "BE_Team7\\Models\\Blog.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
+              "Title": "FeedbackReponseDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\FeedbackReponseDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\FeedBack\\FeedbackReponseDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\FeedbackReponseDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\FeedBack\\FeedbackReponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:53:11.861Z"
+              "WhenOpened": "2025-03-11T02:27:09.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateFeebackRequestDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\CreateFeebackRequestDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\FeedBack\\CreateFeebackRequestDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\CreateFeebackRequestDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\FeedBack\\CreateFeebackRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T02:25:09.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FeedbanckDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\FeedbanckDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\FeedBack\\FeedbanckDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\FeedbanckDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\FeedBack\\FeedbanckDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T02:24:44.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateFeedbackRequestDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\UpdateFeedbackRequestDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\FeedBack\\UpdateFeedbackRequestDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\FeedBack\\UpdateFeedbackRequestDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\FeedBack\\UpdateFeedbackRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T02:24:42.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateBlogDto.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Blog\\UpdateBlogDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:46:01.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Feedback.cs",
+              "ToolTip": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\Models\\Feedback.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Feedback.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:33:53.632Z",
+              "EditorCaption": ""
             }
           ]
         }

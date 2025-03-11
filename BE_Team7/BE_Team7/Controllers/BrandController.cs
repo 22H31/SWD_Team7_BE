@@ -28,7 +28,7 @@ namespace BE_Team7.Controllers
             var brandDto = _mapper.Map<List<BrandDto>>(brands);
             return Ok(brandDto);
         }
-        [HttpGet("{brandId:Guid}")]
+        [HttpGet("{brandId}")]
         public async Task<IActionResult> GetBrandById([FromRoute] Guid brandId)
         {
             try
@@ -56,7 +56,7 @@ namespace BE_Team7.Controllers
             return CreatedAtAction(nameof(GetBrandById), new { id = brandModel.BrandId }, _mapper.Map<BrandDto>(brandModel));
         }
         [HttpPut]
-        [Route("{brandId:Guid}")]
+        [Route("{brandId}")]
         public async Task<IActionResult> UpdateBrand([FromRoute] Guid brandId, [FromBody] UpdateBrandRequestDto updateBrandRequestDto)
         {
             if (!ModelState.IsValid) return BadRequest(new ApiResponse<Brand>
@@ -71,7 +71,7 @@ namespace BE_Team7.Controllers
                 return NotFound(brandModel);
             return Ok(brandModel);
         }
-        [HttpDelete("{brandId:Guid}")]
+        [HttpDelete("{brandId}")]
         public async Task<IActionResult> DeleteBrand([FromRoute] Guid brandId)
         {
             if (!ModelState.IsValid) return BadRequest(new ApiResponse<Brand>

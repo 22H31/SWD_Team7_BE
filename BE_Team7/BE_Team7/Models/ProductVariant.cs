@@ -8,7 +8,6 @@ namespace BE_Team7.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid VariantId { get; set; }
-
         public Guid ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; } = null!;

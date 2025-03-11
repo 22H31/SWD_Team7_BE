@@ -12,11 +12,14 @@ namespace BE_Team7.Models
         [Required]
         [MaxLength(200)]
         public string Title { get; set; } = string.Empty;
-
+        public string SubTitle { get; set; } = string.Empty;
         [Required]
-        public string Content { get; set; } = string.Empty;
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public string Content1 { get; set; } = string.Empty;
+        public string Content2 { get; set; } = string.Empty;
+        public DateTime BlogCreatedAt { get; set; } = DateTime.UtcNow;
+        // Danh sách hình ảnh sản phẩm
+        public virtual ICollection<BlogAvartarImage> BlogAvartarImage { get; set; } = new List<BlogAvartarImage>();
+        public virtual ICollection<BlogImage> BlogImage { get; set; } = new List<BlogImage>();
 
         [ForeignKey("Account")]
         public Guid Id { get; set; } // Foreign Key

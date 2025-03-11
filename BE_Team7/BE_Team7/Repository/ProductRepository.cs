@@ -25,6 +25,7 @@ namespace BE_Team7.Repository
                 .Include(p => p.Brand)
                 .Include(p => p.Category)
                 .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
                 .Include(p => p.Feedbacks)
                 .AsQueryable();
 
@@ -46,6 +47,17 @@ namespace BE_Team7.Repository
 
         public async Task<ApiResponse<Product>> CreateProductAsyns(Product product)
         {
+            // Kiểm tra Category có tồn tại không
+            var productExists = await _context.Products.AnyAsync(c => c.ProductName == product.ProductName);
+            if (productExists)
+            {
+                return new ApiResponse<Product>
+                {
+                    Success = false,
+                    Message = "Tên sản phẩm đã tồn tại",
+                    Data = null
+                };
+            }
             // Kiểm tra Category có tồn tại không
             var categoryExists = await _context.Category.AnyAsync(c => c.CategoryId == product.CategoryId);
             if (!categoryExists)
@@ -79,7 +91,16 @@ namespace BE_Team7.Repository
                 };
             }
             _context.Products.Add(product);
-            await _context.SaveChangesAsync();
+            int changes = await _context.SaveChangesAsync();
+            if (changes == 0)
+            {
+                return new ApiResponse<Product>
+                {
+                    Success = false,
+                    Message = "Lỗi khi lưu dữ liệu vào database.",
+                    Data = null
+                };
+            }
             return new ApiResponse<Product>
             {
                 Success = true,
@@ -93,6 +114,7 @@ namespace BE_Team7.Repository
             return await _context.Products
             .Include(p => p.Brand)
             .Include(p => p.Category)
+            .Include(p => p.ProductAvatarImages)
             .Include(p => p.ProductImages)
             .Include(p => p.Variants)
             .Include(p => p.Feedbacks)
@@ -142,6 +164,7 @@ namespace BE_Team7.Repository
             }
 
             _mapper.Map(productDtoForUpdate, productModel);
+            _context.Products.Update(productModel);
             await _context.SaveChangesAsync();
             return new ApiResponse<Product>
             {
@@ -151,9 +174,9 @@ namespace BE_Team7.Repository
             };
         }
 
-        public async Task<ApiResponse<Product>> DeleteProductById(Guid id)
+        public async Task<ApiResponse<Product>> DeleteProductById(Guid productId)
         {
-            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+            var productModel = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId);
             if (productModel == null)
             {
                 return new ApiResponse<Product>
@@ -179,7 +202,8 @@ namespace BE_Team7.Repository
             {
                 ImageUrl = absoluteUrl,
                 ImageId = publicId,
-                ProductId = productId
+                ProductId = productId,
+                ProductImageCreatedAt = DateTime.UtcNow
             };
             _context.ProductImage.Add(productImg);
             await _context.SaveChangesAsync();
@@ -187,7 +211,27 @@ namespace BE_Team7.Repository
             return new ApiResponse<Product>
             {
                 Success = true,
-                Message = "Cập nhật sản phẩm thành công.",
+                Message = "Upload thành công.",
+                Data = null,
+            };
+        }
+
+        public async Task<ApiResponse<Product>> CreateProductAvartarImgAsync(Guid productId, string publicId, string absoluteUrl)
+        {
+            var productImg = new ProductAvatarImage()
+            {
+                ImageUrl = absoluteUrl,
+                ImageId = publicId,
+                ProductId = productId,
+                ProductAvatarImageCreatedAt = DateTime.UtcNow,
+            };
+            _context.productAvatarImage.Add(productImg);
+            await _context.SaveChangesAsync();
+
+            return new ApiResponse<Product>
+            {
+                Success = true,
+                Message = "Upload thành công.",
                 Data = null,
             };
         }

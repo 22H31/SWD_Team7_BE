@@ -82,6 +82,7 @@ namespace api.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
+
                 var user = new User
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -95,48 +96,51 @@ namespace api.Controllers
                     SecurityStamp = Guid.NewGuid().ToString(),
                     TwoFactorEnabled = false,
                     LockoutEnabled = false,
-                    Name = registerDto.Name, // Bắt buộc nếu không cho phép NULL
-                    //SkinType = registerDto.SkinType,
+                    Name = registerDto.Name,
                     CreatedAt = DateTime.UtcNow,
                 };
-                var createdUser = await _userManager.CreateAsync(user, registerDto.Password);
-                if (createdUser.Succeeded)
-                {
-                    // Kiểm tra xem role "USER" có tồn tại không, nếu không thì tạo role mới
-                    if (!await _roleManager.RoleExistsAsync("USER"))
-                    {
-                        var createRoleResult = await _roleManager.CreateAsync(new IdentityRole("USER"));
-                        if (!createRoleResult.Succeeded)
-                        {
-                            return StatusCode(500, createRoleResult.Errors);
-                        }
-                    }
 
-                    var roleResult = await _userManager.AddToRoleAsync(user, "USER");
-                    if (roleResult.Succeeded)
-                    {
-                        // Tạo liên kết xác nhận email
-                        var confirmationLink = Url.Action("ConfirmEmail", "Account", new { email = user.Email }, Request.Scheme);
-                        var emailContent = $"Please confirm your account by clicking <a href=\"{confirmationLink}\">here</a>";
-                        // Gửi email
-                        await _emailService.SendEmailAsync(user.Email, "Confirm your email", emailContent);
-                        return Ok("Registration successful. Please check your email to confirm your account.");
-                    }
-                    else
-                    {
-                        return StatusCode(500, roleResult.Errors);
-                    }
-                }
-                else
+                var createdUser = await _userManager.CreateAsync(user, registerDto.Password);
+                if (!createdUser.Succeeded)
                 {
                     return StatusCode(500, createdUser.Errors);
                 }
+
+                // Kiểm tra role
+                string roleName = "USER";
+                if (!await _roleManager.RoleExistsAsync(roleName))
+                {
+                    var createRoleResult = await _roleManager.CreateAsync(new IdentityRole(roleName));
+                    if (!createRoleResult.Succeeded)
+                    {
+                        return StatusCode(500, createRoleResult.Errors);
+                    }
+                }
+
+                // Gán role
+                var roleResult = await _userManager.AddToRoleAsync(user, roleName);
+                if (!roleResult.Succeeded)
+                {
+                    foreach (var error in roleResult.Errors)
+                    {
+                        Console.WriteLine($"Lỗi khi gán role: {error.Description}");
+                    }
+                    return StatusCode(500, roleResult.Errors);
+                }
+
+                // Gửi email xác nhận
+                var confirmationLink = Url.Action("ConfirmEmail", "Account", new { email = user.Email }, Request.Scheme);
+                var emailContent = $"Please confirm your account by clicking <a href=\"{confirmationLink}\">here</a>";
+                await _emailService.SendEmailAsync(user.Email, "Confirm your email", emailContent);
+
+                return Ok("Registration successful. Please check your email to confirm your account.");
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return StatusCode(500, e.Message);
             }
         }
+
 
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] UserForChangePasswordDto passwordDto)

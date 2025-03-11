@@ -2,13 +2,11 @@
 {
     public class UpdateProductRequestDto
     {
-        public Guid CategoryId { get; set; }
-        public Guid BrandId { get; set; }
         public required string ProductName { get; set; }
-        public required string Description { get; set; }
-        public double Price { get; set; }
-        public int StockQuantity { get; set; }
-        public required string SkinType { get; set; }
-        public required string Img { get; set; }
+        public required Guid BrandId { get; set; }
+        public required Guid CategoryId { get; set; }
+        public required DescriptionDto Describe { get; set; }
+        public required SpecificationDto Specifications { get; set; }
+        public required UseManualDto UseManual { get; set; }
     }
 }

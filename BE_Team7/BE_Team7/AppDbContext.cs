@@ -28,14 +28,32 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<ProductImage> ProductImage { get; set; }
     public DbSet<ProductVariant> ProductVariant { get; set; }
     public DbSet<AvatarImage> AvatarImage { get; set; }
+    public DbSet<ProductAvatarImage> productAvatarImage { get; set; }
+    public DbSet<BlogImage> BlogImage { get; set; }
+    public DbSet<BlogAvartarImage> BlogAvartarImage { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Blog>()
+       .HasMany(p => p.BlogImage)
+       .WithOne(pi => pi.Blog)
+       .HasForeignKey(pi => pi.BlogId)
+       .OnDelete(DeleteBehavior.Cascade); 
+        builder.Entity<Blog>()
+       .HasMany(p => p.BlogAvartarImage)
+       .WithOne(pi => pi.Blog)
+       .HasForeignKey(pi => pi.BlogId)
+       .OnDelete(DeleteBehavior.Cascade); 
+        builder.Entity<Product>()
+       .HasMany(p => p.ProductAvatarImages)
+       .WithOne(pi => pi.Product)
+       .HasForeignKey(pi => pi.ProductId)
+       .OnDelete(DeleteBehavior.Cascade); 
         builder.Entity<Product>()
        .HasMany(p => p.ProductImages)
        .WithOne(pi => pi.Product)
        .HasForeignKey(pi => pi.ProductId)
-       .OnDelete(DeleteBehavior.Cascade); // Xóa sản phẩm sẽ xóa luôn ảnh
+       .OnDelete(DeleteBehavior.Cascade); 
         builder.Entity<AvatarImage>()
         .HasOne(a => a.User)  // AvatarImage có một User
         .WithOne(u => u.Avatar)  // User có một AvatarImage

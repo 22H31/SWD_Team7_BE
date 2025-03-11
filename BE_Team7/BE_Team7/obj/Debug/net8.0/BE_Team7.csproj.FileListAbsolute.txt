@@ -156,7 +156,6 @@ C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\ref\BE_Team7.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\AutoMapper.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\SWD\BE\BE_Team7\BE_Team7\bin\Debug\net8.0\CloudinaryDotNet.dll
-C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.csproj.AssemblyReference.cache
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.GeneratedMSBuildEditorConfig.editorconfig
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.AssemblyInfoInputs.cache
@@ -316,3 +315,4 @@ D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.csproj.Up2Date
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\BE_Team7.genruntimeconfig.cache
 D:\CCCCCC\BE_Team7\BE_Team7\obj\Debug\net8.0\ref\BE_Team7.dll
+C:\SWD\BE\BE_Team7\BE_Team7\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
