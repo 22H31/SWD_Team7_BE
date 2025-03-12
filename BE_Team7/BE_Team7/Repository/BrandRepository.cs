@@ -46,9 +46,9 @@ namespace BE_Team7.Repository
             return await brand.ToListAsync();
         }
 
-        public async Task<Brand?> GetBrandById(Guid brandId)
+        public async Task<Brand?> GetBrandById(string brandId)
         {
-            return await _context.Brand.FirstOrDefaultAsync(i => i.BrandId == brandId);
+            return await _context.Brand.FirstOrDefaultAsync(i => i.BrandId.ToString() == brandId);
         }
 
         public async Task<ApiResponse<Brand>> UpdateBrandAsync(Guid brandId, UpdateBrandRequestDto updateBrandRequestDto)

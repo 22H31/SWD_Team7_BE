@@ -11732,11 +11732,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+      "projectUniqueName": "C:\\C#\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
       "projectName": "BE_Team7",
-      "projectPath": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+      "projectPath": "C:\\C#\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
       "packagesPath": "C:\\Users\\Minh Quang\\.nuget\\packages\\",
-      "outputPath": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\obj\\publish\\linux-x64\\",
+      "outputPath": "C:\\C#\\BE_Team7\\BE_Team7\\obj\\publish\\linux-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

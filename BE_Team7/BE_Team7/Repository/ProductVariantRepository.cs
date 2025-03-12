@@ -67,9 +67,9 @@ namespace BE_Team7.Repository
             return await productVariant.ToListAsync();
         }
 
-        public async Task<ProductVariant?> GetProductVariantById(Guid variantId)
+        public async Task<ProductVariant?> GetProductVariantById(string variantId)
         {
-            return await _context.ProductVariant.FirstOrDefaultAsync(i => i.VariantId == variantId);
+            return await _context.ProductVariant.FirstOrDefaultAsync(i => i.VariantId.ToString() == variantId);
         }
 
         public async Task<ApiResponse<ProductVariant>> UpdateProductVariantAsync(Guid variantId, UpdateProductVariantRequestDto updateProductVariantRequestDto)

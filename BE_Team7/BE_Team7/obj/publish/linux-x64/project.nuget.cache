@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dvGtLInSquM=",
+  "dgSpecHash": "qzQYcVFs36Q=",
   "success": true,
-  "projectFilePath": "C:\\SWD\\BE\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
+  "projectFilePath": "C:\\C#\\BE_Team7\\BE_Team7\\BE_Team7.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Minh Quang\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Minh Quang\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

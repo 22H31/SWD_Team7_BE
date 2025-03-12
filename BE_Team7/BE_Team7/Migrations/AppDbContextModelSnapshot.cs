@@ -22,25 +22,59 @@ namespace BE_Team7.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("BE_Team7.Models.AvatarImage", b =>
+                {
+                    b.Property<Guid>("UserImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AvatarImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserImageId");
+
+                    b.HasIndex("Id");
+
+                    b.ToTable("AvatarImage");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.Blog", b =>
                 {
                     b.Property<Guid>("BlogId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Content")
+                    b.Property<DateTime>("BlogCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Content1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Content2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("SubTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -50,6 +84,56 @@ namespace BE_Team7.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Blog");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.BlogAvartarImage", b =>
+                {
+                    b.Property<Guid>("BlogAvartarImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("BlogAvartarImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("BlogId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BlogAvartarImageId");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("BlogAvartarImage");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.BlogImage", b =>
+                {
+                    b.Property<Guid>("BlogImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BlogId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("BlogImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BlogImageId");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("BlogImage");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.Brand", b =>
@@ -289,20 +373,50 @@ namespace BE_Team7.Migrations
                     b.ToTable("Payment");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.ProductImage", b =>
+            modelBuilder.Entity("BE_Team7.Models.ProductAvatarImage", b =>
                 {
-                    b.Property<Guid>("ImageId")
+                    b.Property<Guid>("ProductAvartarrImageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ProductAvatarImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ProductAvartarrImageId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("productAvatarImage");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.ProductImage", b =>
+                {
+                    b.Property<Guid>("ProductImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("ImageId");
+                    b.Property<DateTime>("ProductImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ProductImageId");
 
                     b.HasIndex("ProductId");
 
@@ -381,6 +495,46 @@ namespace BE_Team7.Migrations
                     b.HasKey("PromotionId");
 
                     b.ToTable("Promotion");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.RerultSkinTest", b =>
+                {
+                    b.Property<Guid>("RerultId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("RerultCreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SkinType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TotalSkinCombinationScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinDryScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinNormalScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinOilyScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinSensitiveScore")
+                        .HasColumnType("float");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("RerultId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RerultSkinTests");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.SkinCareRoutine", b =>
@@ -510,19 +664,25 @@ namespace BE_Team7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "56f8b293-5807-486e-995e-611cbe919171",
+                            Id = "f1a36279-d8bb-4f9c-8fce-32119e87a670",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "5522712f-b0bb-4c6e-91a0-a3eb99876529",
+                            Id = "aeb29d51-e024-4566-b56c-df52db717443",
+                            Name = "StaffSale",
+                            NormalizedName = "STAFFSALE"
+                        },
+                        new
+                        {
+                            Id = "b478b0a7-d3c4-47ab-b7ef-e633bd8a5a4f",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         },
                         new
                         {
-                            Id = "3d0ddb4e-1607-4d26-abd0-b10b93707edc",
+                            Id = "b2987919-206c-4254-85c8-fa06821ed289",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -685,15 +845,15 @@ namespace BE_Team7.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Avartar")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateOnly>("DateOfBirth")
+                        .HasColumnType("date");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -731,9 +891,6 @@ namespace BE_Team7.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SkinType")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -754,6 +911,16 @@ namespace BE_Team7.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("BE_Team7.Models.AvatarImage", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("AvatarImages")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.Blog", b =>
                 {
                     b.HasOne("User", "User")
@@ -761,6 +928,28 @@ namespace BE_Team7.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.BlogAvartarImage", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Blog", "Blog")
+                        .WithMany("BlogAvartarImage")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.BlogImage", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Blog", "Blog")
+                        .WithMany("BlogImage")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.Cart", b =>
@@ -866,10 +1055,21 @@ namespace BE_Team7.Migrations
                     b.Navigation("Order");
                 });
 
+            modelBuilder.Entity("BE_Team7.Models.ProductAvatarImage", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany("ProductAvatarImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.ProductImage", b =>
                 {
                     b.HasOne("Product", "Product")
-                        .WithMany("ImageUrls")
+                        .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -886,6 +1086,15 @@ namespace BE_Team7.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.RerultSkinTest", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("RerultSkinTest")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.SkinCareRoutine", b =>
@@ -986,6 +1195,13 @@ namespace BE_Team7.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("BE_Team7.Models.Blog", b =>
+                {
+                    b.Navigation("BlogAvartarImage");
+
+                    b.Navigation("BlogImage");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.CategoryTitle", b =>
                 {
                     b.Navigation("Category");
@@ -995,9 +1211,18 @@ namespace BE_Team7.Migrations
                 {
                     b.Navigation("Feedbacks");
 
-                    b.Navigation("ImageUrls");
+                    b.Navigation("ProductAvatarImages");
+
+                    b.Navigation("ProductImages");
 
                     b.Navigation("Variants");
+                });
+
+            modelBuilder.Entity("User", b =>
+                {
+                    b.Navigation("AvatarImages");
+
+                    b.Navigation("RerultSkinTest");
                 });
 #pragma warning restore 612, 618
         }

@@ -31,6 +31,7 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<ProductAvatarImage> productAvatarImage { get; set; }
     public DbSet<BlogImage> BlogImage { get; set; }
     public DbSet<BlogAvartarImage> BlogAvartarImage { get; set; }
+    public DbSet<RerultSkinTest> RerultSkinTests { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -54,11 +55,11 @@ public class AppDbContext : IdentityDbContext<User>
        .WithOne(pi => pi.Product)
        .HasForeignKey(pi => pi.ProductId)
        .OnDelete(DeleteBehavior.Cascade);
-        builder.Entity<AvatarImage>()
-        .HasOne(a => a.User)  // AvatarImage có một User
-        .WithOne(u => u.Avatar)  // User có một AvatarImage
-        .HasForeignKey<AvatarImage>(a => a.Id)  // Đặt khóa ngoại ở AvatarImage
-        .IsRequired();  // Đảm bảo UserId không null
+        builder.Entity<User>()
+        .HasMany(p => p.AvatarImages)
+        .WithOne(pi => pi.User)
+        .HasForeignKey(pi => pi.Id)
+        .OnDelete(DeleteBehavior.Cascade);
         List<IdentityRole> roles = new List<IdentityRole>
             {
                 new IdentityRole{

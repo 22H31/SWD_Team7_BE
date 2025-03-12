@@ -33,25 +33,5 @@ namespace api.Repository
             Console.WriteLine(await _context.User.FirstOrDefaultAsync(p => p.Id.Equals(id)));
             return await _context.User.FirstOrDefaultAsync(p => p.Id.Equals(id));
         }
-
-        public async Task<ApiResponse<AvatarImage>> UploadAvatarImage(string id, string publicId, string absoluteUrl)
-        {
-
-            var avatarImg = new AvatarImage()
-            {
-                ImageUrl = absoluteUrl,
-                ImageId = publicId,
-                Id = id
-            };
-            _context.AvatarImage.Add(avatarImg);
-            await _context.SaveChangesAsync();
-
-            return new ApiResponse<AvatarImage>
-            {
-                Success = true,
-                Message = "upload avater thành công.",
-                Data = avatarImg,
-            };
-        }
     }
 }

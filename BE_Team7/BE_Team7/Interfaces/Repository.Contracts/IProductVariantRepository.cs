@@ -7,7 +7,7 @@ namespace BE_Team7.Interfaces.Repository.Contracts
     public interface IProductVariantRepository
     {
         Task<List<ProductVariant>> GetProductVariantAsync();
-        Task<ProductVariant?> GetProductVariantById(Guid variantId);
+        Task<ProductVariant?> GetProductVariantById(string variantId);
         Task<ApiResponse<ProductVariant>> CreateProductVariantAsync(ProductVariant productVariant);
         Task<ApiResponse<ProductVariant>> UpdateProductVariantAsync(Guid variantId, UpdateProductVariantRequestDto updateProductVariantRequestDto);
         Task<ApiResponse<ProductVariant>> DeleteProductVariantAsync(Guid variantId);

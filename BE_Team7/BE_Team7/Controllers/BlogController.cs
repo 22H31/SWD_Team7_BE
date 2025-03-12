@@ -104,7 +104,7 @@ namespace BE_Team7.Controllers
                 return NotFound(blogModel);
             return Ok(blogModel);
         }
-        [HttpPost("{blogId:guid}/blog_images", Name = "CreateBlogImage")]
+        [HttpPost("{blogId}/blog_images", Name = "CreateBlogImage")]
         public async Task<IActionResult> CreateBlogImage(Guid blogId, [FromForm] List<IFormFile> fileDtos)
         {
             var blogExists = await _blogRepo.GetBlogById(blogId);
@@ -133,7 +133,7 @@ namespace BE_Team7.Controllers
             }
             return Ok();
         }
-        [HttpPost("{blogId:guid}/blog_avartar_images", Name = "CreateblogAvartarImage")]
+        [HttpPost("{blogId}/blog_avartar_images", Name = "CreateblogAvartarImage")]
         public async Task<IActionResult> CreateBlogAvartarImage(Guid blogId, [FromForm] List<IFormFile> fileDtos)
         {
             var blogExists = await _blogRepo.GetBlogById(blogId);

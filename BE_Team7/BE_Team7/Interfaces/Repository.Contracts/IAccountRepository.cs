@@ -11,7 +11,6 @@ namespace api.Interfaces
     public interface IAccountRepository
     {
         Task<List<User>> GetAllAsync();
-        Task<ApiResponse<AvatarImage>> UploadAvatarImage(string id, string publicId, string absoluteUrl);
         Task<User?> GetUserById(string id);
 
     }

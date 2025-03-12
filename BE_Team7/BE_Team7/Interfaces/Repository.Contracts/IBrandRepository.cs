@@ -7,7 +7,7 @@ namespace BE_Team7.Interfaces.Repository.Contracts
     public interface IBrandRepository
     {
         Task<List<Brand>> GetBrandAsync();
-        Task<Brand?> GetBrandById(Guid brandId);
+        Task<Brand?> GetBrandById(string brandId);
         Task<ApiResponse<Brand>> CreateBrandAsync(Brand brand);
         Task<ApiResponse<Brand>> UpdateBrandAsync(Guid brandId, UpdateBrandRequestDto updateBrandRequestDto);
         Task<ApiResponse<Brand>> DeleteBrandAsync(Guid brandId);

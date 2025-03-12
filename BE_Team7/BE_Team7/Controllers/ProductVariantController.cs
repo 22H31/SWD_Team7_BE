@@ -28,7 +28,7 @@ namespace BE_Team7.Controllers
             return Ok(productVariants);
         }
         [HttpGet("{variantId}")]
-        public async Task<IActionResult> GetProductVariantById([FromRoute] Guid variantId)
+        public async Task<IActionResult> GetProductVariantById([FromRoute] string variantId)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace BE_Team7.Controllers
             if (!ModelState.IsValid) return BadRequest();
             var productVariantModel = _mapper.Map<ProductVariant>(createProductVariantRequestDto);
             await _productVariantRepo.CreateProductVariantAsync(productVariantModel);
-            return CreatedAtAction(nameof(GetProductVariantById), new { varientId = productVariantModel.VariantId }, _mapper.Map<ProductVariantDto>(productVariantModel));
+            return CreatedAtAction(nameof(GetProductVariantById), new { variantId = productVariantModel.VariantId }, _mapper.Map<ProductVariantDto>(productVariantModel));
         }
         [HttpPut]
         [Route("{variantId:Guid}")]
