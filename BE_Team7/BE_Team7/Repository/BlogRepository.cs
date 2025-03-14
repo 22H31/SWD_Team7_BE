@@ -32,12 +32,12 @@ namespace BE_Team7.Repository
                 BlogId = b.BlogId,
                 Title = b.Title,
                 SubTitle = b.SubTitle,
-                CreatedAt = DateTime.Now,
-                Content1 = b.Content1, // Lấy tên user nếu có
+                BlogCreatedAt = b.BlogCreatedAt,
+                Content1 = b.Content1, 
                 AvartarBlogUrl = b.BlogAvartarImage
-                    .OrderByDescending(img => img.BlogAvartarImageCreatedAt) // Sắp xếp giảm dần theo ngày tạo
+                    .OrderByDescending(img => img.BlogAvartarImageCreatedAt) 
                     .Select(img => img.ImageUrl)
-                    .FirstOrDefault() // Lấy ảnh mới nhất
+                    .FirstOrDefault() 
             }).ToList();
 
             return blogDtos;

@@ -142,17 +142,42 @@ namespace BE_Team7.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("BrandImg")
+                    b.Property<string>("BrandName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BrandName")
+                    b.Property<string>("brandDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BrandId");
 
                     b.ToTable("Brand");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.BrandAvartarImage", b =>
+                {
+                    b.Property<Guid>("BrandAvartarImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("BrandAvartarImageCreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("BrandId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BrandAvartarImageId");
+
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("BrandAvartarImage");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.Cart", b =>
@@ -231,10 +256,6 @@ namespace BE_Team7.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CategoryTitleIcon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CategoryTitleName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -257,8 +278,9 @@ namespace BE_Team7.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
@@ -266,18 +288,11 @@ namespace BE_Team7.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("FeedbackId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Feedback");
                 });
@@ -664,25 +679,25 @@ namespace BE_Team7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f1a36279-d8bb-4f9c-8fce-32119e87a670",
+                            Id = "dc153b60-5932-444a-b70d-9e03ea235817",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "aeb29d51-e024-4566-b56c-df52db717443",
+                            Id = "04011ca5-ee99-400b-90e1-2bc0ab49fb43",
                             Name = "StaffSale",
                             NormalizedName = "STAFFSALE"
                         },
                         new
                         {
-                            Id = "b478b0a7-d3c4-47ab-b7ef-e633bd8a5a4f",
+                            Id = "a3162081-fdb1-4818-b6d5-e8088943d624",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         },
                         new
                         {
-                            Id = "b2987919-206c-4254-85c8-fa06821ed289",
+                            Id = "af0de568-05ec-45a0-8e92-2e1fd25fa56f",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -816,6 +831,9 @@ namespace BE_Team7.Migrations
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SoldQuantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("Specification")
                         .IsRequired()
@@ -952,6 +970,17 @@ namespace BE_Team7.Migrations
                     b.Navigation("Blog");
                 });
 
+            modelBuilder.Entity("BE_Team7.Models.BrandAvartarImage", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Brand", "Brand")
+                        .WithMany("BrandAvartarImage")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+                });
+
             modelBuilder.Entity("BE_Team7.Models.Cart", b =>
                 {
                     b.HasOne("User", "User")
@@ -993,15 +1022,17 @@ namespace BE_Team7.Migrations
 
             modelBuilder.Entity("BE_Team7.Models.Feedback", b =>
                 {
+                    b.HasOne("User", "User")
+                        .WithMany()
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Product", "Product")
                         .WithMany("Feedbacks")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
 
                     b.Navigation("Product");
 
@@ -1200,6 +1231,11 @@ namespace BE_Team7.Migrations
                     b.Navigation("BlogAvartarImage");
 
                     b.Navigation("BlogImage");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Brand", b =>
+                {
+                    b.Navigation("BrandAvartarImage");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.CategoryTitle", b =>

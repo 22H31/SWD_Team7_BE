@@ -3,6 +3,6 @@
     public class CreateBrandRequestDto
     {
         public required string BrandName { get; set; }
-        public required string BrandImg { get; set; }
+        public string BrandDescription { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace BE_Team7.Repository
                 return new ApiResponse<CategoryTitle>
                 {
                     Success = false,
-                    Message = "Brand này đã tồn tại.",
+                    Message = "Category Title này đã tồn tại.",
                     Data = null
                 };
             }
@@ -35,7 +35,7 @@ namespace BE_Team7.Repository
             return new ApiResponse<CategoryTitle>
             {
                 Success = true,
-                Message = "Tạo sản phẩm thành công.",
+                Message = "Tạo Category Title thành công.",
                 Data = categoryTitleModel
             };
         }

@@ -29,4 +29,5 @@ public class Product
     // Hướng dẫn sử dụng (Lưu dưới dạng JSON)
     [Column(TypeName = "nvarchar(max)")]
     public string UseManual { get; set; } = "{}";
+    public int SoldQuantity { get; set; }
 }

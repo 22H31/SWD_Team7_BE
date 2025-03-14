@@ -18,7 +18,7 @@ namespace BE_Team7.Mappers
             .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.AvatarImages != null && src.AvatarImages.Any() ? src.AvatarImages.First().ImageUrl : null))
             .ForMember(dest => dest.SkinType, opt => opt.MapFrom(src =>
                 src.RerultSkinTest
-                    .OrderByDescending(test => test.RerultCreateAt) // SkinType mới nhất
+                    .OrderByDescending(test => test.RerultCreateAt) 
                     .Select(test => test.SkinType)
                     .FirstOrDefault()
             ));

@@ -23,6 +23,7 @@ namespace GarageManagementAPI.Service
         private const string _blogFolder = "Blog";
         private const string _blogAvartarFolder = "BlogAvartar";
         private const string _errorCode = "CloudinaryError";
+        private const string _brandAvatarFolder = "BrandAvatar";
 
         public MediaService(IOptionsSnapshot<CloudinarySettings> configuration)
         {
@@ -95,6 +96,8 @@ namespace GarageManagementAPI.Service
 
         public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadAvatarBlogImageAsync(IFormFile file)
             => await UploadImageAsync(file, _blogAvartarFolder);
+        public async Task<Result<(string? publicId, string? absoluteUrl)>> UploadAvatarBrandImageAsync(IFormFile file)  
+            => await UploadImageAsync(file, _brandAvatarFolder); 
 
         public async Task<Result<string>> RemoveImage(string publicId)
         {

@@ -4,6 +4,7 @@ namespace BE_Team7.Dtos.Product
 {
     public class ProductResponseDto
     {
+        public int SoldQuantity { get; set; }
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
         public string AvartarImageUrl { get; set; }

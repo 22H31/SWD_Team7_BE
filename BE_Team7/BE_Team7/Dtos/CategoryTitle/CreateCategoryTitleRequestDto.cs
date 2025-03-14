@@ -3,6 +3,5 @@
     public class CreateCategoryTitleRequestDto
     {
         public string CategoryTitleName { get; set; }
-        public string CategoryTitleIcon { get; set; }
     }
 }

@@ -7,6 +7,6 @@
         public string SubTitle { get; set; } = string.Empty;
         public string Content1 { get; set; } = string.Empty;
         public string AvartarBlogUrl { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime BlogCreatedAt { get; set; }
     }
 }

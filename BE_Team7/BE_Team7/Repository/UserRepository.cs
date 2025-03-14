@@ -66,6 +66,7 @@ public class UserRepository : IUserRepository
             {
                 Id = user.Id,
                 Email = user.Email,
+                LockoutEnd = user.LockoutEnd ?? DateTimeOffset.MinValue,
                 Name = user.UserName,
                 Avatar = user.AvatarImages?.FirstOrDefault()?.ImageUrl,
                 PhoneNumber = user.PhoneNumber,

@@ -58,6 +58,7 @@ namespace BE_Team7.Controllers
 
             if (createBlogDto.Content2 == null ||
                 createBlogDto.Content1 == null ||
+                createBlogDto.SubTitle == null ||
                 createBlogDto.Title == null)
             {
                 return BadRequest("Incomplete Blog details.");
@@ -66,6 +67,7 @@ namespace BE_Team7.Controllers
             var blogModel = new Blog
             {
                 Title = createBlogDto.Title,
+                SubTitle = createBlogDto.SubTitle,
                 Content1 = createBlogDto.Content1,
                 Content2 = createBlogDto.Content2,
                 BlogCreatedAt = DateTime.Now,

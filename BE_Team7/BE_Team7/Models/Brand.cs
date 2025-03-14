@@ -9,6 +9,7 @@ namespace BE_Team7.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid BrandId { get; set; }
         public required string BrandName { get; set; }
-        public required string BrandImg { get; set; }
+        public required string brandDescription { get; set; }
+        public virtual ICollection<BrandAvartarImage> BrandAvartarImage { get; set; } = new List<BrandAvartarImage>();
     }
 }

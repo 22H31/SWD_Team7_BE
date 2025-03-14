@@ -127,15 +127,18 @@ namespace api.Services
 
         public async Task<User?> ValidateUserAsync(string username, string password)
         {
-            // Tìm user theo Username
-            var user = await _userManager.FindByNameAsync(username);
+            var user = await _context.Users
+            .Include(u => u.AvatarImages)
+            .Include(u => u.RerultSkinTest)
+            .FirstOrDefaultAsync(u => u.UserName == username);
             if (user == null) return null;
 
-            // Kiểm tra password
+            if (user.LockoutEnd != null && user.LockoutEnd > DateTimeOffset.UtcNow)
+            {
+                throw new Exception($"Your account is locked until {user.LockoutEnd.Value.UtcDateTime} UTC");
+            }
             var result = await _signinManager.CheckPasswordSignInAsync(user, password, false);
             if (!result.Succeeded) return null;
-
-            // Trả về user nếu đăng nhập thành công
             return user;
         }
 

@@ -11,7 +11,6 @@ namespace BE_Team7.Models
         public Guid ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; } = null!;
-
         public int Volume { get; set; }
         public required string SkinType { get; set; }
         public double Price { get; set; }

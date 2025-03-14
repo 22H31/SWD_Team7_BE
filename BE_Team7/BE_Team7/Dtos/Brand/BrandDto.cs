@@ -4,6 +4,6 @@
     {
         public Guid BrandId { get; set; }
         public required string BrandName { get; set; }
-        public required string BrandImg { get; set; }
+        public string AvartarBrandUrl { get; set; }
     }
 }

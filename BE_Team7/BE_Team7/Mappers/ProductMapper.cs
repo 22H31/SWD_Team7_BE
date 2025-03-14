@@ -3,6 +3,7 @@ using AutoMapper;
 using BE_Team7.Dtos.Product;
 using Newtonsoft.Json;
 using BE_Team7.Dtos.ProductVariant;
+using BE_Team7.Dtos.FeedBack;
 
 namespace BE_Team7.Mappers
 {
@@ -31,15 +32,17 @@ namespace BE_Team7.Mappers
 
             CreateMap<ProductVariant, ProductVariantDto>();
             CreateMap<Feedback, FeedbackDto>()
-                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString("HH:mm dd/MM/yyyy")));
-            // Map từ Product → CreateProductRequestDto      
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name))
+            .ForMember(dest => dest.UserAvatarUrl, opt => opt.MapFrom(src => src.User != null && src.User.AvatarImages != null && src.User.AvatarImages.Any() ? src.User.AvatarImages.OrderByDescending
+            (a => a.AvatarImageCreatedAt).First().ImageUrl : null))
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt.ToString("HH:mm dd/MM/yyyy")));
+            // Map từ Product → CreateProductRequestDto         
             CreateMap<CreateProductRequestDto, Product>()
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Describe)))
                 .ForMember(dest => dest.Specification, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.Specifications)))
                 .ForMember(dest => dest.UseManual, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.UseManual)))
                 .ForMember(dest => dest.ProductImages, opt => opt.Ignore())
                 .ForMember(dest => dest.Variants, opt => opt.Ignore());
-
             CreateMap<ProductVariantDto, ProductVariant>();
             // Map update
             CreateMap<UpdateProductRequestDto, Product>()

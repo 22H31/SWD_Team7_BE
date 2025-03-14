@@ -51,18 +51,25 @@ namespace api.Controllers
         public async Task<IActionResult> Login(UserForLoginDto loginDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var user = await _authRepo.ValidateUserAsync(loginDto.Username, loginDto.Password);
-            if (user == null) return Unauthorized("Invalid username");
-            if (!user.EmailConfirmed) return Unauthorized("Please confirm your email before logging in");
-            var result = await _authService.LoginAsync(user, loginDto.Password);
-            if (result == null) return Unauthorized("Invalid username or password");
-            var roles = await _authRepo.GetRolesAsync(user);
-            var token = _tokenService.CreateToken(user, roles);
-            var userLoginDto = _mapper.Map<LoginResponseDto>(user);
-            userLoginDto.IsLogedIn = true;
-            userLoginDto.JwtToken = token;
-            userLoginDto.Roles = roles;
-            return Ok(userLoginDto);
+            try
+            {
+                var user = await _authRepo.ValidateUserAsync(loginDto.Username, loginDto.Password);
+                if (user == null) return Unauthorized("Invalid username or password");
+                if (!user.EmailConfirmed) return Unauthorized("Please confirm your email before logging in");
+                var result = await _authService.LoginAsync(user, loginDto.Password);
+                if (result == null) return Unauthorized("Invalid username or password");
+                var roles = await _authRepo.GetRolesAsync(user);
+                var token = _tokenService.CreateToken(user, roles);
+                var userLoginDto = _mapper.Map<LoginResponseDto>(user);
+                userLoginDto.IsLogedIn = true;
+                userLoginDto.JwtToken = token;
+                userLoginDto.Roles = roles;
+                return Ok(userLoginDto);
+            }
+            catch (Exception ex)
+            {
+                return Unauthorized(ex.Message);
+            }
         }
 
         [HttpGet("confirm-email")]

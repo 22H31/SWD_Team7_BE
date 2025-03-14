@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BE_Team7.Dtos.Blog;
 using BE_Team7.Dtos.Brand;
 using BE_Team7.Helpers;
 using BE_Team7.Interfaces.Repository.Contracts;
@@ -12,7 +13,7 @@ namespace BE_Team7.Repository
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
 
-        public BrandRepository(AppDbContext context, IMapper mapper)
+        public BrandRepository(AppDbContext context, IMapper mapper)    
         {
             _context = context;
             _mapper = mapper;
@@ -40,15 +41,29 @@ namespace BE_Team7.Repository
             };
         }   
 
-        public async Task<List<Brand>> GetBrandAsync()
+        public async Task<List<BrandDto>> GetBrandAsync()
         {
-            var brand = _context.Brand.AsQueryable();        
-            return await brand.ToListAsync();
+            var brands = await _context.Brand
+            .Include(b => b.BrandAvartarImage)
+            .ToListAsync();
+            var brandDtos = brands.Select(b => new BrandDto
+            {
+                BrandId = b.BrandId,
+                BrandName = b.BrandName,
+                AvartarBrandUrl = b.BrandAvartarImage
+                    .OrderByDescending(img => img.BrandAvartarImageCreatedAt)
+                    .Select(img => img.ImageUrl)
+                    .FirstOrDefault()
+            }).ToList();
+
+            return brandDtos;
         }
 
         public async Task<Brand?> GetBrandById(string brandId)
         {
-            return await _context.Brand.FirstOrDefaultAsync(i => i.BrandId.ToString() == brandId);
+            return await _context.Brand
+            .Include(p => p.BrandAvartarImage)
+            .FirstOrDefaultAsync(p => p.BrandId.ToString() == brandId);
         }
 
         public async Task<ApiResponse<Brand>> UpdateBrandAsync(Guid brandId, UpdateBrandRequestDto updateBrandRequestDto)
@@ -91,6 +106,26 @@ namespace BE_Team7.Repository
                 Success = true,
                 Message = "Xóa brand thành công",
                 Data = brandModel
+            };
+        }
+
+        public async Task<ApiResponse<Brand>> UploadBrandAvartarImgAsync(Guid brandId, string publicId, string absoluteUrl)
+        {
+            var brandAvartarImg = new BrandAvartarImage()
+            {
+                ImageUrl = absoluteUrl,
+                ImageId = publicId,
+                BrandId = brandId,
+                BrandAvartarImageCreatedAt = DateTime.UtcNow
+            };
+            _context.BrandAvartarImage.Add(brandAvartarImg);
+            await _context.SaveChangesAsync();
+
+            return new ApiResponse<Brand>
+            {
+                Success = true,
+                Message = "Upload thành công.",
+                Data = null,
             };
         }
     }

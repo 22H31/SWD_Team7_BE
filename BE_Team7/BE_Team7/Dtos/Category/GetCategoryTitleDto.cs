@@ -4,7 +4,6 @@
     {
         public Guid CategoryTitleId { get; set; }
         public string CategoryTitleName { get; set; } = string.Empty;
-        public string CategoryTitleIcon { get; set; } = string.Empty;
         public List<CategoryDto> Categorys { get; set; } = new();
     }
 }

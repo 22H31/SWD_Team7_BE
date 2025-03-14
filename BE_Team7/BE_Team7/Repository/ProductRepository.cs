@@ -1,10 +1,14 @@
 ﻿using System.Linq;
 using AutoMapper;
+using BE_Team7.Dtos.FeedBack;
 using BE_Team7.Dtos.Product;
+using BE_Team7.Dtos.ProductVariant;
 using BE_Team7.Helpers;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using static StackExchange.Redis.Role;
 
 namespace BE_Team7.Repository
@@ -109,17 +113,65 @@ namespace BE_Team7.Repository
             };
         }
 
-        public async Task<Product?> GetProductById(Guid productId)
+        public async Task<ProductDetailDto?> GetProductById(Guid productId)
         {
-            return await _context.Products
-            .Include(p => p.Brand)
-            .Include(p => p.Category)
-            .Include(p => p.ProductAvatarImages)
-            .Include(p => p.ProductImages)
-            .Include(p => p.Variants)
-            .Include(p => p.Feedbacks)
-            .FirstOrDefaultAsync(p => p.ProductId == productId);
+            var product = await _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.ProductImages)
+                .Include(p => p.Variants)
+                .Include(p => p.Feedbacks)
+                    .ThenInclude(f => f.User)
+                        .ThenInclude(u => u.AvatarImages)
+                .FirstOrDefaultAsync(p => p.ProductId == productId);
+
+            if (product == null) return null;
+
+            var productDto = new ProductDetailDto
+            {
+                SoldQuantity = product.SoldQuantity,
+                ProductId = product.ProductId,
+                ProductName = product.ProductName,
+                BrandName = product.Brand!.BrandName,
+                CategoryName = product.Category!.CategoryName,
+                ImageUrl = product.ProductImages
+                .OrderByDescending(img => img.ProductImageCreatedAt)
+                .Take(5)
+                .ToDictionary(
+                    img => $"img{product.ProductImages.ToList().IndexOf(img) + 1}",
+                    img => img.ImageUrl ?? ""),
+                AvatarImageUrl = product.ProductAvatarImages.FirstOrDefault()?.ImageUrl,
+                Variants = product.Variants.Select(v => new ProductVariantDto
+                {
+                    VariantId = v.VariantId,
+                    Volume = v.Volume,
+                    SkinType = v.SkinType,
+                    Price = v.Price,
+                    StockQuantity = v.StockQuantity,
+                    MainIngredients = v.MainIngredients,
+                    FullIngredients  = v.FullIngredients
+                }).ToList(),
+                Feedbacks = product.Feedbacks.Select(f => new FeedbackDto
+                {
+                    FeedbackId = f.FeedbackId,
+                    UserName = f.User?.Name,
+                    UserAvatarUrl = f.User?.AvatarImages?
+                        .OrderByDescending(a => a.AvatarImageCreatedAt)
+                        .FirstOrDefault()?.ImageUrl,
+                    Rating = f.Rating,
+                    Comment = f.Comment,
+                    CreatedAt = f.CreatedAt.ToString("HH:mm dd/MM/yyyy")
+                }).ToList(),
+                AverageRating = product.Feedbacks.Any() ? product.Feedbacks.Average(f => f.Rating) : 0,
+                TotalFeedback = product.Feedbacks.Count,
+                Describe = JsonConvert.DeserializeObject<DescriptionDto>(product.Description),
+                Specifications = JsonConvert.DeserializeObject<SpecificationDto>(product.Specification),
+                UseManual = JsonConvert.DeserializeObject<UseManualDto>(product.UseManual)
+            };
+            return productDto;
         }
+
 
         public async Task<ApiResponse<Product>> UpdateProductById(Guid id, UpdateProductRequestDto productDtoForUpdate)
         {
@@ -233,6 +285,90 @@ namespace BE_Team7.Repository
                 Success = true,
                 Message = "Upload thành công.",
                 Data = null,
+            };
+        }
+        public async Task<PagedResult<Product>> GetProductsByCategoryTitleIdAsync(Guid categoryTitleId, ProductQuery productQuery)
+        {
+            var products = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .ThenInclude(c => c.CategoryTitle) // Include cả CategoryTitle để lọc
+                .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.Feedbacks)
+                .Where(p => p.Category.CategoryTitleId == categoryTitleId) // Lọc theo CategoryTitleId
+                .AsQueryable();
+
+            return await PaginateAsync(products, productQuery);
+        }
+        public async Task<PagedResult<Product>> GetProductsByCategoryAsync(Guid categoryId, ProductQuery productQuery)
+        {
+            var products = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.Feedbacks)
+                .Where(p => p.CategoryId == categoryId)
+                .AsQueryable();
+
+            return await PaginateAsync(products, productQuery);
+        }
+
+        public async Task<PagedResult<Product>> GetProductsByBrandAsync(Guid brandId, ProductQuery productQuery)
+        {
+            var products = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.Feedbacks)
+                .Where(p => p.BrandId == brandId)
+                .AsQueryable();
+
+            return await PaginateAsync(products, productQuery);
+        }
+
+        public async Task<PagedResult<Product>> GetRecentProductsAsync(ProductQuery productQuery)
+        {
+            var products = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.Feedbacks)
+                .Where(p => p.CreatedAt >= DateTime.UtcNow.AddHours(-24))
+                .OrderByDescending(p => p.CreatedAt)
+                .AsQueryable();
+
+            return await PaginateAsync(products, productQuery);
+        }
+
+        public async Task<PagedResult<Product>> GetTopSellingProductsAsync(ProductQuery productQuery)
+        {
+            var products = _context.Products
+                .Include(p => p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Variants)
+                .Include(p => p.ProductAvatarImages)
+                .Include(p => p.Feedbacks)
+                .OrderByDescending(p => p.SoldQuantity)
+                .AsQueryable();
+
+            return await PaginateAsync(products, productQuery, maxLimit: 20);
+        }
+
+        private async Task<PagedResult<Product>> PaginateAsync(IQueryable<Product> query, ProductQuery productQuery, int? maxLimit = null)
+        {
+            var totalCount = await query.CountAsync();
+            var pageSize = maxLimit.HasValue ? Math.Min(productQuery.PageSize, maxLimit.Value) : productQuery.PageSize;
+            var skipNumber = (productQuery.PageNumber - 1) * pageSize;
+            var pagedProducts = await query.Skip(skipNumber).Take(pageSize).ToListAsync();
+
+            return new PagedResult<Product>
+            {
+                Items = pagedProducts,
+                TotalCount = totalCount
             };
         }
     }

@@ -9,6 +9,8 @@ namespace BE_Team7.Interfaces.Service.Contracts
         public Task<Result<(string? publicId, string? absoluteUrl)>> UploadProductAvatarImageAsync(IFormFile file);
         public Task<Result<(string? publicId, string? absoluteUrl)>> UploadBlogImageAsync(IFormFile file);
         public Task<Result<(string? publicId, string? absoluteUrl)>> UploadAvatarBlogImageAsync(IFormFile file);
+        public Task<Result<(string? publicId, string? absoluteUrl)>> UploadAvatarBrandImageAsync(IFormFile file);
+
         public Task<Result<string>> RemoveImage(string publicId);
     }
 }

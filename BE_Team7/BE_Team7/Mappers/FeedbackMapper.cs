@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BE_Team7.Dtos.Brand;
 using BE_Team7.Dtos.FeedBack;
 using BE_Team7.Models;
 
@@ -12,8 +11,11 @@ namespace BE_Team7.Mappers
             public BrandMapper()
             {
                 CreateMap<Feedback, FeedbackDto>().ReverseMap();
-                // create map
+
                 CreateMap<Feedback, CreateFeebackRequestDto>().ReverseMap();
+
+                CreateMap<UpdateFeedbackRequestDto, Feedback>()
+                    .ForMember(dest => dest.FeedbackId, opt => opt.Ignore());
             }
         }
     }

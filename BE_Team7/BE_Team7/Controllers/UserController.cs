@@ -195,5 +195,26 @@ namespace BE_Team7.Controllers
             }
             return Ok();
         }
+        [HttpPost("toggle-lock/{id}")]
+        public async Task<IActionResult> ToggleLockAccount(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return NotFound("User not found");
+            if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow)
+            {
+                user.LockoutEnd = null;
+                user.LockoutEnabled = false;
+                await _userManager.UpdateAsync(user);
+                return Ok("Account has been unblocked successfully.");
+            }
+            else
+            {
+                user.LockoutEnd = DateTimeOffset.MaxValue;
+                user.LockoutEnabled = true;
+                await _userManager.UpdateAsync(user);
+                return Ok("Account has been blocked successfully.");
+            }
+        }
     }
 }

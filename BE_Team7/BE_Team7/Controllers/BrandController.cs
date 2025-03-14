@@ -2,9 +2,14 @@
 using BE_Team7.Dtos.Brand;
 using BE_Team7.Dtos.Product;
 using BE_Team7.Helpers;
+using BE_Team7.Shared.ErrorModel;
+using BE_Team7.Shared.Extensions;
 using BE_Team7.Interfaces.Repository.Contracts;
+using BE_Team7.Interfaces.Service.Contracts;
 using BE_Team7.Models;
+using GarageManagementAPI.Shared.ResultModel;
 using Microsoft.AspNetCore.Mvc;
+using BE_Team7.Dtos.Blog;
 
 namespace BE_Team7.Controllers
 {
@@ -15,36 +20,32 @@ namespace BE_Team7.Controllers
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
         private readonly IBrandRepository _brandRepo;
-        public BrandController(AppDbContext context, IBrandRepository brandRepo, IMapper mapper)
+        private readonly IMediaService _mediaService;
+
+        public BrandController(AppDbContext context, IBrandRepository brandRepo, IMapper mapper,IMediaService mediaService)
         {
             _brandRepo = brandRepo;
             _context = context;
             _mapper = mapper;
+            _mediaService = mediaService;
+
         }
         [HttpGet]
         public async Task<IActionResult> GetAllBrand()
         {
-            var brands = await _brandRepo.GetBrandAsync();  
-            var brandDto = _mapper.Map<List<BrandDto>>(brands);
+            var brandDto = await _brandRepo.GetBrandAsync();
             return Ok(brandDto);
         }
         [HttpGet("{brandId}")]
         public async Task<IActionResult> GetBrandById([FromRoute] string brandId)
         {
-            try
+            var brand = await _brandRepo.GetBrandById(brandId);
+            if (brand == null)
             {
-                var brand = await _brandRepo.GetBrandById(brandId);
-                if (brand == null)
-                {
-                    return NotFound();
-                }
-                var brandDto = _mapper.Map<BrandDto>(brand);
-                return Ok(brandDto);
+                return NotFound(new { message = "brand không tồn tại." });
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
-            }
+            var blogDto = _mapper.Map<BrandDetailDto>(brand);
+            return Ok(blogDto);
         }
         [HttpPost]
         public async Task<IActionResult> CreateNewBrand([FromBody] CreateBrandRequestDto createBrandRequestDto)
@@ -84,6 +85,35 @@ namespace BE_Team7.Controllers
             if (!brandModel.Success)
                 return NotFound(brandModel);
             return Ok(brandModel);
+        }
+        [HttpPost("{brandId}/brand_avartar_images", Name = "UploadBrandAvartarImage")]
+        public async Task<IActionResult> UploadBrandAvartarImage(Guid brandId, [FromForm] List<IFormFile> fileDtos)
+        {
+            var brandExists = await _brandRepo.GetBrandById(brandId.ToString());
+            if (brandExists == null)
+            {
+                return NotFound(new { message = "Brand không tồn tại." });
+            }
+            if (fileDtos == null || !fileDtos.Any())
+            {
+                return BadRequest("No files were uploaded.");
+            }
+            var uploadBrandAvartarImages = new List<object>();
+            foreach (var fileDto in fileDtos)
+            {
+                var uploadFileResult = await _mediaService.UploadAvatarBrandImageAsync(fileDto);
+
+                if (!uploadFileResult.IsSuccess)
+                    return BadRequest(Result.Failure(HttpStatusCode.BadRequest, uploadFileResult.Errors));
+
+                var imgTuple = uploadFileResult.GetValue<(string? publicId, string? absoluteUrl)>();
+
+                var updateResult = await _brandRepo.UploadBrandAvartarImgAsync(brandId, imgTuple.publicId!, imgTuple.absoluteUrl!);
+
+                if (!updateResult.Success) return BadRequest(Result.Failure(HttpStatusCode.BadRequest, new List<ErrorsResult>()));
+
+            }
+            return Ok();
         }
     }
 }

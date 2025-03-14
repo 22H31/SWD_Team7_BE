@@ -32,8 +32,14 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<BlogImage> BlogImage { get; set; }
     public DbSet<BlogAvartarImage> BlogAvartarImage { get; set; }
     public DbSet<RerultSkinTest> RerultSkinTests { get; set; }
+    public DbSet<BrandAvartarImage> BrandAvartarImage { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.Entity<Brand>()
+       .HasMany(p => p.BrandAvartarImage)
+       .WithOne(pi => pi.Brand)
+       .HasForeignKey(pi => pi.BrandId)
+       .OnDelete(DeleteBehavior.Cascade);
         base.OnModelCreating(builder);
         builder.Entity<Blog>()
        .HasMany(p => p.BlogImage)

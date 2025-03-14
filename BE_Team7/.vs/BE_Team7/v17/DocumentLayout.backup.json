@@ -3,112 +3,32 @@
   "WorkspaceRootPath": "C:\\C#\\BE_Team7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\productvariantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productvariantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\productvariantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\productvariantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\interfaces\\repository.contracts\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iblogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\brandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\interfaces\\repository.contracts\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\ibrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\interfaces\\repository.contracts\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\user\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\user\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\user\\changerolerepositorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\user\\changerolerepositorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\user\\createuserrepositorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\user\\createuserrepositorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\account\\userforregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\account\\userforregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\user\\updateuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\user\\updateuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\interfaces\\repository.contracts\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\mappers\\productmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\dtos\\user\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\dtos\\user\\userdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|c:\\c#\\be_team7\\be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AE1249C-3F87-4C67-83F0-38F8CEBC9317}|BE_Team7\\BE_Team7.csproj|solutionrelative:be_team7\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,346 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\BrandController.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwB4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:38:52.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IBlogRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IBlogRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IBlogRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IBlogRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IBlogRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:37:57.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductVariantController.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\ProductVariantController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductVariantController.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\ProductVariantController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\ProductVariantController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCoAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:26:24.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BlogRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\BlogRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\BlogRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\BlogRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\BlogRepository.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAowAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:23:13.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IBrandRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IBrandRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IBrandRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IBrandRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IBrandRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:39:08.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductVariantRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductVariantRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\ProductVariantRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductVariantRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\ProductVariantRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:24:33.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BlogController.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\BlogController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\BlogController.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\BlogController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\BlogController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAtwEMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:38:42.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BrandRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\BrandRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\BrandRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\BrandRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\BrandRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwC0AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:39:21.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAjwIUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:43:13.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IUserRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IUserRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IUserRepository.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAWwAsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:09:53.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\UserRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\UserRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwC4AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:11:26.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CreateUserRepositoryDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\CreateUserRepositoryDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\User\\CreateUserRepositoryDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\CreateUserRepositoryDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\User\\CreateUserRepositoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T08:28:58.775Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserForRegisterDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\Account\\UserForRegisterDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Account\\UserForRegisterDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\Account\\UserForRegisterDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\Account\\UserForRegisterDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T08:29:12.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AuthRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\AuthRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\AuthRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\AuthRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\AuthRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T08:47:05.552Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserMapper.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Mappers\\UserMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\UserMapper.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Mappers\\UserMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\UserMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:08:13.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserResponseDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UserResponseDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\User\\UserResponseDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UserResponseDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\User\\UserResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:20:03.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\AppDbContext.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\AppDbContext.cs",
-              "RelativeToolTip": "BE_Team7\\AppDbContext.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAADwv1IAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:04:47.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ChangeRoleRepositoryDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\ChangeRoleRepositoryDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\User\\ChangeRoleRepositoryDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\ChangeRoleRepositoryDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\User\\ChangeRoleRepositoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T17:17:24.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AccountRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\AccountRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\AccountRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\AccountRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\AccountRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T08:47:31.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "BE_Team7\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T08:47:53.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\User.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Models\\User.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\User.cs",
-              "RelativeToolTip": "BE_Team7\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:11:17.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
               "RelativeDocumentMoniker": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
               "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
               "RelativeToolTip": "BE_Team7\\Interfaces\\Repository.Contracts\\IProductRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:09:53.987Z"
+              "WhenOpened": "2025-03-14T17:30:04.545Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UpdateUserRequestDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UpdateUserRequestDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\User\\UpdateUserRequestDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UpdateUserRequestDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\User\\UpdateUserRequestDto.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAUAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Category.cs",
+              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Category.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:06:57.54Z"
+              "WhenOpened": "2025-03-14T17:15:33.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Repository\\ProductRepository.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
-              "RelativeToolTip": "BE_Team7\\Repository\\ProductRepository.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAkwIwAAAARAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Brand.cs",
+              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Brand.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:11:27.611Z"
+              "WhenOpened": "2025-03-14T17:15:23.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Models\\Product.cs",
+              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Models\\Product.cs",
+              "RelativeToolTip": "BE_Team7\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T17:15:10.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "BE_Team7\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Controllers\\ProductController.cs",
               "RelativeToolTip": "BE_Team7\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAkwIMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwD8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:45:22.862Z"
+              "WhenOpened": "2025-03-14T17:13:05.667Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ProductMapper.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Mappers\\ProductMapper.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Mappers\\ProductMapper.cs",
-              "RelativeToolTip": "BE_Team7\\Mappers\\ProductMapper.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwC8AAABMAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "BE_Team7\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:07:59.341Z"
+              "WhenOpened": "2025-03-14T17:12:39.249Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UserDetailDto.cs",
-              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UserDetailDto.cs",
-              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\User\\UserDetailDto.cs",
-              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\User\\UserDetailDto.cs",
-              "RelativeToolTip": "BE_Team7\\Dtos\\User\\UserDetailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ProductResponseDto.cs",
+              "DocumentMoniker": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "RelativeDocumentMoniker": "BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "ToolTip": "C:\\C#\\BE_Team7\\BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "RelativeToolTip": "BE_Team7\\Dtos\\Product\\ProductResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:07:04.925Z"
+              "WhenOpened": "2025-03-14T17:09:57.227Z",
+              "EditorCaption": ""
             }
           ]
         }

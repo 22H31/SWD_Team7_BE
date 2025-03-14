@@ -286,6 +286,28 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.BrandController",
+    "Method": "UploadBrandAvartarImage",
+    "RelativePath": "api/brand/{brandId}/brand_avartar_images",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "brandId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileDtos",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UploadBrandAvartarImage"
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.CategoryController",
     "Method": "GetCategories",
     "RelativePath": "api/categories",
@@ -496,6 +518,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "UpdateProductVariant",
+    "RelativePath": "api/feedback/{feedbackId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedbackId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateFeedbackRequestDto",
+        "Type": "BE_Team7.Dtos.FeedBack.UpdateFeedbackRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "DeleteProductVariant",
+    "RelativePath": "api/feedback/{feedbackId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedbackId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.ProductController",
     "Method": "GetProducts",
     "RelativePath": "api/products",
@@ -539,7 +598,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductController",
-    "Method": "GetProductDetailById",
+    "Method": "GetProductById",
     "RelativePath": "api/products/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -633,6 +692,151 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "CreateProductImage"
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetProductsByBrand",
+    "RelativePath": "api/products/brand/{brandId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "brandId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetProductsByCategoryTitleId",
+    "RelativePath": "api/products/category-title-id/{categoryTitleId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryTitleId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetProductsByCategory",
+    "RelativePath": "api/products/category/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetRecentProducts",
+    "RelativePath": "api/products/recent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ProductController",
+    "Method": "GetTopSellingProducts",
+    "RelativePath": "api/products/top-selling",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BE_Team7.Controllers.ProductVariantController",
@@ -934,6 +1138,22 @@
       {
         "Name": "createUserRepositoryDto",
         "Type": "BE_Team7.Dtos.User.CreateUserRepositoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.UserController",
+    "Method": "ToggleLockAccount",
+    "RelativePath": "api/User/toggle-lock/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
