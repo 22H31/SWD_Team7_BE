@@ -17,24 +17,19 @@ using Microsoft.Extensions.Options;
 using BE_Team7.Interfaces.Service.Contracts;
 using GarageManagementAPI.Service;
 using BE_Team7.Interfaces;
-using BE_Team7.Repositories; // Import profile
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Thêm CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176")
-                  .AllowAnyMethod()
-                  .AllowAnyHeader()
-                  .AllowCredentials();
-        });
-});
-
-// Cấu hình Swagger
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176", "http://localhost:3002") // Thêm domain của frontend
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+});// Cấu hình Swagger
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -78,9 +73,15 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 // Cấu hình Authorization
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("RequireAlll", policy => policy.RequireRole("User", "Admin", "Staff", "StaffSale"));
     options.AddPolicy("RequireUser", policy => policy.RequireRole("User"));
     options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
     options.AddPolicy("RequireAdminOrStaff", policy => policy.RequireRole("Admin", "Staff"));
+    options.AddPolicy("RequireStaffSaleOrAdmin", policy => policy.RequireRole("StaffSale", "Admin"));
+    options.AddPolicy("RequireStaffSaleOrStaff", policy => policy.RequireRole("Staff", "StaffSale"));
+    options.AddPolicy("RequireStaff", policy => policy.RequireRole("Staff"));
+    options.AddPolicy("RequireStaffSale", policy => policy.RequireRole("StaffSale"));
+    options.AddPolicy("RequireAlllStaff", policy => policy.RequireRole( "Admin", "Staff", "StaffSale"));
 });
 
 // Cấu hình Authentication + JWT
@@ -160,13 +161,21 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+builder.Services.AddScoped<BE_Team7.Interfaces.Repository.Contracts.ICartItemRepository, BE_Team7.Repository.CartItemRepository>();
 builder.Services.AddScoped<ICategoryTitleRepository, CategoryTitleRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 builder.Services.AddScoped<IMediaService, MediaService>();
 builder.Services.AddScoped<IProductVariantRepository, ProductVariantRepository>();
-builder.Services.AddScoped<ISkinTestRepository, SkinTestRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISkinTestQuestionRepository, SkinTestQuestionRepository>();
+builder.Services.AddScoped<ISkinTestAnswersRepository, SkinTestAnswersRepository>();
+builder.Services.AddScoped<ISkinTestResultRepository, SkinTestResultRepository>();
+builder.Services.AddScoped<IVnPayService, PaymentService>();
+builder.Services.AddScoped<IPromotionRepository, PromotionRepository>();
+builder.Services.AddScoped<IVoucherRepository, VoucherRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IShippingInfoRepository, ShippingInfoRepository>();
 
 var app = builder.Build();
 
@@ -190,9 +199,8 @@ app.Use(async (context, next) =>
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
+app.UseCors("AllowAllOrigins");
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

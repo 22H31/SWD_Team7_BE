@@ -16,12 +16,7 @@ namespace BE_Team7.Mappers
             .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.AvatarImages != null && src.AvatarImages.Any() ? src.AvatarImages.First().ImageUrl : null));
             CreateMap<User, UserDetailDto>()
             .ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => src.AvatarImages != null && src.AvatarImages.Any() ? src.AvatarImages.First().ImageUrl : null))
-            .ForMember(dest => dest.SkinType, opt => opt.MapFrom(src =>
-                src.RerultSkinTest
-                    .OrderByDescending(test => test.RerultCreateAt) 
-                    .Select(test => test.SkinType)
-                    .FirstOrDefault()
-            ));
+            .ForMember(dest => dest.SkinType, opt => opt.MapFrom(src => src.RerultSkinTest != null && src.RerultSkinTest.Any() ? src.RerultSkinTest.First().SkinType : null));
            CreateMap<UpdateUserRequestDto, User>()
            .ForMember(dest => dest.Id, opt => opt.Ignore());
         }

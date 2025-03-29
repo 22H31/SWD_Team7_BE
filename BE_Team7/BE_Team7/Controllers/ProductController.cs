@@ -10,6 +10,7 @@ using GarageManagementAPI.Shared.ResultModel;
 using BE_Team7.Shared.ErrorModel;
 using System.Text.Json;
 using BE_Team7.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BE_Team7.Controllers
 {
@@ -34,7 +35,7 @@ namespace BE_Team7.Controllers
         //[Authorize(Policy = "RequireUser")]
         //[HttpGet]
 
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetProducts([FromQuery] ProductQuery query)
         {
@@ -71,40 +72,42 @@ namespace BE_Team7.Controllers
                 Items = productDtos
             });
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("category-title-id/{categoryTitleId}")]
         public async Task<IActionResult> GetProductsByCategoryTitleId(Guid categoryTitleId, [FromQuery] ProductQuery query)
         {
             var pagedResult = await _productRepo.GetProductsByCategoryTitleIdAsync(categoryTitleId, query);
             return Ok(MapPagedResult(pagedResult, query));
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategory(Guid categoryId, [FromQuery] ProductQuery query)
         {
             var pagedResult = await _productRepo.GetProductsByCategoryAsync(categoryId, query);
             return Ok(MapPagedResult(pagedResult, query));
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("brand/{brandId}")]
         public async Task<IActionResult> GetProductsByBrand(Guid brandId, [FromQuery] ProductQuery query)
         {
             var pagedResult = await _productRepo.GetProductsByBrandAsync(brandId, query);
             return Ok(MapPagedResult(pagedResult, query));
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("recent")]
         public async Task<IActionResult> GetRecentProducts([FromQuery] ProductQuery query)
         {
             var pagedResult = await _productRepo.GetRecentProductsAsync(query);
             return Ok(MapPagedResult(pagedResult, query));
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("top-selling")]
         public async Task<IActionResult> GetTopSellingProducts([FromQuery] ProductQuery query)
         {
             var pagedResult = await _productRepo.GetTopSellingProductsAsync(query);
             return Ok(MapPagedResult(pagedResult, query));
         }
-
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         //[Authorize(Policy = "RequireAdmin")]
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductRequestDto createProductRequestDto)
@@ -149,6 +152,7 @@ namespace BE_Team7.Controllers
             // Trả về ProductId cho FE
             return Ok(new { productId = product.ProductId });
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{productId}")]
         public async Task<IActionResult> GetProductById(Guid productId)
         {
@@ -161,6 +165,7 @@ namespace BE_Team7.Controllers
 
             return Ok(product);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPut]
         [Route("{productId:Guid}")]
         public async Task<IActionResult> Update([FromRoute] Guid productId, [FromBody] UpdateProductRequestDto updateDto)
@@ -176,6 +181,7 @@ namespace BE_Team7.Controllers
                 return NotFound(productModel);
             return Ok(productModel);
         }
+        //[Authorize(Policy = "RequireAlllStaff")]
         [HttpDelete]
         [Route("{productId:Guid}")]
         public async Task<IActionResult> Delete([FromRoute] Guid productId)
@@ -192,6 +198,7 @@ namespace BE_Team7.Controllers
                 return NotFound(productModel);
             return Ok(productModel);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost("{productId:guid}/product_images", Name = "CreateProductImage")]
         public async Task<IActionResult> CreateProductImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
         {
@@ -221,6 +228,7 @@ namespace BE_Team7.Controllers
             }
             return Ok();
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost("{productId:guid}/product_avartar_images", Name = "CreateProductAvartarImage")]
         public async Task<IActionResult> CreateProductAvartarImage(Guid productId, [FromForm] List<IFormFile> fileDtos)
         {

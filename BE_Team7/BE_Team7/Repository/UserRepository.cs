@@ -82,11 +82,34 @@ public class UserRepository : IUserRepository
     public async Task<UserDetailDto?> GetUserByIdAsync(string id)
     {
         var user = await _userManager.Users
-            .Include(u => u.AvatarImages)
-            .Include(u => u.RerultSkinTest)
-            .FirstOrDefaultAsync(u => u.Id == id);
+        .Include(u => u.AvatarImages)
+        .Include(u => u.RerultSkinTest)
+        .FirstOrDefaultAsync(u => u.Id == id);
 
-        return user == null ? null : _mapper.Map<UserDetailDto>(user);
+        if (user == null) return null;
+
+        // Lấy avatar mới nhất (nếu có)
+        var latestAvatar = user.AvatarImages?
+            .OrderByDescending(img => img.AvatarImageCreatedAt)
+            .FirstOrDefault()?.ImageUrl;
+
+        // Lấy kiểu da mới nhất (nếu có)
+        var latestSkinType = user.RerultSkinTest?
+            .OrderByDescending(test => test.RerultCreateAt)
+            .FirstOrDefault()?.SkinType;
+
+        // Trả về DTO với giá trị đã xử lý
+        return new UserDetailDto
+        {
+            Avatar = latestAvatar,
+            Name = user.Name,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+            SkinType = latestSkinType,
+            Address = user.Address,
+            DateOfBirth = user.DateOfBirth,
+            CreatedAt = user.CreatedAt
+        };
     }
 
     public async Task<ApiResponse<User>> UpdateUserById(Guid id, UpdateUserRequestDto updateUserRequestDto)

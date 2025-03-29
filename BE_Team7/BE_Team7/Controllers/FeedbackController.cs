@@ -3,6 +3,7 @@ using BE_Team7.Dtos.FeedBack;
 using BE_Team7.Dtos.ProductVariant;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BE_Team7.Controllers
@@ -20,6 +21,7 @@ namespace BE_Team7.Controllers
             _context = context;
             _mapper = mapper;
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetAllBrand()
         {
@@ -27,6 +29,7 @@ namespace BE_Team7.Controllers
             var feedbackDto = _mapper.Map<List<FeedbackDto>>(feedbacks);
             return Ok(feedbacks);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpPost]
         public async Task<IActionResult> CreateNewFeedback([FromBody] CreateFeebackRequestDto createFeebackRequestDto)
         {
@@ -36,13 +39,13 @@ namespace BE_Team7.Controllers
 
             return CreatedAtAction(nameof(GetFeedbackById), new { id = feedbackModel.FeedbackId }, _mapper.Map<FeedbackDto>(feedbackModel));
         }
-
-        [HttpGet("{feedbackId:Guid}")]
-        public async Task<IActionResult> GetFeedbackById([FromRoute] Guid feedbackId)
+        //[Authorize(Policy = "RequireAlll")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetFeedbackById([FromRoute] Guid id)
         {
             try
             {
-                var feedback = await _feedbackRepo.GetFeedbackById(feedbackId);
+                var feedback = await _feedbackRepo.GetFeedbackById(id);
                 if (feedback == null)
                 {
                     return NotFound();
@@ -55,6 +58,7 @@ namespace BE_Team7.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpPut]
         [Route("{feedbackId:Guid}")]
         public async Task<IActionResult> UpdateProductVariant([FromRoute] Guid feedbackId, [FromBody] UpdateFeedbackRequestDto updateFeedbackRequestDto)
@@ -71,6 +75,7 @@ namespace BE_Team7.Controllers
                 return NotFound(feedbackModel);
             return Ok(feedbackModel);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpDelete("{feedbackId:Guid}")]
         public async Task<IActionResult> DeleteProductVariant([FromRoute] Guid feedbackId)
         {

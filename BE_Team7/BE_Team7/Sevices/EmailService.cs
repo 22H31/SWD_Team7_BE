@@ -54,7 +54,6 @@ namespace api.Services
             }
             catch (Exception ex)
             {
-                // Log or handle the exception accordingly
                 throw new Exception("An error occurred while sending the email.", ex);
             }
         }

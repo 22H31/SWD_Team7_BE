@@ -308,6 +308,91 @@
     "EndpointName": "UploadBrandAvartarImage"
   },
   {
+    "ContainingType": "BE_Team7.Controllers.CartItemController",
+    "Method": "DeleteCartItem",
+    "RelativePath": "api/cartitem/{cartItemId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItemId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CartItemController",
+    "Method": "AddCartItem",
+    "RelativePath": "api/cartitem/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCartItemDto",
+        "Type": "BE_Team7.Dtos.CartItem.CreateCartItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CartItemController",
+    "Method": "DeletemoreCartItems",
+    "RelativePath": "api/cartitem/bulk-delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItemIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CartItemController",
+    "Method": "UpdateCartItem",
+    "RelativePath": "api/cartitem/update-cartitem/{cartItemId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItemId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateCartItemDto",
+        "Type": "UpdateCartItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.CartItemController",
+    "Method": "GetCartItemsByUser",
+    "RelativePath": "api/cartitem/user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BE_Team7.Controllers.CategoryController",
     "Method": "GetCategories",
     "RelativePath": "api/categories",
@@ -503,22 +588,6 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.FeedbackController",
-    "Method": "GetFeedbackById",
-    "RelativePath": "api/feedback/{feedbackId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "feedbackId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BE_Team7.Controllers.FeedbackController",
     "Method": "UpdateProductVariant",
     "RelativePath": "api/feedback/{feedbackId}",
     "HttpMethod": "PUT",
@@ -552,6 +621,326 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.FeedbackController",
+    "Method": "GetFeedbackById",
+    "RelativePath": "api/feedback/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/order/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "DeleteOrder",
+    "RelativePath": "api/order/{orderId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/order/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BE_Team7.Dtos.Order.CreateOrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "ComfirmPrepar",
+    "RelativePath": "api/order/manage/{orderId}/comfirmPrepar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "CreateRefund",
+    "RelativePath": "api/order/manage/{orderId}/comfirmRefuning",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.Refund.CreateRefundDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[BE_Team7.Dtos.Refund.RefundResponseDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "ComfirmShip",
+    "RelativePath": "api/order/manage/{orderId}/comfirmShip",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "GetOrdersByOrderRefundStatus",
+    "RelativePath": "api/order/manage/OrderRefundStatus/{status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[System.Collections.Generic.List\u00601[[BE_Team7.Dtos.Order.ManageOrderDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "GetOrdersByStatus",
+    "RelativePath": "api/order/manage/status/{status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[System.Collections.Generic.List\u00601[[BE_Team7.Dtos.Order.ManageOrderDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "UpdateCustomerRefundInfo",
+    "RelativePath": "api/order/update-customer-info",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateDto",
+        "Type": "BE_Team7.Dtos.Order.CustomerRefundUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "UpdateShippingInfoId",
+    "RelativePath": "api/order/update-shipping-info/{orderId}/{shippingInfoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "shippingInfoId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "UpdateVoucherAndPromotion",
+    "RelativePath": "api/order/update-voucher-promotion/{orderId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.Order.UpdateVoucherAndPromotionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "GetOrdersByUserId",
+    "RelativePath": "api/order/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.OrderController",
+    "Method": "GetOrdersByStatus",
+    "RelativePath": "api/order/user/{userId}/status/{status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.PaymentController",
+    "Method": "PayOrder",
+    "RelativePath": "api/payment/{orderId}/pay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.PaymentController",
+    "Method": "PaymentCallbackVnPay",
+    "RelativePath": "api/payment/vnPay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -918,16 +1307,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BE_Team7.Controllers.SkinTestController",
-    "Method": "GetAllQuestions",
-    "RelativePath": "api/SkinTest/questions",
+    "ContainingType": "BE_Team7.Controllers.PromotionController",
+    "Method": "GetAllPromotions",
+    "RelativePath": "api/promotion/all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BE_Team7.Models.SkinTest, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ApiResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[BE_Team7.Models.Promotion, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -938,22 +1327,22 @@
     ]
   },
   {
-    "ContainingType": "BE_Team7.Controllers.SkinTestController",
-    "Method": "AddQuestion",
-    "RelativePath": "api/SkinTest/questions",
+    "ContainingType": "BE_Team7.Controllers.PromotionController",
+    "Method": "ApplyPromotion",
+    "RelativePath": "api/promotion/apply",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "questionDto",
-        "Type": "BE_Team7.DTOs.SkinTestQuestionDto",
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.Promotion.ApplyPromotionDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BE_Team7.Models.SkinTest",
+        "Type": "ApiResponse\u00601[[BE_Team7.Dtos.Promotion.PromotionResponseDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -964,22 +1353,48 @@
     ]
   },
   {
-    "ContainingType": "BE_Team7.Controllers.SkinTestController",
-    "Method": "GetQuestionById",
-    "RelativePath": "api/SkinTest/questions/{id}",
-    "HttpMethod": "GET",
+    "ContainingType": "BE_Team7.Controllers.PromotionController",
+    "Method": "CreatePromotion",
+    "RelativePath": "api/promotion/create",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.Promotion.CreatePromotionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[BE_Team7.Models.Promotion, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.PromotionController",
+    "Method": "DeletePromotion",
+    "RelativePath": "api/promotion/delete/{promotionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "promotionId",
         "Type": "System.Guid",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BE_Team7.Models.SkinTest",
+        "Type": "ApiResponse\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -990,40 +1405,346 @@
     ]
   },
   {
-    "ContainingType": "BE_Team7.Controllers.SkinTestController",
-    "Method": "UpdateQuestion",
-    "RelativePath": "api/SkinTest/questions/{id}",
+    "ContainingType": "BE_Team7.Controllers.PromotionController",
+    "Method": "UpdatePromotion",
+    "RelativePath": "api/promotion/update/{promotionId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "promotionId",
         "Type": "System.Guid",
         "IsRequired": true
       },
       {
-        "Name": "questionDto",
-        "Type": "BE_Team7.DTOs.SkinTestQuestionDto",
+        "Name": "promotion",
+        "Type": "BE_Team7.Models.Promotion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiResponse\u00601[[BE_Team7.Models.Promotion, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "CreateShippingInfo",
+    "RelativePath": "api/shippingInfo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shippingInfoDto",
+        "Type": "BE_Team7.Dtos.ShippingInfo.ShippingInfoDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BE_Team7.Controllers.SkinTestController",
-    "Method": "DeleteQuestion",
-    "RelativePath": "api/SkinTest/questions/{id}",
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "UpdateShippingInfo",
+    "RelativePath": "api/shippingInfo/{shippingInfoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shippingInfoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "shippingInfoDto",
+        "Type": "BE_Team7.Dtos.ShippingInfo.UpdateShippingInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "DeleteShippingInfo",
+    "RelativePath": "api/shippingInfo/{shippingInfoId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "shippingInfoId",
         "Type": "System.Guid",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "GetShippingInfo",
+    "RelativePath": "api/shippingInfo/{shippingInfoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shippingInfoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "UpdateDefaultAddress",
+    "RelativePath": "api/shippingInfo/default/{id}/{shippingInfoId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "shippingInfoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.ShippingInfoController",
+    "Method": "GetShippingInfosByUserId",
+    "RelativePath": "api/shippingInfo/user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestResultController",
+    "Method": "GetSkinTestResults",
+    "RelativePath": "api/Skin_Test_Result/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BE_Team7.Dtos.SkinTestResult.SkinTestResultResponseWrapperDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestResultController",
+    "Method": "CreateSkinTestResult",
+    "RelativePath": "api/Skin_Test_Result/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.SkinTestResult.CreateSkinTestResultDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestResultController",
+    "Method": "GetLatestSkinTestResult",
+    "RelativePath": "api/Skin_Test_Result/latest/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestAnswersController",
+    "Method": "CreateSkinTestAnswer",
+    "RelativePath": "api/skintest-Answers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BE_Team7.Dtos.SkinTestAnswers.CreateSkinTestAnswersDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestAnswersController",
+    "Method": "GetSkinTestAnswerById",
+    "RelativePath": "api/skintest-Answers/{answerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "answerId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestAnswersController",
+    "Method": "UpdateCatregoryTitle",
+    "RelativePath": "api/skintest-Answers/{answerId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "answerId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateSkinTestAnswersDto",
+        "Type": "BE_Team7.Dtos.SkinTestAnswers.UpdateSkinTestAnswersDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestAnswersController",
+    "Method": "DeleteSkinTestQuestion",
+    "RelativePath": "api/skintest-Answers/{answerId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "answerId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestQuestionController",
+    "Method": "CreateNewSkinTestQuestion",
+    "RelativePath": "api/skintest-question",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createSkinTestQuestionRequestDto",
+        "Type": "BE_Team7.Dtos.SkinTestQuestion.CreateSkinTestQuestionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestQuestionController",
+    "Method": "GetSkinTestQuestionById",
+    "RelativePath": "api/skintest-question/{questionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestQuestionController",
+    "Method": "UpdateCatregoryTitle",
+    "RelativePath": "api/skintest-question/{questionId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateSkinTestQuestionRequestDto",
+        "Type": "BE_Team7.Dtos.SkinTestQuestion.UpdateSkinTestQuestionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestQuestionController",
+    "Method": "DeleteSkinTestQuestion",
+    "RelativePath": "api/skintest-question/{questionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "questionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.SkinTestQuestionController",
+    "Method": "GetQuestionsWithAnswers",
+    "RelativePath": "api/skintest-question/questions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -1075,7 +1796,7 @@
   },
   {
     "ContainingType": "BE_Team7.Controllers.UserController",
-    "Method": "DeleteProductVariant",
+    "Method": "DeleteAcountVariant",
     "RelativePath": "api/User/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -1158,5 +1879,166 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "GetAllVouchers",
+    "RelativePath": "api/voucher",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BE_Team7.Dtos.Voucher.VoucherDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "CreateVoucher",
+    "RelativePath": "api/voucher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createVoucherDto",
+        "Type": "BE_Team7.Dtos.Voucher.CreateVoucherDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BE_Team7.Dtos.Voucher.VoucherDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "GetVoucher",
+    "RelativePath": "api/voucher/{voucherId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voucherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BE_Team7.Dtos.Voucher.VoucherDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "UpdateVoucher",
+    "RelativePath": "api/voucher/{voucherId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voucherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateVoucherDto",
+        "Type": "BE_Team7.Dtos.Voucher.UpdateVoucherDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "DeleteVoucher",
+    "RelativePath": "api/voucher/{voucherId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voucherId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "ApplyVoucher",
+    "RelativePath": "api/voucher/ApplyVoucher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voucherId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BE_Team7.Dtos.Voucher.ApplyVoucherResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BE_Team7.Controllers.VoucherController",
+    "Method": "GetVouchersByProductIds",
+    "RelativePath": "api/voucher/GetVouchersByProductIds",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productIdsRequest",
+        "Type": "BE_Team7.Dtos.Voucher.ProductIdsRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BE_Team7.Dtos.Voucher.VoucherResponseDto, BE_Team7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

@@ -180,48 +180,30 @@ namespace BE_Team7.Migrations
                     b.ToTable("BrandAvartarImage");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Cart", b =>
-                {
-                    b.Property<Guid>("CartId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("CartId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Cart");
-                });
-
             modelBuilder.Entity("BE_Team7.Models.CartItem", b =>
                 {
-                    b.Property<Guid>("CartId")
+                    b.Property<Guid>("CartItemId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CartId1")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("CartItemCreateAt")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("CartItemId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("CartId");
+                    b.Property<Guid>("VariantId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasIndex("CartId1");
+                    b.HasKey("CartItemId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("Id");
+
+                    b.HasIndex("VariantId");
 
                     b.ToTable("CartItem");
                 });
@@ -303,6 +285,9 @@ namespace BE_Team7.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("FinalAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
@@ -317,7 +302,16 @@ namespace BE_Team7.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PromotionId")
+                    b.Property<decimal>("PromotionFee")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("PromotionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ShippingFee")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("ShippingInfoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("TotalAmount")
@@ -326,11 +320,21 @@ namespace BE_Team7.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<decimal>("VoucherFee")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("VoucherId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("OrderId");
 
                     b.HasIndex("PromotionId");
 
+                    b.HasIndex("ShippingInfoId");
+
                     b.HasIndex("UserId");
+
+                    b.HasIndex("VoucherId");
 
                     b.ToTable("Order");
                 });
@@ -341,49 +345,135 @@ namespace BE_Team7.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("OrderDetailCreateAt")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid?>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<Guid>("VariantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("OrderDetailId");
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("VariantId");
 
                     b.ToTable("OrderDetail");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Payment", b =>
+            modelBuilder.Entity("BE_Team7.Models.OrderRefund", b =>
                 {
-                    b.Property<Guid>("PaymentId")
+                    b.Property<Guid>("RefundId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("AccountHolderName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BankAccountNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BankName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<Guid?>("OrderId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OrderRefundStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ProcessedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("RefundId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("OrderId1")
+                        .IsUnique()
+                        .HasFilter("[OrderId1] IS NOT NULL");
+
+                    b.ToTable("orderRefunds");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.PaymentInformation", b =>
+                {
+                    b.Property<string>("OrderType")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OrderType");
+
+                    b.ToTable("PaymentInformation");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Payments", b =>
+                {
+                    b.Property<Guid?>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OrderDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OrderId1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Success")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TransactionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VnPayResponseCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PaymentId");
 
                     b.HasIndex("OrderId");
+
+                    b.HasIndex("OrderId1");
 
                     b.ToTable("Payment");
                 });
@@ -481,9 +571,8 @@ namespace BE_Team7.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("DiscountRate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("DiscountRate")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("PromotionCode")
                         .IsRequired()
@@ -503,53 +592,67 @@ namespace BE_Team7.Migrations
                     b.Property<DateTime>("PromotionStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PromotionType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("PromotionId");
 
                     b.ToTable("Promotion");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.RerultSkinTest", b =>
+            modelBuilder.Entity("BE_Team7.Models.ShippingInfo", b =>
                 {
-                    b.Property<Guid>("RerultId")
+                    b.Property<Guid>("ShippingInfoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("RerultCreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("SkinType")
+                    b.Property<string>("AddressDetail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TotalSkinCombinationScore")
-                        .HasColumnType("float");
+                    b.Property<string>("AddressType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TotalSkinDryScore")
-                        .HasColumnType("float");
+                    b.Property<string>("Commune")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TotalSkinNormalScore")
-                        .HasColumnType("float");
+                    b.Property<bool>("DefaultAddress")
+                        .HasColumnType("bit");
 
-                    b.Property<double>("TotalSkinOilyScore")
-                        .HasColumnType("float");
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TotalSkinSensitiveScore")
-                        .HasColumnType("float");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("RerultId");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("UserId");
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("RerultSkinTests");
+                    b.Property<DateTime?>("ShippingInfoCreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ShippingNote")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingPhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShippingInfoId");
+
+                    b.HasIndex("Id");
+
+                    b.ToTable("ShippingInfo");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.SkinCareRoutine", b =>
@@ -595,27 +698,46 @@ namespace BE_Team7.Migrations
                     b.ToTable("SkinCareRoutine");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.SkinTest", b =>
+            modelBuilder.Entity("BE_Team7.Models.SkinTestAnswers", b =>
+                {
+                    b.Property<Guid>("AnswerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AnswerDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("QuestionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SkinCombinationScore")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkinDryScore")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkinNormalScore")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkinOilyScore")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkinSensitiveScore")
+                        .HasColumnType("int");
+
+                    b.HasKey("AnswerId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("SkinTestAnswers");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.SkinTestQuestion", b =>
                 {
                     b.Property<Guid>("QuestionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("OptionA")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OptionB")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OptionC")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OptionD")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("QuestionDetail")
                         .IsRequired()
@@ -623,7 +745,44 @@ namespace BE_Team7.Migrations
 
                     b.HasKey("QuestionId");
 
-                    b.ToTable("SkinTest");
+                    b.ToTable("SkinTestQuestions");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.SkinTestRerult", b =>
+                {
+                    b.Property<Guid>("RerultId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("RerultCreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SkinType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TotalSkinCombinationScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinDryScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinNormalScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinOilyScore")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TotalSkinSensitiveScore")
+                        .HasColumnType("float");
+
+                    b.HasKey("RerultId");
+
+                    b.HasIndex("Id");
+
+                    b.ToTable("RerultSkinTests");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.SuggestProducts", b =>
@@ -648,6 +807,47 @@ namespace BE_Team7.Migrations
                     b.HasIndex("SkinCareRoutineRoutineId");
 
                     b.ToTable("SuggestProducts");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Voucher", b =>
+                {
+                    b.Property<Guid>("VoucherId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BrandId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("VoucherDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("VoucherEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("VoucherName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VoucherQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("VoucherRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("VoucherStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("VoucherId");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Voucher");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -679,25 +879,25 @@ namespace BE_Team7.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "dc153b60-5932-444a-b70d-9e03ea235817",
+                            Id = "30bee3a6-fdd6-4d16-a933-2b24203c59f0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "04011ca5-ee99-400b-90e1-2bc0ab49fb43",
+                            Id = "1b3dd6e3-20f8-402c-9bf1-f6cb8f5ac1a1",
                             Name = "StaffSale",
                             NormalizedName = "STAFFSALE"
                         },
                         new
                         {
-                            Id = "a3162081-fdb1-4818-b6d5-e8088943d624",
+                            Id = "262ba915-8dbc-4332-85e5-b46ccaa38c00",
                             Name = "Staff",
                             NormalizedName = "STAFF"
                         },
                         new
                         {
-                            Id = "af0de568-05ec-45a0-8e92-2e1fd25fa56f",
+                            Id = "37d030a6-660d-44bb-ba27-5953649214bc",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -981,32 +1181,23 @@ namespace BE_Team7.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Cart", b =>
+            modelBuilder.Entity("BE_Team7.Models.CartItem", b =>
                 {
                     b.HasOne("User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BE_Team7.Models.ProductVariant", "ProductVariant")
+                        .WithMany()
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductVariant");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BE_Team7.Models.CartItem", b =>
-                {
-                    b.HasOne("BE_Team7.Models.Cart", "Cart")
-                        .WithMany()
-                        .HasForeignKey("CartId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cart");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.Category", b =>
@@ -1043,45 +1234,71 @@ namespace BE_Team7.Migrations
                 {
                     b.HasOne("BE_Team7.Models.Promotion", "Promotion")
                         .WithMany()
-                        .HasForeignKey("PromotionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PromotionId");
+
+                    b.HasOne("BE_Team7.Models.ShippingInfo", "ShippingInfo")
+                        .WithMany()
+                        .HasForeignKey("ShippingInfoId");
 
                     b.HasOne("User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.HasOne("BE_Team7.Models.Voucher", "Voucher")
+                        .WithMany()
+                        .HasForeignKey("VoucherId");
+
                     b.Navigation("Promotion");
 
+                    b.Navigation("ShippingInfo");
+
                     b.Navigation("User");
+
+                    b.Navigation("Voucher");
                 });
 
             modelBuilder.Entity("BE_Team7.Models.OrderDetail", b =>
                 {
                     b.HasOne("BE_Team7.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId");
 
-                    b.HasOne("Product", "Product")
+                    b.HasOne("BE_Team7.Models.ProductVariant", "ProductVariant")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("VariantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Order");
 
-                    b.Navigation("Product");
+                    b.Navigation("ProductVariant");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.Payment", b =>
+            modelBuilder.Entity("BE_Team7.Models.OrderRefund", b =>
                 {
                     b.HasOne("BE_Team7.Models.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BE_Team7.Models.Order", null)
+                        .WithOne("RefundInfo")
+                        .HasForeignKey("BE_Team7.Models.OrderRefund", "OrderId1");
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Payments", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("BE_Team7.Models.Order", null)
+                        .WithMany("Payments")
+                        .HasForeignKey("OrderId1");
 
                     b.Navigation("Order");
                 });
@@ -1119,11 +1336,11 @@ namespace BE_Team7.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BE_Team7.Models.RerultSkinTest", b =>
+            modelBuilder.Entity("BE_Team7.Models.ShippingInfo", b =>
                 {
                     b.HasOne("User", "User")
-                        .WithMany("RerultSkinTest")
-                        .HasForeignKey("UserId");
+                        .WithMany()
+                        .HasForeignKey("Id");
 
                     b.Navigation("User");
                 });
@@ -1133,6 +1350,26 @@ namespace BE_Team7.Migrations
                     b.HasOne("User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.SkinTestAnswers", b =>
+                {
+                    b.HasOne("BE_Team7.Models.SkinTestQuestion", "SkinTestQuestion")
+                        .WithMany()
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SkinTestQuestion");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.SkinTestRerult", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("RerultSkinTest")
+                        .HasForeignKey("Id");
 
                     b.Navigation("User");
                 });
@@ -1154,6 +1391,21 @@ namespace BE_Team7.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("SkinCareRoutine");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Voucher", b =>
+                {
+                    b.HasOne("BE_Team7.Models.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId");
+
+                    b.HasOne("BE_Team7.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1241,6 +1493,15 @@ namespace BE_Team7.Migrations
             modelBuilder.Entity("BE_Team7.Models.CategoryTitle", b =>
                 {
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BE_Team7.Models.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+
+                    b.Navigation("Payments");
+
+                    b.Navigation("RefundInfo");
                 });
 
             modelBuilder.Entity("Product", b =>

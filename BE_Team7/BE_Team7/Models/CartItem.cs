@@ -7,11 +7,16 @@ namespace BE_Team7.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid CartId { get; set; }
-        public Guid ProductId { get; set; }
-        public int CartItemId { get; set; }
-        public virtual Cart Cart { get; set; } = null!;
-        public virtual Product Product { get; set; } = null!;
+        public Guid CartItemId { get; set; }
+
+        [ForeignKey("User")]
+        public required string Id { get; set; }  
+        public virtual User User { get; set; } = null!;
+
+        [ForeignKey("ProductVariant")]
+        public required Guid VariantId { get; set; }
+        public virtual ProductVariant ProductVariant { get; set; } = null!;
         public int Quantity { get; set; }
+        public DateTime CartItemCreateAt { get; set; }
     }
 }

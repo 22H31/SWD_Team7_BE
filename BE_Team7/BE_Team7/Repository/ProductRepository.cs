@@ -129,7 +129,8 @@ namespace BE_Team7.Repository
             if (product == null) return null;
 
             var productDto = new ProductDetailDto
-            {
+            { 
+                CategoryId = product.CategoryId,
                 SoldQuantity = product.SoldQuantity,
                 ProductId = product.ProductId,
                 ProductName = product.ProductName,

@@ -583,6 +583,186 @@
         }
       }
     },
+    "/api/cartitem/add": {
+      "post": {
+        "tags": [
+          "CartItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCartItemDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCartItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCartItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCartItemDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cartitem/update-cartitem/{cartItemId}": {
+      "put": {
+        "tags": [
+          "CartItem"
+        ],
+        "parameters": [
+          {
+            "name": "cartItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCartItemDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCartItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCartItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCartItemDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cartitem/user/{id}": {
+      "get": {
+        "tags": [
+          "CartItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cartitem/{cartItemId}": {
+      "delete": {
+        "tags": [
+          "CartItem"
+        ],
+        "parameters": [
+          {
+            "name": "cartItemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cartitem/bulk-delete": {
+      "delete": {
+        "tags": [
+          "CartItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/categories": {
       "get": {
         "tags": [
@@ -911,14 +1091,14 @@
         }
       }
     },
-    "/api/feedback/{feedbackId}": {
+    "/api/feedback/{id}": {
       "get": {
         "tags": [
           "Feedback"
         ],
         "parameters": [
           {
-            "name": "feedbackId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -932,7 +1112,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/feedback/{feedbackId}": {
       "put": {
         "tags": [
           "Feedback"
@@ -985,6 +1167,512 @@
         "parameters": [
           {
             "name": "feedbackId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/create": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/user/{userId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/update-shipping-info/{orderId}/{shippingInfoId}": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "shippingInfoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/update-voucher-promotion/{orderId}": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherAndPromotionDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherAndPromotionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherAndPromotionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherAndPromotionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/user/{userId}/status/{status}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/order/manage/status/{status}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/order/manage/{orderId}/comfirmPrepar": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/order/manage/{orderId}/comfirmShip": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/order/manage/{orderId}/comfirmRefuning": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRefundDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRefundDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRefundDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRefundDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefundResponseDtoApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefundResponseDtoApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefundResponseDtoApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/order/manage/OrderRefundStatus/{status}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManageOrderDtoListApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/order/update-customer-info": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRefundUpdateDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRefundUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRefundUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRefundUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/payment/vnPay": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/payment/{orderId}/pay": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1600,10 +2288,10 @@
         }
       }
     },
-    "/api/SkinTest/questions": {
+    "/api/promotion/all": {
       "get": {
         "tags": [
-          "SkinTest"
+          "Promotion"
         ],
         "responses": {
           "200": {
@@ -1611,56 +2299,49 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SkinTest"
-                  }
+                  "$ref": "#/components/schemas/PromotionIEnumerableApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SkinTest"
-                  }
+                  "$ref": "#/components/schemas/PromotionIEnumerableApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SkinTest"
-                  }
+                  "$ref": "#/components/schemas/PromotionIEnumerableApiResponse"
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/promotion/create": {
       "post": {
         "tags": [
-          "SkinTest"
+          "Promotion"
         ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/CreatePromotionDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/CreatePromotionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/CreatePromotionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/CreatePromotionDto"
               }
             }
           }
@@ -1671,17 +2352,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/PromotionApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/PromotionApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/PromotionApiResponse"
                 }
               }
             }
@@ -1689,14 +2370,14 @@
         }
       }
     },
-    "/api/SkinTest/questions/{id}": {
-      "get": {
+    "/api/promotion/delete/{promotionId}": {
+      "delete": {
         "tags": [
-          "SkinTest"
+          "Promotion"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "promotionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1711,30 +2392,32 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/StringApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/StringApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SkinTest"
+                  "$ref": "#/components/schemas/StringApiResponse"
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/promotion/update/{promotionId}": {
       "put": {
         "tags": [
-          "SkinTest"
+          "Promotion"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "promotionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1747,22 +2430,175 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/Promotion"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/Promotion"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/Promotion"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SkinTestQuestionDto"
+                "$ref": "#/components/schemas/Promotion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/promotion/apply": {
+      "post": {
+        "tags": [
+          "Promotion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromotionDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromotionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromotionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyPromotionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResponseDtoApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResponseDtoApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromotionResponseDtoApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/shippingInfo": {
+      "post": {
+        "tags": [
+          "ShippingInfo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShippingInfoDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShippingInfoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShippingInfoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShippingInfoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/shippingInfo/{shippingInfoId}": {
+      "put": {
+        "tags": [
+          "ShippingInfo"
+        ],
+        "parameters": [
+          {
+            "name": "shippingInfoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateShippingInfoDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateShippingInfoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateShippingInfoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateShippingInfoDto"
               }
             }
           }
@@ -1775,11 +2611,11 @@
       },
       "delete": {
         "tags": [
-          "SkinTest"
+          "ShippingInfo"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "shippingInfoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1791,6 +2627,439 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ShippingInfo"
+        ],
+        "parameters": [
+          {
+            "name": "shippingInfoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/shippingInfo/user/{id}": {
+      "get": {
+        "tags": [
+          "ShippingInfo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/shippingInfo/default/{id}/{shippingInfoId}": {
+      "put": {
+        "tags": [
+          "ShippingInfo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "shippingInfoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/skintest-Answers/{answerId}": {
+      "get": {
+        "tags": [
+          "SkinTestAnswers"
+        ],
+        "parameters": [
+          {
+            "name": "answerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SkinTestAnswers"
+        ],
+        "parameters": [
+          {
+            "name": "answerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestAnswersDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestAnswersDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestAnswersDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestAnswersDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SkinTestAnswers"
+        ],
+        "parameters": [
+          {
+            "name": "answerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/skintest-Answers": {
+      "post": {
+        "tags": [
+          "SkinTestAnswers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestAnswersDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestAnswersDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestAnswersDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestAnswersDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/skintest-question/questions": {
+      "get": {
+        "tags": [
+          "SkinTestQuestion"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/skintest-question/{questionId}": {
+      "get": {
+        "tags": [
+          "SkinTestQuestion"
+        ],
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SkinTestQuestion"
+        ],
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestQuestionDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestQuestionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestQuestionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSkinTestQuestionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SkinTestQuestion"
+        ],
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/skintest-question": {
+      "post": {
+        "tags": [
+          "SkinTestQuestion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestQuestionDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestQuestionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestQuestionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestQuestionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Skin_Test_Result/create": {
+      "post": {
+        "tags": [
+          "SkinTestResult"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestResultDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestResultDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestResultDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSkinTestResultDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Skin_Test_Result/latest/{id}": {
+      "get": {
+        "tags": [
+          "SkinTestResult"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Skin_Test_Result/{id}": {
+      "get": {
+        "tags": [
+          "SkinTestResult"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkinTestResultResponseWrapperDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkinTestResultResponseWrapperDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkinTestResultResponseWrapperDto"
+                }
+              }
+            }
           }
         }
       }
@@ -2034,10 +3303,348 @@
           }
         }
       }
+    },
+    "/api/voucher": {
+      "get": {
+        "tags": [
+          "Voucher"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Voucher"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVoucherDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVoucherDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVoucherDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateVoucherDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/voucher/{voucherId}": {
+      "get": {
+        "tags": [
+          "Voucher"
+        ],
+        "parameters": [
+          {
+            "name": "voucherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoucherDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Voucher"
+        ],
+        "parameters": [
+          {
+            "name": "voucherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVoucherDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Voucher"
+        ],
+        "parameters": [
+          {
+            "name": "voucherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/voucher/GetVouchersByProductIds": {
+      "post": {
+        "tags": [
+          "Voucher"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductIdsRequestDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductIdsRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductIdsRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductIdsRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VoucherResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/voucher/ApplyVoucher": {
+      "post": {
+        "tags": [
+          "Voucher"
+        ],
+        "parameters": [
+          {
+            "name": "voucherId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplyVoucherResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplyVoucherResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplyVoucherResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "ApplyPromotionDto": {
+        "required": [
+          "promotionCode"
+        ],
+        "type": "object",
+        "properties": {
+          "promotionCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplyVoucherResponseDto": {
+        "required": [
+          "voucherName"
+        ],
+        "type": "object",
+        "properties": {
+          "voucherId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "voucherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "applicableProductIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ChangePassword": {
         "required": [
           "currentPassword",
@@ -2120,6 +3727,24 @@
         },
         "additionalProperties": false
       },
+      "CreateCartItemDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "variantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateCategoryRequestDto": {
         "required": [
           "categoryName",
@@ -2173,6 +3798,31 @@
           },
           "comment": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateOrderRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "finalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderItemDto"
+            },
             "nullable": true
           }
         },
@@ -2252,6 +3902,123 @@
         },
         "additionalProperties": false
       },
+      "CreatePromotionDto": {
+        "required": [
+          "promotionCode",
+          "promotionDescription",
+          "promotionName"
+        ],
+        "type": "object",
+        "properties": {
+          "promotionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "promotionCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "promotionDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "discountRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotionStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "promotionEndDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRefundDto": {
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSkinTestAnswersDto": {
+        "required": [
+          "answerDetail",
+          "questionId"
+        ],
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "answerDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "skinNormalScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinDryScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinOilyScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinCombinationScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinSensitiveScore": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSkinTestQuestionDto": {
+        "required": [
+          "questionDetail"
+        ],
+        "type": "object",
+        "properties": {
+          "questionDetail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSkinTestResultDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "answerIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUserRepositoryDto": {
         "required": [
           "password",
@@ -2269,6 +4036,80 @@
             "nullable": true
           },
           "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateVoucherDto": {
+        "required": [
+          "voucherDescription",
+          "voucherEndDate",
+          "voucherName",
+          "voucherStartDate"
+        ],
+        "type": "object",
+        "properties": {
+          "voucherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "voucherQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "voucherStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voucherEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "brandId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerRefundUpdateDto": {
+        "required": [
+          "accountHolderName",
+          "bankAccountNumber",
+          "bankName",
+          "orderId"
+        ],
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "bankAccountNumber": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bankName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "accountHolderName": {
             "minLength": 1,
             "type": "string"
           }
@@ -2309,64 +4150,460 @@
         },
         "additionalProperties": false
       },
-      "SkinTest": {
+      "ManageOrderDetailDto": {
         "required": [
-          "optionA",
-          "optionB",
-          "optionC",
-          "optionD",
-          "questionDetail"
+          "imageUrl",
+          "productName",
+          "skinType"
         ],
         "type": "object",
         "properties": {
-          "questionId": {
+          "variantId": {
             "type": "string",
             "format": "uuid"
           },
-          "questionDetail": {
+          "productId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "imageUrl": {
             "type": "string",
             "nullable": true
           },
-          "optionA": {
+          "productName": {
             "type": "string",
             "nullable": true
           },
-          "optionB": {
+          "volume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinType": {
             "type": "string",
             "nullable": true
           },
-          "optionC": {
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ManageOrderDto": {
+        "required": [
+          "manageOrderDetail",
+          "orderRefundDto",
+          "shippingInfo"
+        ],
+        "type": "object",
+        "properties": {
+          "paymentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shippingFee": {
+            "type": "number",
+            "format": "double"
+          },
+          "voucherFee": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotionFee": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "finalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "shippingInfo": {
+            "$ref": "#/components/schemas/ShippingInfoDto"
+          },
+          "manageOrderDetail": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManageOrderDetailDto"
+            },
+            "nullable": true
+          },
+          "orderRefundDto": {
+            "$ref": "#/components/schemas/OrderRefundDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ManageOrderDtoListApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           },
-          "optionD": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManageOrderDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderItemDto": {
+        "type": "object",
+        "properties": {
+          "variantId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderRefundDto": {
+        "required": [
+          "orderRefundStatus",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "processedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "orderRefundStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountHolderName": {
             "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "SkinTestQuestionDto": {
+      "ProductIdsRequestDto": {
         "type": "object",
         "properties": {
-          "questionDetail": {
+          "productIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Promotion": {
+        "required": [
+          "discountRate",
+          "promotionCode",
+          "promotionDescription",
+          "promotionEndDate",
+          "promotionName",
+          "promotionStartDate"
+        ],
+        "type": "object",
+        "properties": {
+          "promotionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "promotionName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "promotionCode": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "promotionDescription": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "discountRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotionStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "promotionEndDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromotionApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           },
-          "optionA": {
+          "data": {
+            "$ref": "#/components/schemas/Promotion"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromotionIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           },
-          "optionB": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Promotion"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromotionResponseDto": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "promotionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discountRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromotionResponseDtoApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           },
-          "optionC": {
+          "data": {
+            "$ref": "#/components/schemas/PromotionResponseDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefundResponseDto": {
+        "required": [
+          "orderRefundStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "refundId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderRefundStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefundResponseDtoApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
             "type": "string",
             "nullable": true
           },
-          "optionD": {
+          "data": {
+            "$ref": "#/components/schemas/RefundResponseDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShippingInfoDto": {
+        "required": [
+          "addressDetail",
+          "addressType",
+          "commune",
+          "district",
+          "firstName",
+          "id",
+          "lastName",
+          "province",
+          "shippingNote",
+          "shippingPhoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string",
+            "nullable": true
+          },
+          "addressType": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingPhoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "province": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "commune": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingNote": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SkinTestResultResponseDto": {
+        "required": [
+          "skinType"
+        ],
+        "type": "object",
+        "properties": {
+          "totalSkinNormalScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSkinDryScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSkinOilyScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSkinCombinationScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSkinSensitiveScore": {
+            "type": "number",
+            "format": "double"
+          },
+          "skinType": {
+            "type": "string",
+            "nullable": true
+          },
+          "rerultCreateAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SkinTestResultResponseWrapperDto": {
+        "required": [
+          "address",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "skinTestResultResponse": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkinTestResultResponseDto"
+            },
             "nullable": true
           }
         },
@@ -2396,6 +4633,23 @@
             "nullable": true
           },
           "scent": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
             "type": "string",
             "nullable": true
           }
@@ -2437,6 +4691,16 @@
           "brandDescription": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateCartItemDto": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -2556,6 +4820,106 @@
         },
         "additionalProperties": false
       },
+      "UpdateShippingInfoDto": {
+        "required": [
+          "addressDetail",
+          "addressType",
+          "commune",
+          "district",
+          "firstName",
+          "lastName",
+          "province",
+          "shippingNote",
+          "shippingPhoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "addressType": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingPhoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "province": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "commune": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingNote": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSkinTestAnswersDto": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "answerDetail": {
+            "type": "string",
+            "nullable": true
+          },
+          "skinNormalScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinDryScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinOilyScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinCombinationScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skinSensitiveScore": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSkinTestQuestionDto": {
+        "required": [
+          "questionDetail"
+        ],
+        "type": "object",
+        "properties": {
+          "questionDetail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateUserRequestDto": {
         "type": "object",
         "properties": {
@@ -2574,6 +4938,93 @@
           "dateOfBirth": {
             "type": "string",
             "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateVoucherAndPromotionDto": {
+        "required": [
+          "promotionCode",
+          "promotionId",
+          "voucherId"
+        ],
+        "type": "object",
+        "properties": {
+          "promotionId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "voucherId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "voucherFee": {
+            "type": "number",
+            "format": "double"
+          },
+          "promotionCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "promotionFee": {
+            "type": "number",
+            "format": "double"
+          },
+          "finalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "shippingFee": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateVoucherDto": {
+        "required": [
+          "voucherDescription",
+          "voucherEndDate",
+          "voucherName",
+          "voucherStartDate"
+        ],
+        "type": "object",
+        "properties": {
+          "voucherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "voucherQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "voucherStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voucherEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "brandId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2658,6 +5109,93 @@
           "phoneNumber": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VoucherDto": {
+        "required": [
+          "voucherDescription",
+          "voucherEndDate",
+          "voucherId",
+          "voucherName",
+          "voucherStartDate"
+        ],
+        "type": "object",
+        "properties": {
+          "voucherId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "voucherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "voucherQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "voucherStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voucherEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "brandId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VoucherResponseDto": {
+        "required": [
+          "voucherDescription",
+          "voucherEndDate",
+          "voucherId",
+          "voucherName"
+        ],
+        "type": "object",
+        "properties": {
+          "voucherId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "voucherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "voucherEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voucherQuantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "voucherRate": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

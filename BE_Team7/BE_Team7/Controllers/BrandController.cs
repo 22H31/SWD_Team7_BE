@@ -10,6 +10,7 @@ using BE_Team7.Models;
 using GarageManagementAPI.Shared.ResultModel;
 using Microsoft.AspNetCore.Mvc;
 using BE_Team7.Dtos.Blog;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BE_Team7.Controllers
 {
@@ -30,12 +31,14 @@ namespace BE_Team7.Controllers
             _mediaService = mediaService;
 
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetAllBrand()
         {
             var brandDto = await _brandRepo.GetBrandAsync();
             return Ok(brandDto);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{brandId}")]
         public async Task<IActionResult> GetBrandById([FromRoute] string brandId)
         {
@@ -47,6 +50,7 @@ namespace BE_Team7.Controllers
             var blogDto = _mapper.Map<BrandDetailDto>(brand);
             return Ok(blogDto);
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPost]
         public async Task<IActionResult> CreateNewBrand([FromBody] CreateBrandRequestDto createBrandRequestDto)
         {
@@ -56,6 +60,7 @@ namespace BE_Team7.Controllers
 
             return CreatedAtAction(nameof(GetBrandById), new { brandId = brandModel.BrandId }, _mapper.Map<BrandDto>(brandModel));
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPut]
         [Route("{brandId:Guid}")]
         public async Task<IActionResult> UpdateBrand([FromRoute] Guid brandId, [FromBody] UpdateBrandRequestDto updateBrandRequestDto)
@@ -72,6 +77,7 @@ namespace BE_Team7.Controllers
                 return NotFound(brandModel);
             return Ok(brandModel);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrAdmin")]
         [HttpDelete("{brandId:Guid}")]
         public async Task<IActionResult> DeleteBrand([FromRoute] Guid brandId)
         {
@@ -86,6 +92,7 @@ namespace BE_Team7.Controllers
                 return NotFound(brandModel);
             return Ok(brandModel);
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPost("{brandId}/brand_avartar_images", Name = "UploadBrandAvartarImage")]
         public async Task<IActionResult> UploadBrandAvartarImage(Guid brandId, [FromForm] List<IFormFile> fileDtos)
         {

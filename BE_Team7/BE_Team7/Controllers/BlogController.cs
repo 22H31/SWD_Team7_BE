@@ -9,6 +9,7 @@ using BE_Team7.Dtos.Product;
 using BE_Team7.Shared.ErrorModel;
 using GarageManagementAPI.Shared.ResultModel;
 using BE_Team7.Interfaces.Service.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BE_Team7.Controllers
 {
@@ -29,15 +30,14 @@ namespace BE_Team7.Controllers
             _mapper = mapper;
             _mediaService = mediaService;
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetAllBlog()
         {
             var blogDtos = await _blogRepo.GetBlogsAsync();
             return Ok(blogDtos);
         }
-
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{blogId}")]
         public async Task<IActionResult> GetBlogById([FromRoute] Guid blogId)
         {
@@ -49,7 +49,7 @@ namespace BE_Team7.Controllers
             var blogDto = _mapper.Map<BlogDetailDto>(blog);
             return Ok(blogDto);
         }
-
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost]
         public async Task<IActionResult> CreateNewBlog([FromBody] CreateBlogDto createBlogDto)
         {
@@ -76,7 +76,7 @@ namespace BE_Team7.Controllers
             await _blogRepo.CreateBlogAsync(blogModel);
             return Ok(new { blogId = blogModel.BlogId });
         }
-
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPut("{blogId:Guid}")]
         public async Task<IActionResult> UpdateBlog([FromRoute] Guid blogId, [FromBody] UpdateBlogDto updateBlogDto)
         {
@@ -91,7 +91,7 @@ namespace BE_Team7.Controllers
                 return NotFound(blogModel);
             return Ok(blogModel);
         }
-
+        //[Authorize(Policy = "RequireAlllStaff")]
         [HttpDelete("{blogId:Guid}")]
         public async Task<IActionResult> DeleteBlog([FromRoute] Guid blogId)
         {
@@ -106,6 +106,7 @@ namespace BE_Team7.Controllers
                 return NotFound(blogModel);
             return Ok(blogModel);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost("{blogId}/blog_images", Name = "CreateBlogImage")]
         public async Task<IActionResult> CreateBlogImage(Guid blogId, [FromForm] List<IFormFile> fileDtos)
         {
@@ -135,6 +136,7 @@ namespace BE_Team7.Controllers
             }
             return Ok();
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost("{blogId}/blog_avartar_images", Name = "CreateblogAvartarImage")]
         public async Task<IActionResult> CreateBlogAvartarImage(Guid blogId, [FromForm] List<IFormFile> fileDtos)
         {

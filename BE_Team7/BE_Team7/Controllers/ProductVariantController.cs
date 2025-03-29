@@ -3,6 +3,7 @@ using BE_Team7.Dtos.CategoryTitle;
 using BE_Team7.Dtos.ProductVariant;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BE_Team7.Controllers
@@ -20,6 +21,7 @@ namespace BE_Team7.Controllers
             _context = context;
             _mapper = mapper;
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetAllProductVariant()
         {
@@ -27,6 +29,7 @@ namespace BE_Team7.Controllers
             var productVariantDto = _mapper.Map<List<ProductVariantDto>>(productVariants);
             return Ok(productVariants);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{variantId}")]
         public async Task<IActionResult> GetProductVariantById([FromRoute] string variantId)
         {
@@ -45,6 +48,7 @@ namespace BE_Team7.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPost]
         public async Task<IActionResult> CreateNewProductVariant([FromBody] CreateProductVariantRequestDto createProductVariantRequestDto)
         {
@@ -53,6 +57,7 @@ namespace BE_Team7.Controllers
             await _productVariantRepo.CreateProductVariantAsync(productVariantModel);
             return CreatedAtAction(nameof(GetProductVariantById), new { variantId = productVariantModel.VariantId }, _mapper.Map<ProductVariantDto>(productVariantModel));
         }
+        //[Authorize(Policy = "RequireStaffSaleOrStaff")]
         [HttpPut]
         [Route("{variantId:Guid}")]
         public async Task<IActionResult> UpdateProductVariant([FromRoute] Guid variantId, [FromBody] UpdateProductVariantRequestDto updateProductVariantRequestDto)
@@ -69,6 +74,7 @@ namespace BE_Team7.Controllers
                 return NotFound(productVariantModel);
             return Ok(productVariantModel);
         }
+        //[Authorize(Policy = "RequireAlllStaff")]
         [HttpDelete("{variantId:Guid}")]
         public async Task<IActionResult> DeleteProductVariant([FromRoute] Guid variantId)
         {

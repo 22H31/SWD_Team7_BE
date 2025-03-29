@@ -38,6 +38,7 @@ namespace BE_Team7.Controllers
         }
 
         // GET: api/Users
+        //[Authorize(Policy = "RequireAdmin")]
         [HttpGet]
         //[Authorize(Roles = "Admin")] // Chỉ Admin mới có thể lấy danh sách
         public async Task<IActionResult> GetAllUsers()
@@ -54,6 +55,7 @@ namespace BE_Team7.Controllers
             if (user == null) return NotFound("User không tồn tại");
             return Ok(user);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateUserById([FromRoute] Guid id, [FromBody] UpdateUserRequestDto updateUserRequestDto)
@@ -69,6 +71,7 @@ namespace BE_Team7.Controllers
                 return NotFound(userModel);
             return Ok(userModel);
         }
+        //[Authorize(Policy = "RequireAdmin")]
         [HttpPost("create_staff_accout")]
         public async Task<IActionResult> CreateStaffAccout([FromBody] CreateUserRepositoryDto createUserRepositoryDto)
         {
@@ -129,6 +132,7 @@ namespace BE_Team7.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        //[Authorize(Policy = "RequireAdmin")]
         [HttpPost("change-role")]
         public async Task<IActionResult> ChangeUserRole([FromBody] ChangeRoleRepositoryDto model)
         {
@@ -151,8 +155,9 @@ namespace BE_Team7.Controllers
 
             return Ok(new { message = $"Đổi role thành công, role mới: {newRole}" });
         }
+        //[Authorize(Policy = "RequireAldmin")]
         [HttpDelete("{id:Guid}")]
-        public async Task<IActionResult> DeleteProductVariant([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteAcountVariant([FromRoute] Guid id)
         {
             if (!ModelState.IsValid) return BadRequest(new ApiResponse<User>
             {
@@ -165,7 +170,7 @@ namespace BE_Team7.Controllers
                 return NotFound(userModel);
             return Ok(userModel);
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpPost("{id}/images", Name = "UploadAvaterImage")]
         public async Task<IActionResult> UploadAvatarImage(string id, [FromForm] List<IFormFile> fileDtos)
         {
@@ -195,6 +200,7 @@ namespace BE_Team7.Controllers
             }
             return Ok();
         }
+        //[Authorize(Policy = "RequireAdmin")]
         [HttpPost("toggle-lock/{id}")]
         public async Task<IActionResult> ToggleLockAccount(string id)
         {

@@ -3,6 +3,7 @@ using BE_Team7.Dtos.Brand;
 using BE_Team7.Dtos.Category;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BE_Team7.Controllers
@@ -21,13 +22,14 @@ namespace BE_Team7.Controllers
             _context = context;
             _mapper = mapper;
         }
-
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
             var categories = await _categoryRepo.GetAllCategoriesAsync();
             return Ok(categories);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{categoryId:Guid}")]
         public async Task<IActionResult> GetCategoryById([FromRoute] Guid categoryId)
         {
@@ -46,6 +48,7 @@ namespace BE_Team7.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPost]
         public async Task<IActionResult> CreateNewCategory([FromBody] CreateCategoryRequestDto createCategoryRequestDto)
         {
@@ -56,6 +59,7 @@ namespace BE_Team7.Controllers
             return CreatedAtAction(nameof(GetCategoryById), new { categoryId = categoryModel.CategoryId }, _mapper.Map<CategoryDto>(categoryModel));
 
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPut]
         [Route("{categoryId:Guid}")]
         public async Task<IActionResult> UpdateCategory([FromRoute] Guid categoryId, [FromBody] UpdateCategoryRequestDto updateCategoryRequestDto)
@@ -72,6 +76,7 @@ namespace BE_Team7.Controllers
                 return NotFound(categoryModel);
             return Ok(categoryModel);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrAdmin")]
         [HttpDelete("{categoryId:Guid}")]
         public async Task<IActionResult> DeleteCategory([FromRoute] Guid categoryId)
         {

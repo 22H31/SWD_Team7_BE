@@ -3,6 +3,7 @@ using BE_Team7.Dtos.Brand;
 using BE_Team7.Dtos.CategoryTitle;
 using BE_Team7.Interfaces.Repository.Contracts;
 using BE_Team7.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BE_Team7.Controllers
@@ -20,6 +21,7 @@ namespace BE_Team7.Controllers
             _context = context;
             _mapper = mapper;
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet]
         public async Task<IActionResult> GetAllCategoryTitle()
         {
@@ -27,6 +29,7 @@ namespace BE_Team7.Controllers
             var categoryTitleDto = _mapper.Map<List<CategoryTitleDto>>(categoryTitles);
             return Ok(categoryTitles);
         }
+        //[Authorize(Policy = "RequireAlll")]
         [HttpGet("{categoryTitleId:Guid}")]
         public async Task<IActionResult> GetCategoryTitleById([FromRoute] Guid categoryTitleId)
         {
@@ -45,6 +48,7 @@ namespace BE_Team7.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPost]
         public async Task<IActionResult> CreateNewCategoryTitle([FromBody] CreateCategoryTitleRequestDto createCategoryTitleRequestDto)
         {
@@ -54,6 +58,7 @@ namespace BE_Team7.Controllers
 
             return CreatedAtAction(nameof(GetCategoryTitleById), new { categoryTitleId = categoryTitleModel.CategoryTitleId }, _mapper.Map<CategoryTitleDto>(categoryTitleModel));
         }
+        //[Authorize(Policy = "RequireStaffSale")]
         [HttpPut]
         [Route("{categoryTitleId:Guid}")]
         public async Task<IActionResult> UpdateCatregoryTitle([FromRoute] Guid categoryTitleId, [FromBody] UpdateCategoryTitleRequestDto updateCategoryTitleRequestDto)
@@ -70,6 +75,7 @@ namespace BE_Team7.Controllers
                 return NotFound(categoryTitleModel);
             return Ok(categoryTitleModel);
         }
+        //[Authorize(Policy = "RequireStaffSaleOrAdmin")]
         [HttpDelete("{categoryTitleId:Guid}")]
         public async Task<IActionResult> DeleteCategoryTitle([FromRoute] Guid categoryTitleId)
         {
